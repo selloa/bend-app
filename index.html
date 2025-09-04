@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Stretch - Free Stretching App</title>
+    <title>Bend: Stretching & Flexibility</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1 class="main-title">Easy Stretch</h1>
-            <p class="subtitle">Simple stretching exercises for everyone</p>
+            <h1 class="main-title">Bend</h1>
+            <p class="subtitle">Stretching & Flexibility</p>
         </header>
 
-        <!-- Body Area Selection -->
-        <section id="body-selection" class="section active">
-            <h2 class="section-title">Choose a body area to stretch:</h2>
-            <div class="body-areas">
-                <button class="body-area-btn" data-area="neck">
-                    <div class="icon">🦒</div>
-                    <span>Neck & Shoulders</span>
+        <!-- Routine Category Selection -->
+        <section id="routine-selection" class="section active">
+            <h2 class="section-title">Choose a routine:</h2>
+            <div class="routine-categories">
+                <button class="routine-category-btn" data-routine="wake-up">
+                    <div class="icon">🌅</div>
+                    <span>Wake Up</span>
+                    <p>Quick morning mobility flow</p>
                 </button>
-                <button class="body-area-btn" data-area="back">
-                    <div class="icon">🫁</div>
-                    <span>Back</span>
+                <button class="routine-category-btn" data-routine="posture-reset">
+                    <div class="icon">🪑</div>
+                    <span>Posture Reset</span>
+                    <p>Seated stretches for better posture</p>
                 </button>
-                <button class="body-area-btn" data-area="legs">
-                    <div class="icon">🦵</div>
-                    <span>Legs & Hips</span>
-                </button>
-                <button class="body-area-btn" data-area="arms">
-                    <div class="icon">💪</div>
-                    <span>Arms & Wrists</span>
-                </button>
-                <button class="body-area-btn" data-area="full">
+                <button class="routine-category-btn" data-routine="full-body">
                     <div class="icon">🧘</div>
                     <span>Full Body</span>
+                    <p>Comprehensive flexibility routine</p>
                 </button>
-            </div>
-        </section>
-
-        <!-- Routine Selection -->
-        <section id="routine-selection" class="section">
-            <button class="back-btn" onclick="showBodySelection()">← Back</button>
-            <h2 class="section-title" id="routine-title">Choose a routine length:</h2>
-            <div class="routines" id="routines-container">
-                <!-- Routines will be populated by JavaScript -->
+                <button class="routine-category-btn" data-routine="sleep">
+                    <div class="icon">🌙</div>
+                    <span>Sleep</span>
+                    <p>Gentle stretches for better sleep</p>
+                </button>
+                <button class="routine-category-btn" data-routine="expert">
+                    <div class="icon">⭐</div>
+                    <span>Expert</span>
+                    <p>Advanced flexibility training</p>
+                </button>
+                <button class="routine-category-btn" data-routine="hips">
+                    <div class="icon">🦵</div>
+                    <span>Hips</span>
+                    <p>Deep hip opening stretches</p>
+                </button>
+                <button class="routine-category-btn" data-routine="hamstrings">
+                    <div class="icon">🏃</div>
+                    <span>Hamstrings</span>
+                    <p>Targeted hamstring flexibility</p>
+                </button>
+                <button class="routine-category-btn" data-routine="lower-back">
+                    <div class="icon">🫁</div>
+                    <span>Lower Back</span>
+                    <p>Relief for lower back pain</p>
+                </button>
+                <button class="routine-category-btn" data-routine="isometric">
+                    <div class="icon">💪</div>
+                    <span>Isometric</span>
+                    <p>Strength through static holds</p>
+                </button>
             </div>
         </section>
 
@@ -82,6 +98,29 @@
             <div class="exercise-navigation">
                 <button class="nav-btn" id="prev-btn" onclick="previousExercise()">Previous</button>
                 <button class="nav-btn" id="next-btn" onclick="nextExercise()">Next</button>
+            </div>
+        </section>
+
+        <!-- Completion Screen -->
+        <section id="completion-screen" class="section">
+            <div class="completion-content">
+                <div class="completion-icon">🎉</div>
+                <h2 class="completion-title">Routine Complete!</h2>
+                <p class="completion-message" id="completion-message">Great job completing the routine!</p>
+                <div class="completion-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="total-time">0</span>
+                        <span class="stat-label">Minutes</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-exercises-completed">0</span>
+                        <span class="stat-label">Exercises</span>
+                    </div>
+                </div>
+                <div class="completion-actions">
+                    <button class="action-btn primary" onclick="startNewRoutine()">Start New Routine</button>
+                    <button class="action-btn secondary" onclick="showRoutineSelection()">Back to Routines</button>
+                </div>
             </div>
         </section>
     </div>
