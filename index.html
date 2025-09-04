@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Stretch - Free Stretching App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">Easy Stretch</h1>
+            <p class="subtitle">Simple stretching exercises for everyone</p>
+        </header>
+
+        <!-- Body Area Selection -->
+        <section id="body-selection" class="section active">
+            <h2 class="section-title">Choose a body area to stretch:</h2>
+            <div class="body-areas">
+                <button class="body-area-btn" data-area="neck">
+                    <div class="icon">🦒</div>
+                    <span>Neck & Shoulders</span>
+                </button>
+                <button class="body-area-btn" data-area="back">
+                    <div class="icon">🫁</div>
+                    <span>Back</span>
+                </button>
+                <button class="body-area-btn" data-area="legs">
+                    <div class="icon">🦵</div>
+                    <span>Legs & Hips</span>
+                </button>
+                <button class="body-area-btn" data-area="arms">
+                    <div class="icon">💪</div>
+                    <span>Arms & Wrists</span>
+                </button>
+                <button class="body-area-btn" data-area="full">
+                    <div class="icon">🧘</div>
+                    <span>Full Body</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Routine Selection -->
+        <section id="routine-selection" class="section">
+            <button class="back-btn" onclick="showBodySelection()">← Back</button>
+            <h2 class="section-title" id="routine-title">Choose a routine length:</h2>
+            <div class="routines" id="routines-container">
+                <!-- Routines will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Exercise Display -->
+        <section id="exercise-display" class="section">
+            <button class="back-btn" onclick="showRoutineSelection()">← Back</button>
+            <div class="exercise-header">
+                <h2 class="section-title" id="exercise-title">Exercise</h2>
+                <div class="progress">
+                    <span id="current-exercise">1</span> of <span id="total-exercises">5</span>
+                </div>
+            </div>
+            
+            <div class="exercise-content">
+                <div class="exercise-image">
+                    <div class="placeholder-image" id="exercise-image">📱</div>
+                </div>
+                
+                <div class="exercise-info">
+                    <h3 class="exercise-name" id="exercise-name">Exercise Name</h3>
+                    <p class="exercise-description" id="exercise-description">Exercise description will appear here.</p>
+                </div>
+                
+                <div class="timer-section">
+                    <div class="timer-display" id="timer-display">0:30</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn" id="start-pause-btn">Start</button>
+                        <button class="timer-btn" id="skip-btn">Skip</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-navigation">
+                <button class="nav-btn" id="prev-btn" onclick="previousExercise()">Previous</button>
+                <button class="nav-btn" id="next-btn" onclick="nextExercise()">Next</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
