@@ -554,6 +554,434 @@ const bendRoutines = {
                 emoji: "😌"
             }
         ]
+    },
+    "neck": {
+        name: "Neck",
+        description: "Gentle stretches to relieve neck tension, improve mobility, and reduce stiffness from poor posture.",
+        duration: "8 minutes",
+        exercises: [
+            {
+                name: "Neck Rolls",
+                description: "Slowly roll your head in a circle, first clockwise, then counterclockwise. Keep movements gentle and controlled.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Side Neck Stretch",
+                description: "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side.",
+                duration: 60,
+                emoji: "↔️"
+            },
+            {
+                name: "Forward Neck Stretch",
+                description: "Slowly lower your chin toward your chest, feeling a gentle stretch in the back of your neck.",
+                duration: 60,
+                emoji: "⬇️"
+            },
+            {
+                name: "Backward Neck Stretch",
+                description: "Gently tilt your head back, looking up toward the ceiling, feeling a stretch in the front of your neck.",
+                duration: 60,
+                emoji: "⬆️"
+            },
+            {
+                name: "Chin Tucks",
+                description: "Gently pull your chin back, creating a double chin. Hold for 5 seconds, then release. Repeat slowly.",
+                duration: 60,
+                emoji: "⬅️"
+            },
+            {
+                name: "Neck Rotation",
+                description: "Slowly turn your head to the right as far as comfortable, hold for 10 seconds, then repeat on the left.",
+                duration: 60,
+                emoji: "↩️"
+            },
+            {
+                name: "Diagonal Neck Stretch",
+                description: "Gently tilt your head diagonally down and to the right, then repeat on the left side.",
+                duration: 60,
+                emoji: "↘️"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Sit or stand tall, close your eyes, and take 5 deep breaths while feeling your neck relax.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "shoulders": {
+        name: "Shoulders",
+        description: "Targeted stretches to release shoulder tension, improve range of motion, and prevent stiffness.",
+        duration: "10 minutes",
+        exercises: [
+            {
+                name: "Shoulder Shrugs",
+                description: "Lift your shoulders up toward your ears, hold for 3 seconds, then relax. Repeat slowly.",
+                duration: 60,
+                emoji: "🤷"
+            },
+            {
+                name: "Arm Circles",
+                description: "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled.",
+                duration: 60,
+                emoji: "⭕"
+            },
+            {
+                name: "Shoulder Blade Squeeze",
+                description: "Squeeze your shoulder blades together, hold for 5 seconds, then release. Keep your shoulders relaxed.",
+                duration: 60,
+                emoji: "🤝"
+            },
+            {
+                name: "Cross-Body Shoulder Stretch",
+                description: "Bring one arm across your chest, use your other arm to gently pull it closer. Hold and repeat on other side.",
+                duration: 60,
+                emoji: "🤗"
+            },
+            {
+                name: "Behind-Back Shoulder Stretch",
+                description: "Reach one arm behind your back, use your other hand to gently pull it up. Hold and repeat on other side.",
+                duration: 60,
+                emoji: "🤲"
+            },
+            {
+                name: "Overhead Shoulder Stretch",
+                description: "Reach one arm overhead and bend it behind your head, use your other hand to gently pull the elbow. Hold and repeat.",
+                duration: 60,
+                emoji: "🙋"
+            },
+            {
+                name: "Doorway Chest Stretch",
+                description: "Place your forearm against a doorway, step forward to feel a stretch in your chest and front shoulder.",
+                duration: 60,
+                emoji: "🚪"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Let your arms hang naturally at your sides, close your eyes, and feel your shoulders relax completely.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "feet": {
+        name: "Feet",
+        description: "Foot-specific stretches to improve flexibility, reduce pain, and enhance overall foot health.",
+        duration: "8 minutes",
+        exercises: [
+            {
+                name: "Toe Spreads",
+                description: "Sit comfortably and spread your toes as wide as possible, hold for 5 seconds, then relax.",
+                duration: 60,
+                emoji: "🦶"
+            },
+            {
+                name: "Toe Curls",
+                description: "Curl your toes under, hold for 5 seconds, then extend them as far as possible. Repeat slowly.",
+                duration: 60,
+                emoji: "👣"
+            },
+            {
+                name: "Ankle Circles",
+                description: "Sit with one leg extended, rotate your ankle in circles, first clockwise, then counterclockwise.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Plantar Fascia Stretch",
+                description: "Sit and place one foot on the opposite knee, gently pull your toes back toward your shin.",
+                duration: 60,
+                emoji: "🦶"
+            },
+            {
+                name: "Calf Raises",
+                description: "Stand tall and slowly rise up onto your toes, then lower back down. Keep movements controlled.",
+                duration: 60,
+                emoji: "🦵"
+            },
+            {
+                name: "Toe Squats",
+                description: "Kneel on the floor, sit back on your heels, and hold the position to stretch your toes and feet.",
+                duration: 60,
+                emoji: "🦶"
+            },
+            {
+                name: "Foot Massage",
+                description: "Use your hands to gently massage the bottom of your foot, focusing on the arch and heel.",
+                duration: 60,
+                emoji: "👐"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Sit comfortably with your feet flat on the floor, close your eyes, and feel your feet relax.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "ankle": {
+        name: "Ankle",
+        description: "Ankle mobility exercises to improve flexibility, reduce stiffness, and prevent injury.",
+        duration: "6 minutes",
+        exercises: [
+            {
+                name: "Ankle Circles",
+                description: "Sit with one leg extended, rotate your ankle in circles, first clockwise, then counterclockwise.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Ankle Flexion",
+                description: "Point your toes away from you, then pull them back toward your shin. Move slowly and controlled.",
+                duration: 60,
+                emoji: "⬆️"
+            },
+            {
+                name: "Ankle Inversion",
+                description: "Turn your foot inward, then outward. Keep movements gentle and within comfortable range.",
+                duration: 60,
+                emoji: "↔️"
+            },
+            {
+                name: "Calf Stretch",
+                description: "Stand facing a wall, place one foot forward, lean into the wall to stretch your calf and ankle.",
+                duration: 60,
+                emoji: "🦵"
+            },
+            {
+                name: "Achilles Stretch",
+                description: "Stand on a step, let one heel hang off the edge, and gently lower it to stretch your Achilles tendon.",
+                duration: 60,
+                emoji: "🦶"
+            },
+            {
+                name: "Ankle Alphabet",
+                description: "Sit with one leg extended, use your big toe to trace the alphabet in the air.",
+                duration: 60,
+                emoji: "🔤"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Sit comfortably with your feet flat on the floor, close your eyes, and feel your ankles relax.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "knees": {
+        name: "Knees",
+        description: "Gentle knee stretches to improve mobility, reduce stiffness, and support joint health.",
+        duration: "8 minutes",
+        exercises: [
+            {
+                name: "Knee Circles",
+                description: "Stand with feet hip-width apart, place hands on knees, and make gentle circles with your knees.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Knee to Chest",
+                description: "Lie on your back, bring one knee to your chest, hold with your hands. Repeat with the other leg.",
+                duration: 60,
+                emoji: "🦵"
+            },
+            {
+                name: "Seated Knee Extensions",
+                description: "Sit tall, extend one leg straight out, hold for 5 seconds, then lower. Repeat with other leg.",
+                duration: 60,
+                emoji: "🪑"
+            },
+            {
+                name: "Quad Stretch",
+                description: "Stand and bend one knee, bringing your heel toward your glutes. Hold your ankle and gently pull.",
+                duration: 60,
+                emoji: "🦵"
+            },
+            {
+                name: "Hamstring Stretch",
+                description: "Sit with one leg extended, reach forward toward your toes while keeping your back straight.",
+                duration: 60,
+                emoji: "⬇️"
+            },
+            {
+                name: "IT Band Stretch",
+                description: "Stand and cross one leg behind the other, lean to the side to stretch your IT band.",
+                duration: 60,
+                emoji: "↔️"
+            },
+            {
+                name: "Knee Hugs",
+                description: "Lie on your back, bring both knees to your chest, and gently rock from side to side.",
+                duration: 60,
+                emoji: "🤗"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Lie on your back with legs extended, close your eyes, and feel your knees relax completely.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "hands": {
+        name: "Hands",
+        description: "Hand and finger stretches to improve dexterity, reduce stiffness, and prevent repetitive strain.",
+        duration: "6 minutes",
+        exercises: [
+            {
+                name: "Fist to Open",
+                description: "Make a tight fist, then open your hand and spread your fingers wide. Repeat slowly.",
+                duration: 60,
+                emoji: "✊"
+            },
+            {
+                name: "Finger Spreads",
+                description: "Spread your fingers as wide as possible, hold for 5 seconds, then bring them together.",
+                duration: 60,
+                emoji: "🖐️"
+            },
+            {
+                name: "Thumb Circles",
+                description: "Make circles with your thumb, first clockwise, then counterclockwise. Use your other hand for support.",
+                duration: 60,
+                emoji: "👍"
+            },
+            {
+                name: "Finger Bends",
+                description: "Bend each finger individually, starting with your index finger and working to your pinky.",
+                duration: 60,
+                emoji: "👆"
+            },
+            {
+                name: "Prayer Stretch",
+                description: "Press your palms together in front of your chest, then slowly lower your hands while keeping palms together.",
+                duration: 60,
+                emoji: "🙏"
+            },
+            {
+                name: "Wrist Flexor Stretch",
+                description: "Extend one arm, use your other hand to gently pull your fingers back toward your forearm.",
+                duration: 60,
+                emoji: "🤲"
+            },
+            {
+                name: "Hand Massage",
+                description: "Use your thumb to gently massage the palm of your other hand, then switch hands.",
+                duration: 60,
+                emoji: "👐"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Let your hands rest comfortably in your lap, close your eyes, and feel your hands relax.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "fingers": {
+        name: "Fingers",
+        description: "Detailed finger exercises to improve flexibility, dexterity, and reduce stiffness in individual fingers.",
+        duration: "5 minutes",
+        exercises: [
+            {
+                name: "Individual Finger Lifts",
+                description: "Place your hand flat on a table, lift each finger individually, one at a time.",
+                duration: 60,
+                emoji: "👆"
+            },
+            {
+                name: "Finger Taps",
+                description: "Tap each finger to your thumb, starting with your index finger and working to your pinky.",
+                duration: 60,
+                emoji: "👌"
+            },
+            {
+                name: "Finger Stretches",
+                description: "Gently pull each finger back one at a time, holding for 5 seconds each.",
+                duration: 60,
+                emoji: "🖐️"
+            },
+            {
+                name: "Spider Crawl",
+                description: "Place your fingertips on a table, lift and lower each finger in sequence like a spider walking.",
+                duration: 60,
+                emoji: "🕷️"
+            },
+            {
+                name: "Finger Circles",
+                description: "Make small circles with each finger individually, keeping the rest of your hand still.",
+                duration: 60,
+                emoji: "🌀"
+            },
+            {
+                name: "Pinky to Thumb",
+                description: "Touch your pinky to your thumb, then stretch them apart. Repeat with each finger.",
+                duration: 60,
+                emoji: "🤏"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Rest your hands comfortably, close your eyes, and feel each finger relax completely.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
+    "wrists": {
+        name: "Wrists",
+        description: "Wrist mobility exercises to improve flexibility, reduce stiffness, and prevent repetitive strain injury.",
+        duration: "6 minutes",
+        exercises: [
+            {
+                name: "Wrist Circles",
+                description: "Make slow circles with your wrists, first clockwise, then counterclockwise. Keep movements gentle.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Wrist Flexion",
+                description: "Bend your wrists forward, then backward. Move slowly and within comfortable range.",
+                duration: 60,
+                emoji: "↕️"
+            },
+            {
+                name: "Wrist Side to Side",
+                description: "Move your wrists from side to side, keeping your forearms still.",
+                duration: 60,
+                emoji: "↔️"
+            },
+            {
+                name: "Prayer Stretch",
+                description: "Press your palms together in front of your chest, then slowly lower your hands while keeping palms together.",
+                duration: 60,
+                emoji: "🙏"
+            },
+            {
+                name: "Reverse Prayer",
+                description: "Press the backs of your hands together, fingers pointing down, then gently lift your elbows.",
+                duration: 60,
+                emoji: "🤲"
+            },
+            {
+                name: "Wrist Extensor Stretch",
+                description: "Extend one arm, use your other hand to gently pull your fingers down toward your forearm.",
+                duration: 60,
+                emoji: "⬇️"
+            },
+            {
+                name: "Wrist Flexor Stretch",
+                description: "Extend one arm, use your other hand to gently pull your fingers back toward your forearm.",
+                duration: 60,
+                emoji: "⬆️"
+            },
+            {
+                name: "Final Relaxation",
+                description: "Let your arms hang naturally at your sides, close your eyes, and feel your wrists relax completely.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
     }
 };
 
