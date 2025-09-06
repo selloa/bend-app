@@ -170,6 +170,40 @@ class BendI18n {
                     posture: "Posture",
                     chest: "Chest"
                 },
+                exercises: {
+                    neckrolls: {
+                        name: "Neck Rolls",
+                        description: "Slowly roll your head in a circle, first clockwise, then counterclockwise. Keep movements gentle and controlled."
+                    },
+                    shouldershrugs: {
+                        name: "Shoulder Shrugs",
+                        description: "Lift your shoulders up toward your ears, hold for 3 seconds, then relax. Repeat slowly."
+                    },
+                    sideneckstretch: {
+                        name: "Side Neck Stretch",
+                        description: "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side."
+                    },
+                    forwardneckstretch: {
+                        name: "Forward Neck Stretch",
+                        description: "Slowly lower your chin toward your chest, feeling a gentle stretch in the back of your neck."
+                    },
+                    armcircles: {
+                        name: "Arm Circles",
+                        description: "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled."
+                    },
+                    gentleTwist: {
+                        name: "Gentle Twist",
+                        description: "Stand with feet hip-width apart, place your hands on your hips, and gently twist from side to side."
+                    },
+                    calfraises: {
+                        name: "Calf Raises",
+                        description: "Stand tall and slowly rise up onto your toes, then lower back down. Keep movements controlled."
+                    },
+                    deepbreathing: {
+                        name: "Deep Breathing",
+                        description: "Take 5 deep breaths, inhaling through your nose and exhaling through your mouth. Feel your body relax."
+                    }
+                },
                 accessibility: {
                     toggleDarkMode: "Toggle dark mode",
                     languageSelector: "Select language",
@@ -242,6 +276,40 @@ class BendI18n {
                     seated: "Sitzend",
                     posture: "Haltung",
                     chest: "Brust"
+                },
+                exercises: {
+                    neckrolls: {
+                        name: "Nackenrollen",
+                        description: "Rollen Sie Ihren Kopf langsam im Kreis, zuerst im Uhrzeigersinn, dann gegen den Uhrzeigersinn. Halten Sie die Bewegungen sanft und kontrolliert."
+                    },
+                    shouldershrugs: {
+                        name: "Schulterzucken",
+                        description: "Heben Sie Ihre Schultern zu den Ohren, halten Sie 3 Sekunden, dann entspannen Sie. Wiederholen Sie langsam."
+                    },
+                    sideneckstretch: {
+                        name: "Seitliche Nackendehnung",
+                        description: "Neigen Sie Ihren Kopf sanft nach rechts, halten Sie 15 Sekunden, dann wiederholen Sie auf der linken Seite."
+                    },
+                    forwardneckstretch: {
+                        name: "Vorwärts Nackendehnung",
+                        description: "Senken Sie Ihr Kinn langsam zur Brust, spüren Sie eine sanfte Dehnung im Nacken."
+                    },
+                    armcircles: {
+                        name: "Armkreise",
+                        description: "Machen Sie kleine Kreise mit den Armen, zuerst vorwärts, dann rückwärts. Halten Sie die Bewegungen langsam und kontrolliert."
+                    },
+                    gentleTwist: {
+                        name: "Sanfte Drehung",
+                        description: "Stehen Sie mit hüftbreit auseinander stehenden Füßen, legen Sie Ihre Hände auf die Hüften und drehen Sie sich sanft von Seite zu Seite."
+                    },
+                    calfraises: {
+                        name: "Wadenheben",
+                        description: "Stehen Sie aufrecht und heben Sie sich langsam auf die Zehenspitzen, dann senken Sie sich wieder ab. Halten Sie die Bewegungen kontrolliert."
+                    },
+                    deepbreathing: {
+                        name: "Tiefes Atmen",
+                        description: "Atmen Sie 5 Mal tief ein, durch die Nase einatmen und durch den Mund ausatmen. Spüren Sie, wie sich Ihr Körper entspannt."
+                    }
                 },
                 accessibility: {
                     toggleDarkMode: "Dunklen Modus umschalten",
@@ -316,6 +384,40 @@ class BendI18n {
                     posture: "Postura",
                     chest: "Pecho"
                 },
+                exercises: {
+                    neckrolls: {
+                        name: "Rotaciones de Cuello",
+                        description: "Rote su cabeza lentamente en círculo, primero en el sentido de las agujas del reloj, luego en sentido contrario. Mantenga los movimientos suaves y controlados."
+                    },
+                    shouldershrugs: {
+                        name: "Encogimiento de Hombros",
+                        description: "Levante los hombros hacia las orejas, mantenga 3 segundos, luego relaje. Repita lentamente."
+                    },
+                    sideneckstretch: {
+                        name: "Estiramiento Lateral del Cuello",
+                        description: "Incline suavemente la cabeza hacia la derecha, mantenga 15 segundos, luego repita en el lado izquierdo."
+                    },
+                    forwardneckstretch: {
+                        name: "Estiramiento Frontal del Cuello",
+                        description: "Baje lentamente la barbilla hacia el pecho, sintiendo un estiramiento suave en la parte posterior del cuello."
+                    },
+                    armcircles: {
+                        name: "Círculos con Brazos",
+                        description: "Haga círculos pequeños con los brazos, primero hacia adelante, luego hacia atrás. Mantenga los movimientos lentos y controlados."
+                    },
+                    gentleTwist: {
+                        name: "Giro Suave",
+                        description: "Párese con los pies separados al ancho de las caderas, coloque las manos en las caderas y gire suavemente de lado a lado."
+                    },
+                    calfraises: {
+                        name: "Elevación de Pantorrillas",
+                        description: "Párese derecho y levántese lentamente sobre las puntas de los pies, luego baje de nuevo. Mantenga los movimientos controlados."
+                    },
+                    deepbreathing: {
+                        name: "Respiración Profunda",
+                        description: "Tome 5 respiraciones profundas, inhalando por la nariz y exhalando por la boca. Sienta cómo su cuerpo se relaja."
+                    }
+                },
                 accessibility: {
                     toggleDarkMode: "Alternar modo oscuro",
                     languageSelector: "Seleccionar idioma",
@@ -388,6 +490,40 @@ class BendI18n {
                     seated: "உட்கார்ந்து",
                     posture: "உடல்நிலை",
                     chest: "மார்பு"
+                },
+                exercises: {
+                    neckrolls: {
+                        name: "கழுத்து சுழற்சி",
+                        description: "உங்கள் தலையை மெதுவாக வட்டமாக சுழற்றுங்கள், முதலில் கடிகார திசையில், பின்னர் எதிர் திசையில். இயக்கங்களை மென்மையாகவும் கட்டுப்பாட்டுடனும் வைத்திருங்கள்."
+                    },
+                    shouldershrugs: {
+                        name: "தோள் உயர்த்துதல்",
+                        description: "உங்கள் தோள்களை காதுகளுக்கு நோக்கி உயர்த்துங்கள், 3 வினாடிகள் வைத்திருங்கள், பின்னர் தளர்த்துங்கள். மெதுவாக மீண்டும் செய்யுங்கள்."
+                    },
+                    sideneckstretch: {
+                        name: "பக்க கழுத்து நீட்சி",
+                        description: "உங்கள் தலையை வலது பக்கமாக மெதுவாக சாய்த்து, 15 வினாடிகள் வைத்திருங்கள், பின்னர் இடது பக்கத்தில் மீண்டும் செய்யுங்கள்."
+                    },
+                    forwardneckstretch: {
+                        name: "முன்னோக்கி கழுத்து நீட்சி",
+                        description: "உங்கள் தாடியை மெதுவாக மார்புக்கு நோக்கி கீழே கொண்டு வாருங்கள், உங்கள் கழுத்தின் பின்புறத்தில் மென்மையான நீட்சியை உணருங்கள்."
+                    },
+                    armcircles: {
+                        name: "கை வட்டங்கள்",
+                        description: "உங்கள் கைகளால் சிறிய வட்டங்கள் செய்யுங்கள், முதலில் முன்னோக்கி, பின்னர் பின்னோக்கி. இயக்கங்களை மெதுவாகவும் கட்டுப்பாட்டுடனும் வைத்திருங்கள்."
+                    },
+                    gentleTwist: {
+                        name: "மென்மையான திருப்பம்",
+                        description: "உங்கள் கால்களை இடுப்பு அகலத்தில் வைத்து நிற்கவும், உங்கள் கைகளை இடுப்புகளில் வைக்கவும், மற்றும் பக்கத்திலிருந்து பக்கத்திற்கு மெதுவாக திருப்புங்கள்."
+                    },
+                    calfraises: {
+                        name: "கால் தசை உயர்த்துதல்",
+                        description: "நேராக நிற்கவும் மற்றும் மெதுவாக உங்கள் கால் விரல்களில் உயர்த்துங்கள், பின்னர் மீண்டும் கீழே கொண்டு வாருங்கள். இயக்கங்களை கட்டுப்பாட்டுடன் வைத்திருங்கள்."
+                    },
+                    deepbreathing: {
+                        name: "ஆழமான சுவாசம்",
+                        description: "5 ஆழமான சுவாசங்கள் எடுக்கவும், மூக்கு வழியாக உள்ளிழுக்கவும் மற்றும் வாய் வழியாக வெளியேற்றவும். உங்கள் உடல் தளர்வடைகிறது என்பதை உணருங்கள்."
+                    }
                 },
                 accessibility: {
                     toggleDarkMode: "இருண்ட பயன்முறையை மாற்றவும்",

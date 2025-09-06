@@ -1474,9 +1474,37 @@ function showCompletionScreen() {
     document.getElementById('total-exercises-completed').textContent = currentExercises.length;
 }
 
+// Get translated exercise data
+function getTranslatedExercise(exercise) {
+    if (!window.i18n) {
+        return exercise; // Fallback to original if i18n not available
+    }
+    
+    const currentLang = window.i18n.currentLang;
+    
+    // Try to get translation from i18n system
+    const translatedName = window.i18n.t(`exercises.${exercise.name.toLowerCase().replace(/\s+/g, '')}.name`, {}, exercise.name);
+    const translatedDescription = window.i18n.t(`exercises.${exercise.name.toLowerCase().replace(/\s+/g, '')}.description`, {}, exercise.description);
+    
+    // If translation exists and is different from fallback, use it
+    if (translatedName !== exercise.name) {
+        return {
+            ...exercise,
+            name: translatedName,
+            description: translatedDescription
+        };
+    }
+    
+    // Fallback to original exercise data
+    return exercise;
+}
+
 function displayCurrentExercise() {
     const exercise = currentExercises[currentExerciseIndex];
     const totalExercises = currentExercises.length;
+    
+    // Get translated exercise data
+    const translatedExercise = getTranslatedExercise(exercise);
     
     // Reset side to left for new exercises
     currentSide = 'left';
@@ -1485,10 +1513,10 @@ function displayCurrentExercise() {
     document.getElementById('current-exercise').textContent = currentExerciseIndex + 1;
     document.getElementById('total-exercises').textContent = totalExercises;
     
-    // Update exercise info
-    document.getElementById('exercise-name').textContent = exercise.name;
-    document.getElementById('exercise-description').textContent = exercise.description;
-    document.getElementById('exercise-emoji').textContent = exercise.emoji;
+    // Update exercise info with translated data
+    document.getElementById('exercise-name').textContent = translatedExercise.name;
+    document.getElementById('exercise-description').textContent = translatedExercise.description;
+    document.getElementById('exercise-emoji').textContent = translatedExercise.emoji;
     
     // Reset timer
     timeRemaining = exercise.duration;
@@ -1892,7 +1920,7 @@ function showSideSwitchMessage() {
     messageElement.innerHTML = `
         <div class="side-switch-content">
             <div class="side-switch-icon">🔄</div>
-            <div class="side-switch-text">Switch sides</div>
+            <div class="side-switch-text">${window.i18n ? window.i18n.t('timer.switchSides') : 'Switch sides'}</div>
         </div>
     `;
     
