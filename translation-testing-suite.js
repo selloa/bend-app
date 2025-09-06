@@ -283,6 +283,12 @@ class TranslationTestingSuite {
 
     // Generate comprehensive report
     generateReport() {
+        // Only show report if there are issues
+        if (this.testResults.issues.length === 0) {
+            // No issues found - silent success
+            return;
+        }
+        
         console.log('\n📊 TRANSLATION TESTING REPORT');
         console.log('================================');
         console.log(`✅ Passed: ${this.testResults.passed}`);
@@ -296,7 +302,7 @@ class TranslationTestingSuite {
             });
         }
         
-        // Generate HTML report
+        // Generate HTML report only if there are issues
         this.generateHTMLReport();
     }
 
@@ -308,7 +314,7 @@ class TranslationTestingSuite {
             position: fixed;
             top: 10px;
             right: 10px;
-            width: 400px;
+            width: 450px;
             max-height: 80vh;
             background: white;
             border: 2px solid #333;
@@ -318,22 +324,24 @@ class TranslationTestingSuite {
             overflow-y: auto;
             font-family: monospace;
             font-size: 12px;
+            color: #333;
+            line-height: 1.4;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         `;
         
         let html = `
-            <h3>🧪 Translation Test Report</h3>
-            <p><strong>Passed:</strong> ${this.testResults.passed}</p>
-            <p><strong>Failed:</strong> ${this.testResults.failed}</p>
-            <p><strong>Warnings:</strong> ${this.testResults.warnings}</p>
+            <h3 style="color: #333; margin-top: 0; font-size: 1.1rem;">🧪 Translation Test Report</h3>
+            <p style="color: #333; margin: 6px 0;"><strong>Passed:</strong> ${this.testResults.passed}</p>
+            <p style="color: #333; margin: 6px 0;"><strong>Failed:</strong> ${this.testResults.failed}</p>
+            <p style="color: #333; margin: 6px 0;"><strong>Warnings:</strong> ${this.testResults.warnings}</p>
         `;
         
         if (this.testResults.issues.length > 0) {
-            html += '<h4>Issues Found:</h4><ul>';
+            html += '<h4 style="color: #333; margin: 12px 0 6px 0; font-size: 1rem;">Issues Found:</h4><ul style="margin: 0 0 12px 0; padding-left: 18px;">';
             this.testResults.issues.forEach(issue => {
-                const color = issue.severity === 'CRITICAL' ? 'red' : 
-                             issue.severity === 'ERROR' ? 'orange' : 'yellow';
-                html += `<li style="color: ${color}">[${issue.severity}] ${issue.message}</li>`;
+                const color = issue.severity === 'CRITICAL' ? '#e74c3c' : 
+                             issue.severity === 'ERROR' ? '#f39c12' : '#f1c40f';
+                html += `<li style="color: ${color}; margin: 3px 0; font-size: 0.9rem;">[${issue.severity}] ${issue.message}</li>`;
             });
             html += '</ul>';
         }

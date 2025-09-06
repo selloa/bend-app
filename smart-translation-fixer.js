@@ -421,6 +421,12 @@ class SmartTranslationFixer {
 
     // Generate report
     generateReport() {
+        // Only show report if there are issues or fixes
+        if (this.issuesFound.length === 0 && this.fixesApplied.length === 0) {
+            // No issues found - silent success
+            return;
+        }
+        
         console.log('\n📊 SMART TRANSLATION FIXER REPORT');
         console.log('====================================');
         console.log(`🔍 Real Issues Found: ${this.issuesFound.length}`);
@@ -441,7 +447,7 @@ class SmartTranslationFixer {
             });
         }
         
-        // Show visual report
+        // Show visual report only if there are issues or fixes
         this.showVisualReport();
     }
 
@@ -459,30 +465,34 @@ class SmartTranslationFixer {
             border-radius: 15px;
             padding: 20px;
             z-index: 10000;
-            max-width: 500px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             font-family: monospace;
+            color: #333;
+            line-height: 1.4;
         `;
         
         let html = `
-            <h2 style="color: #2ecc71; margin-top: 0;">🎉 Smart Translation Fixer Complete!</h2>
-            <p><strong>Real Issues Found:</strong> ${this.issuesFound.length}</p>
-            <p><strong>Fixes Applied:</strong> ${this.fixesApplied.length}</p>
-            <p><strong>Success Rate:</strong> ${this.fixesApplied.length > 0 ? Math.round((this.fixesApplied.length / (this.issuesFound.length + this.fixesApplied.length)) * 100) : 0}%</p>
+            <h2 style="color: #2ecc71; margin-top: 0; font-size: 1.2rem;">🎉 Smart Translation Fixer Complete!</h2>
+            <p style="color: #333; margin: 8px 0;"><strong>Real Issues Found:</strong> ${this.issuesFound.length}</p>
+            <p style="color: #333; margin: 8px 0;"><strong>Fixes Applied:</strong> ${this.fixesApplied.length}</p>
+            <p style="color: #333; margin: 8px 0;"><strong>Success Rate:</strong> ${this.fixesApplied.length > 0 ? Math.round((this.fixesApplied.length / (this.issuesFound.length + this.fixesApplied.length)) * 100) : 0}%</p>
         `;
         
         if (this.fixesApplied.length > 0) {
-            html += '<h3 style="color: #27ae60;">✅ Real Fixes Applied:</h3><ul>';
+            html += '<h3 style="color: #27ae60; margin: 15px 0 8px 0; font-size: 1rem;">✅ Real Fixes Applied:</h3><ul style="margin: 0 0 15px 0; padding-left: 20px;">';
             this.fixesApplied.forEach(fix => {
-                html += `<li style="color: #27ae60;">${fix.message}</li>`;
+                html += `<li style="color: #27ae60; margin: 4px 0; font-size: 0.9rem;">${fix.message}</li>`;
             });
             html += '</ul>';
         }
         
         if (this.issuesFound.length > 0) {
-            html += '<h3 style="color: #e74c3c;">⚠️ Remaining Real Issues:</h3><ul>';
+            html += '<h3 style="color: #e74c3c; margin: 15px 0 8px 0; font-size: 1rem;">⚠️ Remaining Real Issues:</h3><ul style="margin: 0 0 15px 0; padding-left: 20px;">';
             this.issuesFound.forEach(issue => {
-                html += `<li style="color: #e74c3c;">${issue.message}</li>`;
+                html += `<li style="color: #e74c3c; margin: 4px 0; font-size: 0.9rem;">${issue.message}</li>`;
             });
             html += '</ul>';
         }
