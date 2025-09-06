@@ -11,6 +11,16 @@
     display: inline-block;
 }
 
+/* Hide language selector by default */
+.language-selector {
+    display: none;
+}
+
+/* Show language selector only when routine selection is active */
+body.routine-selection-active .language-selector {
+    display: inline-block;
+}
+
 .language-button {
     background: var(--bg-secondary);
     border: 1px solid var(--border-primary);

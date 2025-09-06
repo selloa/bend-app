@@ -1320,6 +1320,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDarkMode();
     initializeAudio();
     setupAccessibility();
+    
+    // Show language selector on initial load (routine selection is default active)
+    document.body.classList.add('routine-selection-active');
 });
 
 function setupEventListeners() {
@@ -1428,6 +1431,9 @@ function showRoutineSelection() {
     document.getElementById('exercise-display').classList.remove('active');
     document.getElementById('completion-screen').classList.remove('active');
     currentView = 'main';
+    
+    // Show language selector on routine selection screen
+    document.body.classList.add('routine-selection-active');
 }
 
 function showFolderView(folderKey) {
@@ -1467,6 +1473,9 @@ function showFolderView(folderKey) {
     document.getElementById('folder-view').classList.add('active');
     document.getElementById('exercise-display').classList.remove('active');
     document.getElementById('completion-screen').classList.remove('active');
+    
+    // Hide language selector on folder view
+    document.body.classList.remove('routine-selection-active');
 }
 
 function showMainView() {
@@ -1478,6 +1487,9 @@ function showExerciseDisplay() {
     document.getElementById('folder-view').classList.remove('active');
     document.getElementById('exercise-display').classList.add('active');
     document.getElementById('completion-screen').classList.remove('active');
+    
+    // Hide language selector on exercise display
+    document.body.classList.remove('routine-selection-active');
 }
 
 function getRoutineIcon(routineKey) {
@@ -1502,6 +1514,9 @@ function showCompletionScreen() {
     document.getElementById('routine-selection').classList.remove('active');
     document.getElementById('exercise-display').classList.remove('active');
     document.getElementById('completion-screen').classList.add('active');
+    
+    // Hide language selector on completion screen
+    document.body.classList.remove('routine-selection-active');
     
     // Calculate total time
     totalRoutineTime = Math.floor((Date.now() - routineStartTime) / 1000 / 60);
