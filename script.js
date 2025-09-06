@@ -34,7 +34,8 @@ const bendRoutines = {
                 name: "Arm Circles",
                 description: "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled.",
                 duration: 30,
-                emoji: "⭕"
+                emoji: "⭕",
+                needsSideSwitch: true
             },
             {
                 name: "Gentle Twist",
@@ -650,7 +651,8 @@ const bendRoutines = {
                 name: "Arm Circles",
                 description: "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled.",
                 duration: 60,
-                emoji: "⭕"
+                emoji: "⭕",
+                needsSideSwitch: true
             },
             {
                 name: "Shoulder Blade Squeeze",
@@ -1036,14 +1038,16 @@ let timeRemaining = 0;
 let isTimerRunning = false;
 let routineStartTime = null;
 let totalRoutineTime = 0;
-let autoAdvanceEnabled = true;
+let autoStartTimerEnabled = true;
 let currentSide = 'left'; // 'left' or 'right'
 let sideSwitchMessageTimer = null;
+let audioContext = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     initializeDarkMode();
+    initializeAudio();
 });
 
 function setupEventListeners() {
@@ -1057,14 +1061,20 @@ function setupEventListeners() {
     });
 
     // Timer controls
-    document.getElementById('start-pause-btn').addEventListener('click', toggleTimer);
+    document.getElementById('start-pause-btn').addEventListener('click', function() {
+        // Initialize audio context on first user interaction
+        if (audioContext && audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+        toggleTimer();
+    });
     document.getElementById('skip-btn').addEventListener('click', skipExercise);
     
-    // Auto-advance toggle
-    const autoAdvanceToggle = document.getElementById('auto-advance-toggle');
-    if (autoAdvanceToggle) {
-        autoAdvanceToggle.addEventListener('change', function() {
-            autoAdvanceEnabled = this.checked;
+    // Auto-start timer toggle
+    const autoStartToggle = document.getElementById('auto-start-toggle');
+    if (autoStartToggle) {
+        autoStartToggle.addEventListener('change', function() {
+            autoStartTimerEnabled = this.checked;
         });
     }
     
@@ -1141,6 +1151,13 @@ function displayCurrentExercise() {
         clearInterval(timer);
         timer = null;
     }
+    
+    // Auto-start timer if enabled
+    if (autoStartTimerEnabled) {
+        setTimeout(() => {
+            startTimer();
+        }, 500); // Small delay to let the UI update
+    }
 }
 
 function toggleTimer() {
@@ -1159,11 +1176,19 @@ function startTimer() {
         timeRemaining--;
         updateTimerDisplay();
         
+        // Play countdown beeps for last 3 seconds
+        if (timeRemaining <= 3 && timeRemaining > 0) {
+            playCountdownBeep();
+        }
+        
         if (timeRemaining <= 0) {
             clearInterval(timer);
             timer = null;
             isTimerRunning = false;
             document.getElementById('start-pause-btn').textContent = 'Start';
+            
+            // Play timer end beep
+            playTimerEndBeep();
             
             // Check if current exercise needs side switching
             const currentExercise = currentExercises[currentExerciseIndex];
@@ -1185,12 +1210,6 @@ function startTimer() {
             if (currentExerciseIndex < currentExercises.length - 1) {
                 setTimeout(() => {
                     nextExercise();
-                    // If auto-advance is enabled, automatically start the timer for the next exercise
-                    if (autoAdvanceEnabled) {
-                        setTimeout(() => {
-                            startTimer();
-                        }, 500); // Small delay to let the UI update
-                    }
                 }, 1000);
             } else {
                 // Routine completed
@@ -1287,6 +1306,49 @@ function enableLightMode() {
     localStorage.setItem('bend-theme', 'light');
 }
 
+// Audio functions
+function initializeAudio() {
+    try {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    } catch (e) {
+        console.log('Web Audio API not supported');
+    }
+}
+
+function playBeep(frequency = 800, duration = 200, type = 'short') {
+    if (!audioContext) return;
+    
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    oscillator.type = 'sine';
+    
+    // Create a gentle envelope
+    const now = audioContext.currentTime;
+    gainNode.gain.setValueAtTime(0, now);
+    gainNode.gain.linearRampToValueAtTime(0.1, now + 0.01);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, now + duration / 1000);
+    
+    oscillator.start(now);
+    oscillator.stop(now + duration / 1000);
+}
+
+function playCountdownBeep() {
+    playBeep(600, 150, 'short');
+}
+
+function playTimerEndBeep() {
+    playBeep(400, 500, 'long');
+}
+
+function playSideSwitchBeep() {
+    playBeep(700, 200, 'short');
+}
+
 function showSideSwitchMessage() {
     // Create or update side switch message
     let messageElement = document.getElementById('side-switch-message');
@@ -1306,6 +1368,11 @@ function showSideSwitchMessage() {
     
     // Show message for 3 seconds
     messageElement.style.display = 'block';
+    
+    // Play three beeps during the side switch message
+    playSideSwitchBeep();
+    setTimeout(() => playSideSwitchBeep(), 1000);
+    setTimeout(() => playSideSwitchBeep(), 2000);
     
     if (sideSwitchMessageTimer) {
         clearTimeout(sideSwitchMessageTimer);
