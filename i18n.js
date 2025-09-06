@@ -24,9 +24,10 @@ class BendI18n {
     }
 
     // Get translation for a key
-    t(key, params = {}) {
+    t(key, params = {}, fallback = null) {
         const translation = this.getNestedValue(this.translations[this.currentLang], key) ||
                           this.getNestedValue(this.translations.en, key) ||
+                          fallback ||
                           key;
         
         // Replace parameters in translation
@@ -46,7 +47,14 @@ class BendI18n {
     // Change language
     changeLanguage(lang) {
         if (lang === this.currentLang) return;
-        if (!['en', 'de', 'es', 'ta'].includes(lang)) return;
+        if (!['en', 'de', 'es', 'ta'].includes(lang)) {
+            // Fallback to English for invalid languages
+            this.currentLang = 'en';
+            localStorage.setItem('bend-language', 'en');
+            this.updateDocumentLanguage();
+            this.applyTranslations();
+            return;
+        }
         
         this.currentLang = lang;
         localStorage.setItem('bend-language', lang);
