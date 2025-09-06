@@ -1312,6 +1312,7 @@ let currentView = 'main'; // 'main' or 'folder'
 let currentFolder = null;
 let sideSwitchMessageTimer = null;
 let audioContext = null;
+let circularTimerAnimation = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -1528,6 +1529,9 @@ function startTimer() {
     isTimerRunning = true;
     document.getElementById('play-pause-icon').textContent = '⏸';
     
+    // Start continuous circular animation
+    startCircularTimerAnimation();
+    
     timer = setInterval(() => {
         timeRemaining--;
         updateTimerDisplay();
@@ -1585,6 +1589,10 @@ function startTimer() {
 function pauseTimer() {
     isTimerRunning = false;
     document.getElementById('play-pause-icon').textContent = '▶';
+    
+    // Stop continuous circular animation
+    stopCircularTimerAnimation();
+    
     if (timer) {
         clearInterval(timer);
         timer = null;
@@ -1626,9 +1634,6 @@ function updateTimerDisplay() {
     const seconds = timeRemaining % 60;
     const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     document.getElementById('timer-display').textContent = display;
-    
-    // Update circular timer progress
-    updateCircularTimer();
 }
 
 function updateCircularTimer() {
@@ -1642,15 +1647,8 @@ function updateCircularTimer() {
     
     const progressCircle = document.querySelector('.timer-ring-progress');
     if (progressCircle) {
-        // Direct update without transition for continuous motion
-        progressCircle.style.transition = 'none';
+        // Set the target position without transition for immediate update
         progressCircle.style.strokeDashoffset = strokeDashoffset;
-        
-        // Force reflow to ensure the change is applied
-        progressCircle.offsetHeight;
-        
-        // Re-enable smooth transition for next update
-        progressCircle.style.transition = 'stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     }
 }
 
@@ -1660,6 +1658,45 @@ function resetCircularTimer() {
         const circumference = 2 * Math.PI * 45; // radius = 45
         // Reset with smooth transition
         progressCircle.style.strokeDashoffset = circumference;
+    }
+}
+
+function startCircularTimerAnimation() {
+    const exercise = currentExercises[currentExerciseIndex];
+    if (!exercise) return;
+    
+    const totalDuration = exercise.duration;
+    const startTime = Date.now();
+    const progressCircle = document.querySelector('.timer-ring-progress');
+    
+    if (!progressCircle) return;
+    
+    function animate() {
+        if (!isTimerRunning) {
+            circularTimerAnimation = null;
+            return;
+        }
+        
+        const elapsed = (Date.now() - startTime) / 1000; // seconds
+        const progress = Math.min(elapsed / totalDuration, 1);
+        const circumference = 2 * Math.PI * 45;
+        const strokeDashoffset = circumference - (progress * circumference);
+        
+        progressCircle.style.strokeDashoffset = strokeDashoffset;
+        
+        if (progress < 1) {
+            circularTimerAnimation = requestAnimationFrame(animate);
+        }
+    }
+    
+    // Start the continuous animation
+    circularTimerAnimation = requestAnimationFrame(animate);
+}
+
+function stopCircularTimerAnimation() {
+    if (circularTimerAnimation) {
+        cancelAnimationFrame(circularTimerAnimation);
+        circularTimerAnimation = null;
     }
 }
 
