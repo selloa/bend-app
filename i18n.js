@@ -640,11 +640,19 @@ function setupLanguageSelector() {
 // Initialize global i18n instance
 window.i18n = new BendI18n();
 
-// Setup language selector when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupLanguageSelector);
-} else {
+// Setup language selector and apply translations when DOM is ready
+function initializeApp() {
     setupLanguageSelector();
+    // Apply translations after DOM is ready with a small delay to ensure all elements are loaded
+    setTimeout(() => {
+        window.i18n.applyTranslations();
+    }, 100);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
 }
 
 // Export for module systems
