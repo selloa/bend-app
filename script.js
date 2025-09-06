@@ -1657,21 +1657,21 @@ function getTranslatedExercise(exercise) {
     
     const currentLang = window.i18n.currentLang;
     
+    // Convert exercise name to match i18n key format
+    // "Neck Rolls" -> "neckrolls", "Shoulder Shrugs" -> "shouldershrugs", etc.
+    const exerciseKey = exercise.name.toLowerCase().replace(/\s+/g, '');
+    
     // Try to get translation from i18n system
-    const translatedName = window.i18n.t(`exercises.${exercise.name.toLowerCase().replace(/\s+/g, '')}.name`, {}, exercise.name);
-    const translatedDescription = window.i18n.t(`exercises.${exercise.name.toLowerCase().replace(/\s+/g, '')}.description`, {}, exercise.description);
+    const translatedName = window.i18n.t(`exercises.${exerciseKey}.name`, {}, exercise.name);
+    const translatedDescription = window.i18n.t(`exercises.${exerciseKey}.description`, {}, exercise.description);
     
-    // If translation exists and is different from fallback, use it
-    if (translatedName !== exercise.name) {
-        return {
-            ...exercise,
-            name: translatedName,
-            description: translatedDescription
-        };
-    }
-    
-    // Fallback to original exercise data
-    return exercise;
+    // Always return translated data if available, even if it's the same as original
+    // This ensures the translation system is working
+    return {
+        ...exercise,
+        name: translatedName,
+        description: translatedDescription
+    };
 }
 
 function displayCurrentExercise() {
