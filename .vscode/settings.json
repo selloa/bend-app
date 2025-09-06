@@ -1,7 +1,7 @@
 {
-  "git.autoCommit": true,
-  "git.autoPush": true,
-  "git.autoCommitOnMilestone": true,
-  "cursor.autoCommit": true,
-  "cursor.autoPush": true
+  "git.autoCommit": false,
+  "git.autoPush": false,
+  "git.autoCommitOnMilestone": false,
+  "cursor.autoCommit": false,
+  "cursor.autoPush": false
 }

@@ -1,9 +1,9 @@
 {
-  "git.autoCommit": true,
-  "git.autoPush": true,
+  "git.autoCommit": false,
+  "git.autoPush": false,
   "git.autoCommitMessage": "Auto-commit: {timestamp}",
   "git.autoCommitOnSave": false,
-  "git.autoCommitOnMilestone": true,
-  "cursor.autoCommit": true,
-  "cursor.autoPush": true
+  "git.autoCommitOnMilestone": false,
+  "cursor.autoCommit": false,
+  "cursor.autoPush": false
 }
