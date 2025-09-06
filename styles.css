@@ -769,7 +769,7 @@ body {
 .timer-ring-progress {
     stroke: var(--accent-secondary);
     stroke-linecap: round;
-    transition: stroke-dashoffset 0.1s ease-out;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     stroke-dasharray: 283; /* 2 * PI * 45 */
     stroke-dashoffset: 283; /* Start with full circle hidden */
     stroke-width: 4;

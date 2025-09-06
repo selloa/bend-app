@@ -1636,13 +1636,16 @@ function updateCircularTimer() {
     if (!exercise) return;
     
     const totalDuration = exercise.duration;
-    const progress = (totalDuration - timeRemaining) / totalDuration;
+    const progress = Math.max(0, (totalDuration - timeRemaining) / totalDuration);
     const circumference = 2 * Math.PI * 45; // radius = 45
     const strokeDashoffset = circumference - (progress * circumference);
     
     const progressCircle = document.querySelector('.timer-ring-progress');
     if (progressCircle) {
-        progressCircle.style.strokeDashoffset = strokeDashoffset;
+        // Use requestAnimationFrame for smoother animation
+        requestAnimationFrame(() => {
+            progressCircle.style.strokeDashoffset = strokeDashoffset;
+        });
     }
 }
 
@@ -1650,7 +1653,10 @@ function resetCircularTimer() {
     const progressCircle = document.querySelector('.timer-ring-progress');
     if (progressCircle) {
         const circumference = 2 * Math.PI * 45; // radius = 45
-        progressCircle.style.strokeDashoffset = circumference;
+        // Smooth reset animation
+        requestAnimationFrame(() => {
+            progressCircle.style.strokeDashoffset = circumference;
+        });
     }
 }
 
