@@ -1174,6 +1174,10 @@ function startTimer() {
                 // Reset timer for the other side
                 timeRemaining = currentExercise.duration;
                 updateTimerDisplay();
+                // Automatically restart the timer for the other side
+                setTimeout(() => {
+                    startTimer();
+                }, 3000); // Wait for the side switch message to finish
                 return;
             }
             
@@ -1296,7 +1300,7 @@ function showSideSwitchMessage() {
     messageElement.innerHTML = `
         <div class="side-switch-content">
             <div class="side-switch-icon">🔄</div>
-            <div class="side-switch-text">Switch to ${currentSide} side!</div>
+            <div class="side-switch-text">Switch sides</div>
         </div>
     `;
     

@@ -1,0 +1,16 @@
+{
+  "name": "Cursor Auto-Commit Template",
+  "description": "Template for automatic git commits and pushes in Cursor",
+  "settings": {
+    "git.autoCommit": true,
+    "git.autoPush": true,
+    "git.autoCommitOnMilestone": true,
+    "cursor.autoCommit": true,
+    "cursor.autoPush": true
+  },
+  "files": [
+    ".cursor/settings.json",
+    ".vscode/settings.json",
+    ".git/hooks/post-commit"
+  ]
+}

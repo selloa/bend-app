@@ -1,0 +1,7 @@
+{
+  "git.autoCommit": true,
+  "git.autoPush": true,
+  "git.autoCommitOnMilestone": true,
+  "cursor.autoCommit": true,
+  "cursor.autoPush": true
+}
