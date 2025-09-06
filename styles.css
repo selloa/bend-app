@@ -175,11 +175,11 @@ body {
     font-size: 0.9rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 6px;
     color: var(--text-primary);
     transition: all 0.2s ease;
     min-height: var(--min-touch-target);
-    min-width: var(--min-touch-target);
+    white-space: nowrap;
 }
 
 .share-button:focus {
@@ -196,6 +196,13 @@ body {
     font-size: 1rem;
     line-height: 1;
     transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.share-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1;
 }
 
 .share-button:hover .share-icon {
@@ -1103,6 +1110,11 @@ body {
     .share-button {
         padding: 6px 8px;
         font-size: 0.8rem;
+        gap: 4px;
+    }
+    
+    .share-text {
+        font-size: 0.7rem;
     }
     
     .dark-mode-toggle {
