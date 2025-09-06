@@ -1,0 +1,55 @@
+{
+  "id": "wake-up-complete",
+  "name": "Wake Up Complete",
+  "category": "morning",
+  "difficulty": "beginner",
+  "targetDuration": 300,
+  "tags": ["morning", "mobility", "quick", "full-body"],
+  "exercises": [
+    {
+      "exerciseId": "neck-rolls",
+      "duration": 30,
+      "order": 1
+    },
+    {
+      "exerciseId": "shoulder-shrugs",
+      "duration": 30,
+      "order": 2
+    },
+    {
+      "exerciseId": "side-neck-stretch",
+      "duration": 30,
+      "order": 3,
+      "needsSideSwitch": true
+    },
+    {
+      "exerciseId": "forward-neck-stretch",
+      "duration": 30,
+      "order": 4
+    },
+    {
+      "exerciseId": "arm-circles",
+      "duration": 30,
+      "order": 5,
+      "needsSideSwitch": true
+    }
+  ],
+  "translations": {
+    "en": {
+      "name": "Wake Up Complete",
+      "description": "A comprehensive morning routine designed to wake up your entire body and prepare you for the day ahead."
+    },
+    "de": {
+      "name": "Vollständiges Aufwachen",
+      "description": "Eine umfassende Morgenroutine, die darauf ausgelegt ist, Ihren ganzen Körper zu wecken und Sie auf den Tag vorzubereiten."
+    },
+    "es": {
+      "name": "Despertar Completo",
+      "description": "Una rutina matutina integral diseñada para despertar todo tu cuerpo y prepararte para el día que tienes por delante."
+    },
+    "ta": {
+      "name": "முழுமையான எழுந்திருத்தல்",
+      "description": "உங்கள் முழு உடலையும் எழுப்பி, முன்னேறும் நாளுக்கு தயார்படுத்த வடிவமைக்கப்பட்ட ஒரு விரிவான காலை வழக்கம்."
+    }
+  }
+}

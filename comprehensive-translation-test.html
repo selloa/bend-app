@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Translation Test - Bend App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .language-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .language-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .language-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 5px solid #ff6b6b;
+        }
+        .language-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        .translation-item {
+            margin: 8px 0;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        .translation-key {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            font-family: monospace;
+        }
+        .translation-value {
+            font-size: 1rem;
+            margin-top: 3px;
+        }
+        .tamil-text {
+            font-family: 'Latha', 'Tahoma', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .test-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .status {
+            background: rgba(46, 204, 113, 0.2);
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+        .exercise-demo {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .exercise-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+        .exercise-description {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Comprehensive Translation Test</h1>
+        
+        <div class="language-section">
+            <h2 class="language-title">📊 Translation Statistics</h2>
+            <div id="translation-stats" class="stats-grid">
+                <p>Loading translation statistics...</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="test-button" onclick="loadTranslationStats()">Load Statistics</button>
+                <button class="test-button" onclick="testAllTranslations()">Test All Translations</button>
+                <button class="test-button" onclick="exportTranslations()">Export Translations</button>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🔤 App Interface Translations</h2>
+            <div id="app-translations" class="language-grid">
+                <p>Loading app translations...</p>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🏃‍♂️ Exercise Translations</h2>
+            <div id="exercise-translations">
+                <p>Loading exercise translations...</p>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">📁 Routine & Folder Translations</h2>
+            <div id="routine-translations">
+                <p>Loading routine translations...</p>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🔍 Console Output</h2>
+            <div id="console-output" style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; font-family: monospace; font-size: 0.9rem; max-height: 200px; overflow-y: auto;">
+                <p>Console logs will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the scripts -->
+    <script src="i18n.js"></script>
+    <script src="data-manager.js"></script>
+    <script src="comprehensive-translation-loader.js"></script>
+
+    <script>
+        // Capture console output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addToConsole(message, type = 'log') {
+            const consoleDiv = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.style.color = type === 'error' ? '#ff6b6b' : type === 'warn' ? '#f39c12' : '#2ecc71';
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${message}`;
+            consoleDiv.appendChild(logEntry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToConsole(args.join(' '), 'warn');
+        };
+
+        function loadTranslationStats() {
+            const statsDiv = document.getElementById('translation-stats');
+            
+            try {
+                if (!window.comprehensiveTranslationLoader) {
+                    throw new Error('Comprehensive translation loader not available');
+                }
+                
+                const stats = window.comprehensiveTranslationLoader.getTranslationStats();
+                
+                statsDiv.innerHTML = Object.entries(stats).map(([lang, stat]) => `
+                    <div class="stat-card">
+                        <div class="stat-number">${stat.totalKeys}</div>
+                        <div class="stat-label">${lang.toUpperCase()} Keys</div>
+                        <div style="font-size: 0.8rem; margin-top: 5px;">
+                            ${stat.exercises} exercises<br>
+                            ${stat.routines} routines<br>
+                            ${stat.folders} folders
+                        </div>
+                    </div>
+                `).join('');
+                
+                console.log('Translation statistics loaded:', stats);
+                
+            } catch (error) {
+                statsDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                console.error('Failed to load translation stats:', error);
+            }
+        }
+
+        function testAllTranslations() {
+            console.log('🧪 Testing all translations...');
+            
+            if (!window.comprehensiveTranslationLoader) {
+                console.error('Comprehensive translation loader not available');
+                return;
+            }
+            
+            const languages = ['en', 'de', 'es', 'ta'];
+            const testKeys = [
+                'app.title',
+                'app.subtitle',
+                'navigation.back',
+                'navigation.next',
+                'timer.switchSides',
+                'routines.wakeUp',
+                'folders.hips'
+            ];
+            
+            languages.forEach(lang => {
+                console.log(`\n📝 Testing ${lang.toUpperCase()} translations:`);
+                testKeys.forEach(key => {
+                    const translation = window.comprehensiveTranslationLoader.getTranslation(key, lang);
+                    console.log(`  ${key}: ${translation}`);
+                });
+            });
+        }
+
+        function exportTranslations() {
+            if (!window.comprehensiveTranslationLoader) {
+                console.error('Comprehensive translation loader not available');
+                return;
+            }
+            
+            const exportData = window.comprehensiveTranslationLoader.exportTranslations();
+            console.log('📤 Translation export data:', exportData);
+            
+            // Create downloadable file
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'bend-app-translations.json';
+            link.click();
+            
+            URL.revokeObjectURL(url);
+        }
+
+        function displayAppTranslations() {
+            const translationsDiv = document.getElementById('app-translations');
+            
+            if (!window.comprehensiveTranslationLoader) {
+                translationsDiv.innerHTML = '<div class="error">Translation loader not available</div>';
+                return;
+            }
+            
+            const languages = window.comprehensiveTranslationLoader.getAvailableLanguages();
+            
+            translationsDiv.innerHTML = languages.map(lang => {
+                const appTitle = window.comprehensiveTranslationLoader.getTranslation('app.title', lang.code);
+                const appSubtitle = window.comprehensiveTranslationLoader.getTranslation('app.subtitle', lang.code);
+                const backButton = window.comprehensiveTranslationLoader.getTranslation('navigation.back', lang.code);
+                const nextButton = window.comprehensiveTranslationLoader.getTranslation('navigation.next', lang.code);
+                
+                return `
+                    <div class="language-card">
+                        <div class="language-name">${lang.flag} ${lang.name}</div>
+                        <div class="translation-item">
+                            <div class="translation-key">app.title</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${appTitle}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-key">app.subtitle</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${appSubtitle}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-key">navigation.back</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${backButton}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-key">navigation.next</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${nextButton}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function displayExerciseTranslations() {
+            const exercisesDiv = document.getElementById('exercise-translations');
+            
+            if (!window.comprehensiveTranslationLoader) {
+                exercisesDiv.innerHTML = '<div class="error">Translation loader not available</div>';
+                return;
+            }
+            
+            const languages = window.comprehensiveTranslationLoader.getAvailableLanguages();
+            const exerciseIds = ['neck-rolls', 'shoulder-shrugs', 'side-neck-stretch'];
+            
+            exercisesDiv.innerHTML = exerciseIds.map(exerciseId => {
+                const exerciseTranslations = languages.map(lang => {
+                    const name = window.comprehensiveTranslationLoader.getTranslation(`exercises.${exerciseId}.name`, lang.code);
+                    const description = window.comprehensiveTranslationLoader.getTranslation(`exercises.${exerciseId}.description`, lang.code);
+                    
+                    return `
+                        <div class="language-card">
+                            <div class="language-name">${lang.flag} ${lang.name}</div>
+                            <div class="exercise-demo">
+                                <div class="exercise-name ${lang.code === 'ta' ? 'tamil-text' : ''}">${name}</div>
+                                <div class="exercise-description ${lang.code === 'ta' ? 'tamil-text' : ''}">${description}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <h3 style="color: #ffd700; margin: 20px 0 10px 0;">Exercise: ${exerciseId}</h3>
+                    <div class="language-grid">${exerciseTranslations}</div>
+                `;
+            }).join('');
+        }
+
+        function displayRoutineTranslations() {
+            const routinesDiv = document.getElementById('routine-translations');
+            
+            if (!window.comprehensiveTranslationLoader) {
+                routinesDiv.innerHTML = '<div class="error">Translation loader not available</div>';
+                return;
+            }
+            
+            const languages = window.comprehensiveTranslationLoader.getAvailableLanguages();
+            const routineIds = ['wakeUp', 'hips'];
+            const folderIds = ['hips', 'shoulders'];
+            
+            let html = '<h3 style="color: #ffd700; margin: 20px 0 10px 0;">Routines</h3>';
+            html += routineIds.map(routineId => {
+                const routineTranslations = languages.map(lang => {
+                    const name = window.comprehensiveTranslationLoader.getTranslation(`routines.${routineId}`, lang.code);
+                    return `
+                        <div class="language-card">
+                            <div class="language-name">${lang.flag} ${lang.name}</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${name}</div>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <h4 style="color: #e0e0e0; margin: 15px 0 5px 0;">${routineId}</h4>
+                    <div class="language-grid">${routineTranslations}</div>
+                `;
+            }).join('');
+            
+            html += '<h3 style="color: #ffd700; margin: 20px 0 10px 0;">Folders</h3>';
+            html += folderIds.map(folderId => {
+                const folderTranslations = languages.map(lang => {
+                    const name = window.comprehensiveTranslationLoader.getTranslation(`folders.${folderId}`, lang.code);
+                    return `
+                        <div class="language-card">
+                            <div class="language-name">${lang.flag} ${lang.name}</div>
+                            <div class="translation-value ${lang.code === 'ta' ? 'tamil-text' : ''}">${name}</div>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <h4 style="color: #e0e0e0; margin: 15px 0 5px 0;">${folderId}</h4>
+                    <div class="language-grid">${folderTranslations}</div>
+                `;
+            }).join('');
+            
+            routinesDiv.innerHTML = html;
+        }
+
+        // Auto-run tests when translations are loaded
+        document.addEventListener('translationsLoaded', function() {
+            console.log('🎉 Translations loaded, running tests...');
+            setTimeout(() => {
+                loadTranslationStats();
+                displayAppTranslations();
+                displayExerciseTranslations();
+                displayRoutineTranslations();
+                testAllTranslations();
+            }, 500);
+        });
+
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            console.log('Comprehensive translation test page loaded');
+        });
+    </script>
+</body>
+</html>

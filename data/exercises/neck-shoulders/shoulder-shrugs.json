@@ -1,0 +1,48 @@
+{
+  "id": "shoulder-shrugs",
+  "category": "neck-shoulders",
+  "difficulty": "beginner",
+  "position": "seated",
+  "equipment": "none",
+  "muscleGroups": ["upper-trapezius", "levator-scapulae"],
+  "defaultDuration": 30,
+  "needsSideSwitch": false,
+  "tags": ["tension-relief", "mobility"],
+  "emoji": "🤷",
+  "variations": {
+    "beginner": {
+      "duration": 20,
+      "description": "Gentle shoulder shrugs"
+    },
+    "advanced": {
+      "duration": 45,
+      "description": "Shoulder shrugs with resistance"
+    }
+  },
+  "safety": {
+    "contraindications": ["shoulder-injury"],
+    "cautions": ["move-slowly", "avoid-rapid-movements"]
+  },
+  "translations": {
+    "en": {
+      "name": "Shoulder Shrugs",
+      "description": "Lift your shoulders up toward your ears, hold for 3 seconds, then relax. Repeat slowly.",
+      "instructions": "Keep movements controlled and avoid rapid shrugging motions."
+    },
+    "de": {
+      "name": "Schulterzucken",
+      "description": "Heben Sie Ihre Schultern zu den Ohren, halten Sie 3 Sekunden, dann entspannen Sie. Wiederholen Sie langsam.",
+      "instructions": "Halten Sie die Bewegungen kontrolliert und vermeiden Sie schnelle Zuckbewegungen."
+    },
+    "es": {
+      "name": "Encogimiento de Hombros",
+      "description": "Levante los hombros hacia las orejas, mantenga 3 segundos, luego relaje. Repita lentamente.",
+      "instructions": "Mantenga los movimientos controlados y evite movimientos rápidos de encogimiento."
+    },
+    "ta": {
+      "name": "தோள் உயர்த்துதல்",
+      "description": "உங்கள் தோள்களை காதுகளுக்கு நோக்கி உயர்த்துங்கள், 3 வினாடிகள் வைத்திருங்கள், பின்னர் தளர்த்துங்கள். மெதுவாக மீண்டும் செய்யுங்கள்.",
+      "instructions": "இயக்கங்களை கட்டுப்பாட்டுடன் வைத்திருங்கள் மற்றும் விரைவான தோள் உயர்த்தும் இயக்கங்களை தவிர்க்கவும்."
+    }
+  }
+}

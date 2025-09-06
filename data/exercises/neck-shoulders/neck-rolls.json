@@ -1,0 +1,48 @@
+{
+  "id": "neck-rolls",
+  "category": "neck-shoulders",
+  "difficulty": "beginner",
+  "position": "seated",
+  "equipment": "none",
+  "muscleGroups": ["neck", "upper-trapezius"],
+  "defaultDuration": 30,
+  "needsSideSwitch": false,
+  "tags": ["mobility", "tension-relief"],
+  "emoji": "🔄",
+  "variations": {
+    "beginner": {
+      "duration": 20,
+      "description": "Gentle neck rolls"
+    },
+    "advanced": {
+      "duration": 45,
+      "description": "Full range neck rolls with resistance"
+    }
+  },
+  "safety": {
+    "contraindications": ["neck-injury", "vertigo"],
+    "cautions": ["move-slowly", "stop-if-pain"]
+  },
+  "translations": {
+    "en": {
+      "name": "Neck Rolls",
+      "description": "Slowly roll your head in a circle, first clockwise, then counterclockwise. Keep movements gentle and controlled.",
+      "instructions": "Start with small circles and gradually increase range of motion."
+    },
+    "de": {
+      "name": "Nackenrollen",
+      "description": "Rollen Sie Ihren Kopf langsam im Kreis, zuerst im Uhrzeigersinn, dann gegen den Uhrzeigersinn. Halten Sie die Bewegungen sanft und kontrolliert.",
+      "instructions": "Beginnen Sie mit kleinen Kreisen und vergrößern Sie allmählich den Bewegungsumfang."
+    },
+    "es": {
+      "name": "Rotaciones de Cuello",
+      "description": "Rote su cabeza lentamente en círculo, primero en el sentido de las agujas del reloj, luego en sentido contrario. Mantenga los movimientos suaves y controlados.",
+      "instructions": "Comience con círculos pequeños y aumente gradualmente el rango de movimiento."
+    },
+    "ta": {
+      "name": "கழுத்து சுழற்சி",
+      "description": "உங்கள் தலையை மெதுவாக வட்டமாக சுழற்றுங்கள், முதலில் கடிகார திசையில், பின்னர் எதிர் திசையில். இயக்கங்களை மென்மையாகவும் கட்டுப்பாட்டுடனும் வைத்திருங்கள்.",
+      "instructions": "சிறிய வட்டங்களுடன் தொடங்கி, படிப்படியாக இயக்க வரம்பை அதிகரிக்கவும்."
+    }
+  }
+}

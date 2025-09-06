@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "Bend",
+    "subtitle": "Estiramiento y Flexibilidad",
+    "description": "Una aplicación suave de estiramiento y flexibilidad diseñada para todas las edades y habilidades"
+  },
+  "navigation": {
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "start": "Comenzar",
+    "pause": "Pausar",
+    "skip": "Saltar",
+    "chooseRoutine": "Elige una rutina:"
+  },
+  "timer": {
+    "switchSides": "Cambia de lado",
+    "exerciseComplete": "Ejercicio Completado",
+    "routineComplete": "Rutina Completada",
+    "progress": "{{current}} de {{total}}"
+  },
+  "routines": {
+    "wakeUp": "Despertar",
+    "bedTime": "Hora de Dormir",
+    "neckShoulders": "Cuello y Hombros",
+    "backSpine": "Espalda y Columna",
+    "legsHips": "Piernas y Caderas",
+    "armsWrists": "Brazos y Muñecas",
+    "feetAnkles": "Pies y Tobillos",
+    "fullBody": "Cuerpo Completo",
+    "quickStretch": "Estiramiento Rápido",
+    "postureReset": "Reinicio de Postura",
+    "sleep": "Dormir",
+    "expert": "Experto",
+    "hips": "Caderas",
+    "hamstrings": "Isquiotibiales",
+    "lowerBack": "Espalda Baja",
+    "isometric": "Isométrico",
+    "neck": "Cuello",
+    "shoulders": "Hombros",
+    "feet": "Pies",
+    "ankle": "Tobillo",
+    "knees": "Rodillas",
+    "hands": "Manos",
+    "fingers": "Dedos",
+    "wrists": "Muñecas",
+    "feetAnkles": "Pies y Tobillos"
+  },
+  "folders": {
+    "hips": "Caderas",
+    "shoulders": "Hombros",
+    "lowerBack": "Espalda Baja",
+    "neck": "Cuello",
+    "hamstrings": "Isquiotibiales",
+    "feetAnkles": "Pies y Tobillos",
+    "core": "Núcleo",
+    "upperBody": "Parte Superior",
+    "lowerBody": "Parte Inferior",
+    "seated": "Sentado",
+    "posture": "Postura",
+    "chest": "Pecho"
+  },
+  "exercises": {
+    "neckRolls": {
+      "name": "Rotaciones de Cuello",
+      "description": "Rote su cabeza lentamente en círculo, primero en el sentido de las agujas del reloj, luego en sentido contrario. Mantenga los movimientos suaves y controlados.",
+      "instructions": "Comience con círculos pequeños y aumente gradualmente el rango de movimiento."
+    },
+    "shoulderShrugs": {
+      "name": "Encogimiento de Hombros",
+      "description": "Levante los hombros hacia las orejas, mantenga 3 segundos, luego relaje. Repita lentamente.",
+      "instructions": "Mantenga los movimientos controlados y evite movimientos rápidos de encogimiento."
+    },
+    "sideNeckStretch": {
+      "name": "Estiramiento Lateral del Cuello",
+      "description": "Incline suavemente la cabeza hacia la derecha, mantenga 15 segundos, luego repita en el lado izquierdo.",
+      "instructions": "Mantenga los hombros relajados y evite tirar con la mano."
+    },
+    "forwardNeckStretch": {
+      "name": "Estiramiento Frontal del Cuello",
+      "description": "Baje lentamente la barbilla hacia el pecho, sintiendo un estiramiento suave en la parte posterior del cuello.",
+      "instructions": "Mantenga el estiramiento suave y evite la tensión excesiva."
+    },
+    "armCircles": {
+      "name": "Círculos con Brazos",
+      "description": "Haga círculos pequeños con los brazos, primero hacia adelante, luego hacia atrás. Mantenga los movimientos lentos y controlados.",
+      "instructions": "Comience con círculos pequeños y aumente gradualmente el radio."
+    },
+    "gentleTwist": {
+      "name": "Giro Suave",
+      "description": "Párese con los pies separados al ancho de las caderas, coloque las manos en las caderas y gire suavemente de lado a lado.",
+      "instructions": "Mantenga los movimientos controlados y respire uniformemente."
+    },
+    "calfRaises": {
+      "name": "Elevación de Pantorrillas",
+      "description": "Párese derecho y levántese lentamente sobre las puntas de los pies, luego baje de nuevo. Mantenga los movimientos controlados.",
+      "instructions": "Mantenga el equilibrio y evite movimientos bruscos."
+    },
+    "deepBreathing": {
+      "name": "Respiración Profunda",
+      "description": "Tome 5 respiraciones profundas, inhalando por la nariz y exhalando por la boca. Sienta cómo su cuerpo se relaja.",
+      "instructions": "Concéntrese en respiraciones lentas y profundas."
+    },
+    "cactusArms": {
+      "name": "Brazos de Cactus",
+      "description": "Siéntese derecho, lleve los brazos a la altura de los hombros, doble los codos a 90 grados y presione los brazos contra la silla.",
+      "instructions": "Mantenga los omóplatos apretados."
+    },
+    "divers": {
+      "name": "Buzos",
+      "description": "Siéntese derecho, extienda los brazos hacia adelante y arriba, luego bújelos entre las piernas, redondeando la columna.",
+      "instructions": "Muévase lenta y controladamente a través de todo el movimiento."
+    },
+    "seatedBackTwist": {
+      "name": "Giro de Espalda Sentado",
+      "description": "Siéntese derecho y gire suavemente el torso hacia la derecha, colocando la mano izquierda en la rodilla derecha. Mantenga y repita en el otro lado.",
+      "instructions": "Mantenga las caderas rectas y gire solo el torso."
+    },
+    "shoulderBladeSqueeze": {
+      "name": "Apretón de Omóplatos",
+      "description": "Apriete los omóplatos, mantenga 5 segundos, luego suelte. Mantenga los hombros relajados.",
+      "instructions": "Concéntrese en apretar los omóplatos, no en levantar los hombros."
+    },
+    "chinTucks": {
+      "name": "Retracción de Barbilla",
+      "description": "Retraiga suavemente la barbilla, creando una papada. Mantenga 5 segundos, luego suelte. Repita lentamente.",
+      "instructions": "Imagine que está haciendo una papada."
+    }
+  },
+  "accessibility": {
+    "toggleDarkMode": "Alternar modo oscuro",
+    "languageSelector": "Seleccionar idioma",
+    "startPauseTimer": "Iniciar o pausar temporizador",
+    "nextExercise": "Siguiente ejercicio",
+    "previousExercise": "Ejercicio anterior",
+    "backToRoutines": "Volver a selección de rutinas",
+    "timerLabel": "Temporizador de ejercicio",
+    "progressLabel": "Progreso del ejercicio",
+    "routineSelection": "Selección de rutina"
+  },
+  "meta": {
+    "description": "Una aplicación suave de estiramiento y flexibilidad diseñada para todas las edades y habilidades"
+  }
+}

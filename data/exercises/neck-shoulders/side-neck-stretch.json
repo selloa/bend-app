@@ -1,0 +1,48 @@
+{
+  "id": "side-neck-stretch",
+  "category": "neck-shoulders",
+  "difficulty": "beginner",
+  "position": "seated",
+  "equipment": "none",
+  "muscleGroups": ["sternocleidomastoid", "scalene"],
+  "defaultDuration": 30,
+  "needsSideSwitch": true,
+  "tags": ["stretching", "tension-relief"],
+  "emoji": "↔️",
+  "variations": {
+    "beginner": {
+      "duration": 20,
+      "description": "Gentle side neck stretch"
+    },
+    "advanced": {
+      "duration": 45,
+      "description": "Deep side neck stretch with hand assistance"
+    }
+  },
+  "safety": {
+    "contraindications": ["neck-injury", "cervical-spine-issues"],
+    "cautions": ["move-slowly", "stop-if-pain", "avoid-overstretching"]
+  },
+  "translations": {
+    "en": {
+      "name": "Side Neck Stretch",
+      "description": "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side.",
+      "instructions": "Keep shoulders relaxed and avoid pulling with your hand."
+    },
+    "de": {
+      "name": "Seitliche Nackendehnung",
+      "description": "Neigen Sie Ihren Kopf sanft nach rechts, halten Sie 15 Sekunden, dann wiederholen Sie auf der linken Seite.",
+      "instructions": "Halten Sie die Schultern entspannt und vermeiden Sie das Ziehen mit der Hand."
+    },
+    "es": {
+      "name": "Estiramiento Lateral del Cuello",
+      "description": "Incline suavemente la cabeza hacia la derecha, mantenga 15 segundos, luego repita en el lado izquierdo.",
+      "instructions": "Mantenga los hombros relajados y evite tirar con la mano."
+    },
+    "ta": {
+      "name": "பக்க கழுத்து நீட்சி",
+      "description": "உங்கள் தலையை வலது பக்கமாக மெதுவாக சாய்த்து, 15 வினாடிகள் வைத்திருங்கள், பின்னர் இடது பக்கத்தில் மீண்டும் செய்யுங்கள்.",
+      "instructions": "தோள்களை தளர்வாக வைத்திருங்கள் மற்றும் கையால் இழுப்பதை தவிர்க்கவும்."
+    }
+  }
+}

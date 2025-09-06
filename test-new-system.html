@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test New Data System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🧪 New Data System Test</h1>
+    
+    <div class="test-section">
+        <h2>System Status</h2>
+        <div id="status">Loading...</div>
+        <button onclick="checkStatus()">Check Status</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Data Manager Test</h2>
+        <div id="data-manager-status">Not tested yet</div>
+        <button onclick="testDataManager()">Test Data Manager</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Exercise Loading Test</h2>
+        <div id="exercise-test">Not tested yet</div>
+        <button onclick="testExerciseLoading()">Test Exercise Loading</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Translation Test</h2>
+        <div id="translation-test">Not tested yet</div>
+        <button onclick="testTranslations()">Test Translations</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Search Test</h2>
+        <div id="search-test">Not tested yet</div>
+        <button onclick="testSearch()">Test Search</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Console Logs</h2>
+        <div id="console-logs"></div>
+        <button onclick="clearLogs()">Clear Logs</button>
+    </div>
+
+    <!-- Load the scripts -->
+    <script src="i18n.js"></script>
+    <script src="data-manager.js"></script>
+    <script src="new-data-integration.js"></script>
+
+    <script>
+        // Capture console logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addLog(message, type = 'info') {
+            const logsDiv = document.getElementById('console-logs');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = type;
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${message}`;
+            logsDiv.appendChild(logEntry);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addLog(args.join(' '), 'info');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addLog(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addLog(args.join(' '), 'error');
+        };
+
+        function checkStatus() {
+            const statusDiv = document.getElementById('status');
+            let status = '<h3>System Status:</h3><ul>';
+            
+            // Check if scripts are loaded
+            status += `<li class="${window.i18n ? 'success' : 'error'}">i18n System: ${window.i18n ? '✅ Loaded' : '❌ Not loaded'}</li>`;
+            status += `<li class="${window.dataManager ? 'success' : 'error'}">Data Manager: ${window.dataManager ? '✅ Loaded' : '❌ Not loaded'}</li>`;
+            status += `<li class="${window.newDataIntegration ? 'success' : 'error'}">New Data Integration: ${window.newDataIntegration ? '✅ Loaded' : '❌ Not loaded'}</li>`;
+            
+            // Check integration status
+            if (window.newDataIntegration) {
+                const integrationStatus = window.newDataIntegration.getStatus();
+                status += `<li class="info">Integration Active: ${integrationStatus.isActive ? '✅ Yes' : '❌ No'}</li>`;
+                status += `<li class="info">Exercises Loaded: ${integrationStatus.exercisesLoaded}</li>`;
+                status += `<li class="info">Routines Loaded: ${integrationStatus.routinesLoaded}</li>`;
+            }
+            
+            status += '</ul>';
+            statusDiv.innerHTML = status;
+        }
+
+        async function testDataManager() {
+            const statusDiv = document.getElementById('data-manager-status');
+            statusDiv.innerHTML = '<div class="info">Testing data manager...</div>';
+            
+            try {
+                if (!window.dataManager) {
+                    throw new Error('Data manager not available');
+                }
+                
+                const stats = window.dataManager.getCacheStats();
+                statusDiv.innerHTML = `
+                    <div class="success">✅ Data Manager Working!</div>
+                    <pre>Cache Stats: ${JSON.stringify(stats, null, 2)}</pre>
+                `;
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        async function testExerciseLoading() {
+            const statusDiv = document.getElementById('exercise-test');
+            statusDiv.innerHTML = '<div class="info">Testing exercise loading...</div>';
+            
+            try {
+                if (!window.dataManager) {
+                    throw new Error('Data manager not available');
+                }
+                
+                // Try to load an exercise
+                const exercise = await window.dataManager.loadExercise('neck-rolls');
+                statusDiv.innerHTML = `
+                    <div class="success">✅ Exercise Loaded Successfully!</div>
+                    <pre>${JSON.stringify(exercise, null, 2)}</pre>
+                `;
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        async function testTranslations() {
+            const statusDiv = document.getElementById('translation-test');
+            statusDiv.innerHTML = '<div class="info">Testing translations...</div>';
+            
+            try {
+                if (!window.dataManager) {
+                    throw new Error('Data manager not available');
+                }
+                
+                // Test translations
+                const exercise = await window.dataManager.loadExercise('neck-rolls');
+                const enTranslation = window.dataManager.getTranslatedExercise('neck-rolls', 'en');
+                const deTranslation = window.dataManager.getTranslatedExercise('neck-rolls', 'de');
+                const esTranslation = window.dataManager.getTranslatedExercise('neck-rolls', 'es');
+                
+                statusDiv.innerHTML = `
+                    <div class="success">✅ Translations Working!</div>
+                    <h4>Exercise: ${exercise.name}</h4>
+                    <ul>
+                        <li><strong>English:</strong> ${enTranslation.name}</li>
+                        <li><strong>German:</strong> ${deTranslation.name}</li>
+                        <li><strong>Spanish:</strong> ${esTranslation.name}</li>
+                    </ul>
+                `;
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        async function testSearch() {
+            const statusDiv = document.getElementById('search-test');
+            statusDiv.innerHTML = '<div class="info">Testing search functionality...</div>';
+            
+            try {
+                if (!window.dataManager) {
+                    throw new Error('Data manager not available');
+                }
+                
+                // Test search
+                const results = window.dataManager.searchExercises('neck');
+                statusDiv.innerHTML = `
+                    <div class="success">✅ Search Working!</div>
+                    <p>Found ${results.length} exercises matching "neck":</p>
+                    <ul>
+                        ${results.map(ex => `<li>${ex.name} (${ex.category})</li>`).join('')}
+                    </ul>
+                `;
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+
+        function clearLogs() {
+            document.getElementById('console-logs').innerHTML = '';
+        }
+
+        // Auto-check status on load
+        window.addEventListener('load', () => {
+            setTimeout(checkStatus, 1000);
+        });
+    </script>
+</body>
+</html>

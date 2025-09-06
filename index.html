@@ -7,6 +7,8 @@
     <meta name="description" content="A gentle stretching and flexibility app designed for all ages and abilities">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A90E2' stroke='%232C5F8A' stroke-width='3'/%3E%3Cpath d='M30 40 Q50 20 70 40 Q50 60 30 40' fill='%23FFFFFF' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 35 Q50 25 65 35' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 45 Q50 55 65 45' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="i18n-styles.css">
+    <link rel="stylesheet" href="new-system-styles.css">
 </head>
 <body>
     <div class="container">
@@ -14,18 +16,31 @@
         <header class="header">
             <div class="header-content">
                 <div class="title-section">
-                    <h1 class="main-title">Bend</h1>
-                    <p class="subtitle">Stretching & Flexibility</p>
+                    <h1 class="main-title" data-i18n="app.title">Bend</h1>
+                    <p class="subtitle" data-i18n="app.subtitle">Stretching & Flexibility</p>
                 </div>
-                <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
-                    <span class="toggle-icon">🌙</span>
-                </button>
+                <div class="header-controls">
+                    <!-- Language Selector -->
+                    <div class="language-selector" id="language-selector">
+                        <button class="language-button" id="language-button" data-i18n-attr="aria-label" data-i18n="accessibility.languageSelector">
+                            <span class="language-flag" id="language-flag">🇺🇸</span>
+                            <span class="language-code" id="current-language">EN</span>
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown">
+                            <!-- Languages populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <button class="dark-mode-toggle" id="dark-mode-toggle" data-i18n-attr="aria-label" data-i18n="accessibility.toggleDarkMode">
+                        <span class="toggle-icon">🌙</span>
+                    </button>
+                </div>
             </div>
         </header>
 
         <!-- Routine Category Selection -->
         <section id="routine-selection" class="section active" role="main" aria-label="Routine selection">
-            <h2 class="section-title">Choose a routine:</h2>
+            <h2 class="section-title" data-i18n="navigation.chooseRoutine">Choose a routine:</h2>
             <div class="routine-categories">
                 <!-- Original Routine Categories -->
                 <button class="routine-category-btn" data-routine="wake-up">
@@ -199,7 +214,7 @@
             <div class="folder-header">
                 <button class="back-btn" id="back-to-main" aria-label="Go back to routine selection">
                     <span class="back-icon">‹</span>
-                    <span>Back</span>
+                    <span data-i18n="navigation.back">Back</span>
                 </button>
                 <h2 class="section-title" id="folder-title">Folder Routines</h2>
             </div>
@@ -279,6 +294,10 @@
         </section>
     </div>
 
+    <!-- i18n System -->
+    <script src="i18n.js"></script>
+    <script src="data-manager.js"></script>
+    <script src="new-data-integration.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

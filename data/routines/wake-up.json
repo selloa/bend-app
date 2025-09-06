@@ -1,0 +1,44 @@
+{
+  "id": "wake-up",
+  "name": "Wake Up",
+  "category": "morning",
+  "difficulty": "beginner",
+  "targetDuration": 300,
+  "tags": ["morning", "mobility", "quick"],
+  "exercises": [
+    {
+      "exerciseId": "neck-rolls",
+      "duration": 30,
+      "order": 1
+    },
+    {
+      "exerciseId": "shoulder-shrugs",
+      "duration": 30,
+      "order": 2
+    },
+    {
+      "exerciseId": "side-neck-stretch",
+      "duration": 30,
+      "order": 3,
+      "needsSideSwitch": true
+    }
+  ],
+  "translations": {
+    "en": {
+      "name": "Wake Up",
+      "description": "A simple, quick, convenient flow designed to maintain mobility and range of motion. Doable anytime, anywhere."
+    },
+    "de": {
+      "name": "Aufwachen",
+      "description": "Ein einfacher, schneller, praktischer Ablauf zur Erhaltung der Mobilität und des Bewegungsumfangs. Überall und jederzeit machbar."
+    },
+    "es": {
+      "name": "Despertar",
+      "description": "Un flujo simple, rápido y conveniente diseñado para mantener la movilidad y el rango de movimiento. Se puede hacer en cualquier momento y lugar."
+    },
+    "ta": {
+      "name": "எழுந்திரு",
+      "description": "இயக்கத்திறன் மற்றும் இயக்க வரம்பை பராமரிக்க வடிவமைக்கப்பட்ட எளிய, விரைவான, வசதியான ஓட்டம். எப்போது வேண்டுமானாலும், எங்கு வேண்டுமானாலும் செய்யக்கூடியது."
+    }
+  }
+}

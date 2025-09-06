@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "Bend",
+    "subtitle": "Dehnung & Flexibilität",
+    "description": "Eine sanfte Dehnungs- und Flexibilitäts-App für alle Altersgruppen und Fähigkeiten"
+  },
+  "navigation": {
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "start": "Start",
+    "pause": "Pause",
+    "skip": "Überspringen",
+    "chooseRoutine": "Wähle eine Routine:"
+  },
+  "timer": {
+    "switchSides": "Seite wechseln",
+    "exerciseComplete": "Übung abgeschlossen",
+    "routineComplete": "Routine abgeschlossen",
+    "progress": "{{current}} von {{total}}"
+  },
+  "routines": {
+    "wakeUp": "Aufwachen",
+    "bedTime": "Schlafenszeit",
+    "neckShoulders": "Nacken & Schultern",
+    "backSpine": "Rücken & Wirbelsäule",
+    "legsHips": "Beine & Hüften",
+    "armsWrists": "Arme & Handgelenke",
+    "feetAnkles": "Füße & Knöchel",
+    "fullBody": "Ganzkörper",
+    "quickStretch": "Schnelle Dehnung",
+    "postureReset": "Haltung zurücksetzen",
+    "sleep": "Schlaf",
+    "expert": "Experte",
+    "hips": "Hüften",
+    "hamstrings": "Oberschenkelrückseite",
+    "lowerBack": "Unterer Rücken",
+    "isometric": "Isometrisch",
+    "neck": "Nacken",
+    "shoulders": "Schultern",
+    "feet": "Füße",
+    "ankle": "Knöchel",
+    "knees": "Knie",
+    "hands": "Hände",
+    "fingers": "Finger",
+    "wrists": "Handgelenke",
+    "feetAnkles": "Füße & Knöchel"
+  },
+  "folders": {
+    "hips": "Hüften",
+    "shoulders": "Schultern",
+    "lowerBack": "Unterer Rücken",
+    "neck": "Nacken",
+    "hamstrings": "Oberschenkelrückseite",
+    "feetAnkles": "Füße & Knöchel",
+    "core": "Rumpf",
+    "upperBody": "Oberkörper",
+    "lowerBody": "Unterkörper",
+    "seated": "Sitzend",
+    "posture": "Haltung",
+    "chest": "Brust"
+  },
+  "exercises": {
+    "neckRolls": {
+      "name": "Nackenrollen",
+      "description": "Rollen Sie Ihren Kopf langsam im Kreis, zuerst im Uhrzeigersinn, dann gegen den Uhrzeigersinn. Halten Sie die Bewegungen sanft und kontrolliert.",
+      "instructions": "Beginnen Sie mit kleinen Kreisen und vergrößern Sie allmählich den Bewegungsumfang."
+    },
+    "shoulderShrugs": {
+      "name": "Schulterzucken",
+      "description": "Heben Sie Ihre Schultern zu den Ohren, halten Sie 3 Sekunden, dann entspannen Sie. Wiederholen Sie langsam.",
+      "instructions": "Halten Sie die Bewegungen kontrolliert und vermeiden Sie schnelle Zuckbewegungen."
+    },
+    "sideNeckStretch": {
+      "name": "Seitliche Nackendehnung",
+      "description": "Neigen Sie Ihren Kopf sanft nach rechts, halten Sie 15 Sekunden, dann wiederholen Sie auf der linken Seite.",
+      "instructions": "Halten Sie die Schultern entspannt und vermeiden Sie das Ziehen mit der Hand."
+    },
+    "forwardNeckStretch": {
+      "name": "Vorwärts Nackendehnung",
+      "description": "Senken Sie Ihr Kinn langsam zur Brust, spüren Sie eine sanfte Dehnung im Nacken.",
+      "instructions": "Halten Sie die Dehnung sanft und vermeiden Sie übermäßige Belastung."
+    },
+    "armCircles": {
+      "name": "Armkreise",
+      "description": "Machen Sie kleine Kreise mit den Armen, zuerst vorwärts, dann rückwärts. Halten Sie die Bewegungen langsam und kontrolliert.",
+      "instructions": "Beginnen Sie mit kleinen Kreisen und vergrößern Sie allmählich den Radius."
+    },
+    "gentleTwist": {
+      "name": "Sanfte Drehung",
+      "description": "Stehen Sie mit hüftbreit auseinander stehenden Füßen, legen Sie Ihre Hände auf die Hüften und drehen Sie sich sanft von Seite zu Seite.",
+      "instructions": "Halten Sie die Bewegungen kontrolliert und atmen Sie gleichmäßig."
+    },
+    "calfRaises": {
+      "name": "Wadenheben",
+      "description": "Stehen Sie aufrecht und heben Sie sich langsam auf die Zehenspitzen, dann senken Sie sich wieder ab. Halten Sie die Bewegungen kontrolliert.",
+      "instructions": "Halten Sie das Gleichgewicht und vermeiden Sie ruckartige Bewegungen."
+    },
+    "deepBreathing": {
+      "name": "Tiefes Atmen",
+      "description": "Atmen Sie 5 Mal tief ein, durch die Nase einatmen und durch den Mund ausatmen. Spüren Sie, wie sich Ihr Körper entspannt.",
+      "instructions": "Konzentrieren Sie sich auf langsame, tiefe Atemzüge."
+    },
+    "cactusArms": {
+      "name": "Kaktusarme",
+      "description": "Sitzen Sie aufrecht, bringen Sie Ihre Arme auf Schulterhöhe, beugen Sie die Ellbogen um 90 Grad und drücken Sie Ihre Arme gegen den Stuhl zurück.",
+      "instructions": "Halten Sie die Schulterblätter zusammengedrückt."
+    },
+    "divers": {
+      "name": "Taucher",
+      "description": "Sitzen Sie aufrecht, strecken Sie Ihre Arme nach vorne und oben, dann tauchen Sie sie zwischen Ihre Beine, wobei Sie Ihre Wirbelsäule runden.",
+      "instructions": "Bewegen Sie sich langsam und kontrolliert durch die gesamte Bewegung."
+    },
+    "seatedBackTwist": {
+      "name": "Sitzende Rückendrehung",
+      "description": "Sitzen Sie aufrecht und drehen Sie Ihren Oberkörper sanft nach rechts, legen Sie Ihre linke Hand auf Ihr rechtes Knie. Halten Sie und wiederholen Sie auf der anderen Seite.",
+      "instructions": "Halten Sie die Hüften gerade und drehen Sie nur den Oberkörper."
+    },
+    "shoulderBladeSqueeze": {
+      "name": "Schulterblatt-Zusammenziehen",
+      "description": "Drücken Sie Ihre Schulterblätter zusammen, halten Sie 5 Sekunden, dann lassen Sie los. Halten Sie Ihre Schultern entspannt.",
+      "instructions": "Konzentrieren Sie sich darauf, die Schulterblätter zusammenzuziehen, nicht die Schultern zu heben."
+    },
+    "chinTucks": {
+      "name": "Kinn-Einziehen",
+      "description": "Ziehen Sie Ihr Kinn sanft zurück, wodurch ein Doppelkinn entsteht. Halten Sie 5 Sekunden, dann lassen Sie los. Wiederholen Sie langsam.",
+      "instructions": "Stellen Sie sich vor, Sie machen ein Doppelkinn."
+    }
+  },
+  "accessibility": {
+    "toggleDarkMode": "Dunklen Modus umschalten",
+    "languageSelector": "Sprache auswählen",
+    "startPauseTimer": "Timer starten oder pausieren",
+    "nextExercise": "Nächste Übung",
+    "previousExercise": "Vorherige Übung",
+    "backToRoutines": "Zurück zur Routineauswahl",
+    "timerLabel": "Übungstimer",
+    "progressLabel": "Übungsfortschritt",
+    "routineSelection": "Routineauswahl"
+  },
+  "meta": {
+    "description": "Eine sanfte Dehnungs- und Flexibilitäts-App für alle Altersgruppen und Fähigkeiten"
+  }
+}

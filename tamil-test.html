@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Language Test - Bend App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .language-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .language-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-align: center;
+        }
+        .exercise-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+        .exercise-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #ffd700;
+        }
+        .exercise-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        .exercise-instructions {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+        .tamil-text {
+            font-family: 'Latha', 'Tahoma', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .special-chars {
+            background: rgba(255, 107, 107, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #ff6b6b;
+        }
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .char-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .char-display {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .char-name {
+            font-size: 0.9rem;
+            color: #ffd700;
+        }
+        .test-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .status {
+            background: rgba(46, 204, 113, 0.2);
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+        }
+        .batticaloa-note {
+            background: rgba(52, 152, 219, 0.2);
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .batticaloa-note h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇱🇰 Tamil Language Test - Batticaloa Dialect</h1>
+        
+        <div class="batticaloa-note">
+            <h3>📝 About Batticaloa Tamil</h3>
+            <p>The Batticaloa dialect of Tamil (மட்டக்களப்பு தமிழ்) has unique pronunciation and vocabulary features that distinguish it from standard Tamil. This test demonstrates how the app handles Tamil script and special characters.</p>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🌍 Language Support Test</h2>
+            <div id="language-status" class="status">
+                <p>Loading language support...</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="test-button" onclick="testLanguageSupport()">Test Language Support</button>
+                <button class="test-button" onclick="testTamilTranslations()">Test Tamil Translations</button>
+                <button class="test-button" onclick="testSpecialCharacters()">Test Special Characters</button>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🔤 Tamil Special Characters</h2>
+            <div class="special-chars">
+                <p><strong>Testing Tamil Unicode Support:</strong></p>
+                <div class="char-grid">
+                    <div class="char-item">
+                        <div class="char-display">அ</div>
+                        <div class="char-name">அ (a)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஆ</div>
+                        <div class="char-name">ஆ (aa)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">இ</div>
+                        <div class="char-name">இ (i)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஈ</div>
+                        <div class="char-name">ஈ (ii)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">உ</div>
+                        <div class="char-name">உ (u)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஊ</div>
+                        <div class="char-name">ஊ (uu)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">எ</div>
+                        <div class="char-name">எ (e)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஏ</div>
+                        <div class="char-name">ஏ (ee)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஐ</div>
+                        <div class="char-name">ஐ (ai)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஒ</div>
+                        <div class="char-name">ஒ (o)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஓ</div>
+                        <div class="char-name">ஓ (oo)</div>
+                    </div>
+                    <div class="char-item">
+                        <div class="char-display">ஔ</div>
+                        <div class="char-name">ஔ (au)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🏃‍♂️ Exercise Translations</h2>
+            <div id="exercise-translations">
+                <p>Click "Test Tamil Translations" to see exercise names in Tamil</p>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">📱 App Integration Test</h2>
+            <div id="app-integration">
+                <p>Testing integration with the main Bend app...</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="test-button" onclick="testAppIntegration()">Test App Integration</button>
+                <button class="test-button" onclick="openMainApp()">Open Main App</button>
+            </div>
+        </div>
+
+        <div class="language-section">
+            <h2 class="language-title">🔍 Console Output</h2>
+            <div id="console-output" style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; font-family: monospace; font-size: 0.9rem; max-height: 200px; overflow-y: auto;">
+                <p>Console logs will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the scripts -->
+    <script src="i18n.js"></script>
+    <script src="data-manager.js"></script>
+
+    <script>
+        // Capture console output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addToConsole(message, type = 'log') {
+            const consoleDiv = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.style.color = type === 'error' ? '#ff6b6b' : type === 'warn' ? '#f39c12' : '#2ecc71';
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${message}`;
+            consoleDiv.appendChild(logEntry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToConsole(args.join(' '), 'warn');
+        };
+
+        function testLanguageSupport() {
+            const statusDiv = document.getElementById('language-status');
+            
+            try {
+                if (!window.i18n) {
+                    throw new Error('i18n system not loaded');
+                }
+                
+                const availableLanguages = window.i18n.getAvailableLanguages();
+                const tamilSupported = availableLanguages.some(lang => lang.code === 'ta');
+                
+                if (tamilSupported) {
+                    statusDiv.className = 'status';
+                    statusDiv.innerHTML = `
+                        <h3>✅ Tamil Language Support Active!</h3>
+                        <p>Available languages: ${availableLanguages.map(l => l.name).join(', ')}</p>
+                        <p>Tamil flag: 🇱🇰 | Tamil name: தமிழ்</p>
+                    `;
+                } else {
+                    throw new Error('Tamil not found in available languages');
+                }
+                
+                console.log('Tamil language support test passed');
+                
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = `<h3>❌ Error: ${error.message}</h3>`;
+                console.error('Tamil language support test failed:', error);
+            }
+        }
+
+        async function testTamilTranslations() {
+            const translationsDiv = document.getElementById('exercise-translations');
+            translationsDiv.innerHTML = '<p>Loading Tamil translations...</p>';
+            
+            try {
+                if (!window.dataManager) {
+                    throw new Error('Data manager not loaded');
+                }
+                
+                // Test loading exercises with Tamil translations
+                const exerciseIds = ['neck-rolls', 'shoulder-shrugs', 'side-neck-stretch'];
+                let translations = '';
+                
+                for (const exerciseId of exerciseIds) {
+                    try {
+                        const exercise = await window.dataManager.loadExercise(exerciseId);
+                        const tamilTranslation = window.dataManager.getTranslatedExercise(exerciseId, 'ta');
+                        
+                        translations += `
+                            <div class="exercise-card">
+                                <div class="exercise-name tamil-text">${tamilTranslation.name}</div>
+                                <div class="exercise-description tamil-text">${tamilTranslation.description}</div>
+                                <div class="exercise-instructions tamil-text">${tamilTranslation.instructions}</div>
+                            </div>
+                        `;
+                        
+                        console.log(`Loaded Tamil translation for ${exerciseId}: ${tamilTranslation.name}`);
+                        
+                    } catch (error) {
+                        console.warn(`Could not load Tamil translation for ${exerciseId}:`, error.message);
+                    }
+                }
+                
+                if (translations) {
+                    translationsDiv.innerHTML = translations;
+                } else {
+                    translationsDiv.innerHTML = '<p class="error">No Tamil translations found</p>';
+                }
+                
+            } catch (error) {
+                translationsDiv.innerHTML = `<p class="error">Error loading Tamil translations: ${error.message}</p>`;
+                console.error('Tamil translations test failed:', error);
+            }
+        }
+
+        function testSpecialCharacters() {
+            console.log('Testing Tamil special characters...');
+            
+            // Test various Tamil characters and combinations
+            const testStrings = [
+                'கழுத்து சுழற்சி', // Neck rotation
+                'தோள் உயர்த்துதல்', // Shoulder lifting
+                'பக்க கழுத்து நீட்சி', // Side neck stretch
+                'மட்டக்களப்பு தமிழ்', // Batticaloa Tamil
+                'எழுந்திரு', // Wake up
+                'நீட்சி மற்றும் நெகிழ்வு' // Stretching and flexibility
+            ];
+            
+            testStrings.forEach((str, index) => {
+                console.log(`Test string ${index + 1}: ${str}`);
+                console.log(`Length: ${str.length} characters`);
+                console.log(`Unicode: ${str.split('').map(c => c.charCodeAt(0).toString(16)).join(' ')}`);
+            });
+            
+            // Test if characters display correctly
+            const charTestDiv = document.createElement('div');
+            charTestDiv.innerHTML = `
+                <h4>Character Display Test:</h4>
+                <p>${testStrings.join(' | ')}</p>
+            `;
+            charTestDiv.style.cssText = `
+                background: rgba(255, 255, 255, 0.1);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 10px 0;
+                font-family: 'Latha', 'Tahoma', sans-serif;
+                font-size: 1.1rem;
+            `;
+            
+            document.querySelector('.language-section:last-of-type').appendChild(charTestDiv);
+        }
+
+        async function testAppIntegration() {
+            const integrationDiv = document.getElementById('app-integration');
+            integrationDiv.innerHTML = '<p>Testing app integration...</p>';
+            
+            try {
+                // Test if we can change language to Tamil
+                if (window.i18n) {
+                    window.i18n.changeLanguage('ta');
+                    console.log('Changed language to Tamil');
+                    
+                    // Test some translations
+                    const appTitle = window.i18n.t('app.title');
+                    const appSubtitle = window.i18n.t('app.subtitle');
+                    const backButton = window.i18n.t('navigation.back');
+                    
+                    integrationDiv.innerHTML = `
+                        <div class="status">
+                            <h3>✅ App Integration Successful!</h3>
+                            <p><strong>App Title:</strong> ${appTitle}</p>
+                            <p><strong>App Subtitle:</strong> ${appSubtitle}</p>
+                            <p><strong>Back Button:</strong> ${backButton}</p>
+                            <p>Language successfully changed to Tamil (தமிழ்)</p>
+                        </div>
+                    `;
+                    
+                    console.log('App integration test passed');
+                } else {
+                    throw new Error('i18n system not available');
+                }
+                
+            } catch (error) {
+                integrationDiv.innerHTML = `
+                    <div class="status error">
+                        <h3>❌ Integration Error</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+                console.error('App integration test failed:', error);
+            }
+        }
+
+        function openMainApp() {
+            window.open('index.html', '_blank');
+        }
+
+        // Auto-run tests on load
+        window.addEventListener('load', () => {
+            console.log('Tamil language test page loaded');
+            setTimeout(() => {
+                testLanguageSupport();
+                testSpecialCharacters();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

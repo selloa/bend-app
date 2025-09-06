@@ -1,0 +1,48 @@
+{
+  "id": "arm-circles",
+  "category": "neck-shoulders",
+  "difficulty": "beginner",
+  "position": "standing",
+  "equipment": "none",
+  "muscleGroups": ["shoulders", "deltoids", "rotator-cuff"],
+  "defaultDuration": 30,
+  "needsSideSwitch": true,
+  "tags": ["mobility", "warm-up"],
+  "emoji": "⭕",
+  "variations": {
+    "beginner": {
+      "duration": 20,
+      "description": "Small arm circles"
+    },
+    "advanced": {
+      "duration": 45,
+      "description": "Large arm circles with resistance"
+    }
+  },
+  "safety": {
+    "contraindications": ["shoulder-injury", "rotator-cuff-tear"],
+    "cautions": ["move-slowly", "stop-if-pain", "avoid-overhead-if-injured"]
+  },
+  "translations": {
+    "en": {
+      "name": "Arm Circles",
+      "description": "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled.",
+      "instructions": "Start with small circles and gradually increase the radius."
+    },
+    "de": {
+      "name": "Armkreise",
+      "description": "Machen Sie kleine Kreise mit den Armen, zuerst vorwärts, dann rückwärts. Halten Sie die Bewegungen langsam und kontrolliert.",
+      "instructions": "Beginnen Sie mit kleinen Kreisen und vergrößern Sie allmählich den Radius."
+    },
+    "es": {
+      "name": "Círculos con Brazos",
+      "description": "Haga círculos pequeños con los brazos, primero hacia adelante, luego hacia atrás. Mantenga los movimientos lentos y controlados.",
+      "instructions": "Comience con círculos pequeños y aumente gradualmente el radio."
+    },
+    "ta": {
+      "name": "கை வட்டங்கள்",
+      "description": "உங்கள் கைகளால் சிறிய வட்டங்கள் செய்யுங்கள், முதலில் முன்னோக்கி, பின்னர் பின்னோக்கி. இயக்கங்களை மெதுவாகவும் கட்டுப்பாட்டுடனும் வைத்திருங்கள்.",
+      "instructions": "சிறிய வட்டங்களுடன் தொடங்கி, படிப்படியாக ஆரத்தை அதிகரிக்கவும்."
+    }
+  }
+}

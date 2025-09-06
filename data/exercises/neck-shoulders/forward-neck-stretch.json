@@ -1,0 +1,48 @@
+{
+  "id": "forward-neck-stretch",
+  "category": "neck-shoulders",
+  "difficulty": "beginner",
+  "position": "seated",
+  "equipment": "none",
+  "muscleGroups": ["neck", "upper-trapezius"],
+  "defaultDuration": 30,
+  "needsSideSwitch": false,
+  "tags": ["stretching", "tension-relief"],
+  "emoji": "⬇️",
+  "variations": {
+    "beginner": {
+      "duration": 20,
+      "description": "Gentle forward neck stretch"
+    },
+    "advanced": {
+      "duration": 45,
+      "description": "Deep forward neck stretch with resistance"
+    }
+  },
+  "safety": {
+    "contraindications": ["neck-injury", "cervical-spine-issues"],
+    "cautions": ["move-slowly", "stop-if-pain", "avoid-overstretching"]
+  },
+  "translations": {
+    "en": {
+      "name": "Forward Neck Stretch",
+      "description": "Slowly lower your chin toward your chest, feeling a gentle stretch in the back of your neck.",
+      "instructions": "Keep the stretch gentle and avoid excessive tension."
+    },
+    "de": {
+      "name": "Vorwärts Nackendehnung",
+      "description": "Senken Sie Ihr Kinn langsam zur Brust, spüren Sie eine sanfte Dehnung im Nacken.",
+      "instructions": "Halten Sie die Dehnung sanft und vermeiden Sie übermäßige Belastung."
+    },
+    "es": {
+      "name": "Estiramiento Frontal del Cuello",
+      "description": "Baje lentamente la barbilla hacia el pecho, sintiendo un estiramiento suave en la parte posterior del cuello.",
+      "instructions": "Mantenga el estiramiento suave y evite la tensión excesiva."
+    },
+    "ta": {
+      "name": "முன்னோக்கி கழுத்து நீட்சி",
+      "description": "உங்கள் தாடியை மெதுவாக மார்புக்கு நோக்கி கீழே கொண்டு வாருங்கள், உங்கள் கழுத்தின் பின்புறத்தில் மென்மையான நீட்சியை உணருங்கள்.",
+      "instructions": "நீட்சியை மென்மையாக வைத்திருங்கள் மற்றும் அதிகப்படியான பதற்றத்தை தவிர்க்கவும்."
+    }
+  }
+}

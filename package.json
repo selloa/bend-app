@@ -14,7 +14,10 @@
     "test:all": "npm run test && npm run test:e2e && npm run test:accessibility",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "serve": "http-server . -p 3000 -o"
+    "serve": "http-server . -p 3000 -o",
+    "i18n:extract": "echo 'Extract translation strings from code'",
+    "i18n:validate": "echo 'Validate translation completeness'",
+    "i18n:missing": "echo 'Find missing translations'"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",

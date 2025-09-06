@@ -1,0 +1,70 @@
+{
+  "id": "neck-shoulders",
+  "name": "Neck & Shoulders",
+  "icon": "🦒",
+  "description": "Neck and shoulder mobility and tension relief routines",
+  "routines": {
+    "neck-shoulders-5min": {
+      "id": "neck-shoulders-5min",
+      "name": "Neck & Shoulders - 5 min",
+      "description": "Quick neck and shoulder tension relief",
+      "category": "neck-shoulders",
+      "difficulty": "beginner",
+      "targetDuration": 300,
+      "exercises": [
+        {
+          "exerciseId": "neck-rolls",
+          "duration": 30,
+          "order": 1
+        },
+        {
+          "exerciseId": "shoulder-shrugs",
+          "duration": 30,
+          "order": 2
+        },
+        {
+          "exerciseId": "side-neck-stretch",
+          "duration": 30,
+          "order": 3,
+          "needsSideSwitch": true
+        }
+      ],
+      "translations": {
+        "en": {
+          "name": "Neck & Shoulders - 5 min",
+          "description": "Quick neck and shoulder tension relief"
+        },
+        "de": {
+          "name": "Nacken & Schultern - 5 Min",
+          "description": "Schnelle Nacken- und Schulterentspannung"
+        },
+        "es": {
+          "name": "Cuello y Hombros - 5 min",
+          "description": "Alivio rápido de tensión en cuello y hombros"
+        },
+        "ta": {
+          "name": "கழுத்து மற்றும் தோள்கள் - 5 நிமிடம்",
+          "description": "கழுத்து மற்றும் தோள்களில் விரைவான பதற்ற நிவாரணம்"
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "name": "Neck & Shoulders",
+      "description": "Neck and shoulder mobility and tension relief routines"
+    },
+    "de": {
+      "name": "Nacken & Schultern",
+      "description": "Nacken- und Schultermobilität und Spannungsabbau-Routinen"
+    },
+    "es": {
+      "name": "Cuello y Hombros",
+      "description": "Rutinas de movilidad y alivio de tensión en cuello y hombros"
+    },
+    "ta": {
+      "name": "கழுத்து மற்றும் தோள்கள்",
+      "description": "கழுத்து மற்றும் தோள் இயக்கத்திறன் மற்றும் பதற்ற நிவாரண வழக்கங்கள்"
+    }
+  }
+}

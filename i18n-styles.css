@@ -1,0 +1,179 @@
+/* Language Selector Styles for Bend App */
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.language-button {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    min-height: var(--min-touch-target);
+    min-width: var(--min-touch-target);
+}
+
+.language-button:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+}
+
+.language-button:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.language-flag {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.language-code {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    min-width: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 4px;
+}
+
+.language-dropdown.open {
+    display: block;
+}
+
+.language-option {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-secondary);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.language-option:hover {
+    background: var(--bg-secondary);
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option.selected {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.language-option-flag {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.language-option-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* Dark mode overrides for language selector */
+[data-theme="dark"] .language-button {
+    background: var(--bg-secondary);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .language-button:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+}
+
+[data-theme="dark"] .language-dropdown {
+    background: var(--bg-primary);
+    border-color: var(--border-primary);
+}
+
+[data-theme="dark"] .language-option {
+    color: var(--text-primary);
+    border-color: var(--border-secondary);
+}
+
+[data-theme="dark"] .language-option:hover {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .language-option.selected {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-controls {
+        gap: 8px;
+    }
+    
+    .language-button {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .language-dropdown {
+        right: -10px;
+        min-width: 120px;
+    }
+    
+    .language-option {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .language-button {
+        border-width: 2px;
+    }
+    
+    .language-dropdown {
+        border-width: 2px;
+    }
+    
+    .language-option.selected {
+        border: 2px solid var(--text-primary);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .language-button,
+    .language-option {
+        transition: none;
+    }
+}
