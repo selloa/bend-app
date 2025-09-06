@@ -1026,6 +1026,66 @@ const bendRoutines = {
                 emoji: "😌"
             }
         ]
+    },
+    "feet-ankles": {
+        name: "Feet & Ankles",
+        description: "Comprehensive foot and ankle mobility routine to improve balance, flexibility, and prevent injury.",
+        duration: "8 minutes",
+        exercises: [
+            {
+                name: "Single Leg Stand",
+                description: "Stand on one leg, lift the other leg slightly off the ground, and hold the position for balance.",
+                duration: 60,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Ankle Circles",
+                description: "Sit with one leg extended, rotate your ankle in circles, first clockwise, then counterclockwise.",
+                duration: 60,
+                emoji: "🔄",
+                needsSideSwitch: true
+            },
+            {
+                name: "Heel-to-Toe Rocks",
+                description: "Stand with feet hip-width apart, slowly rock forward onto your toes, then back onto your heels. Keep movements controlled.",
+                duration: 60,
+                emoji: "🦶"
+            },
+            {
+                name: "Lateral Foot Rocks",
+                description: "Stand with feet hip-width apart, slowly rock your weight from the outside edges of your feet to the inside edges.",
+                duration: 60,
+                emoji: "↔️"
+            },
+            {
+                name: "Knee Circles",
+                description: "Stand with feet hip-width apart, place hands on knees, and make gentle circles with your knees.",
+                duration: 60,
+                emoji: "🔄",
+                needsSideSwitch: true
+            },
+            {
+                name: "Soleus Stretch",
+                description: "Stand facing a wall, place one foot forward with knee bent, lean into the wall to stretch your soleus muscle.",
+                duration: 60,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Standing Quad Stretch",
+                description: "Stand and bend one knee, bringing your heel toward your glutes. Hold your ankle and gently pull.",
+                duration: 60,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Final Relaxation",
+                description: "Sit comfortably with your feet flat on the floor, close your eyes, and feel your feet and ankles relax.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
     }
 };
 
@@ -1048,6 +1108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     initializeDarkMode();
     initializeAudio();
+    setupAccessibility();
 });
 
 function setupEventListeners() {
@@ -1190,6 +1251,9 @@ function startTimer() {
             // Play timer end beep
             playTimerEndBeep();
             
+            // Announce to screen readers
+            announceToScreenReader('Exercise complete');
+            
             // Check if current exercise needs side switching
             const currentExercise = currentExercises[currentExerciseIndex];
             if (currentExercise.needsSideSwitch && currentSide === 'left') {
@@ -1199,6 +1263,8 @@ function startTimer() {
                 // Reset timer for the other side
                 timeRemaining = currentExercise.duration;
                 updateTimerDisplay();
+                // Announce side switch to screen readers
+                announceToScreenReader('Switch sides');
                 // Automatically restart the timer for the other side
                 setTimeout(() => {
                     startTimer();
@@ -1347,6 +1413,103 @@ function playTimerEndBeep() {
 
 function playSideSwitchBeep() {
     playBeep(700, 200, 'short');
+}
+
+// Accessibility functions
+function setupAccessibility() {
+    // Add ARIA labels and roles
+    addAriaLabels();
+    
+    // Setup keyboard navigation
+    setupKeyboardNavigation();
+    
+    // Announce timer changes to screen readers
+    setupScreenReaderAnnouncements();
+}
+
+function addAriaLabels() {
+    // Add ARIA labels to buttons
+    const startPauseBtn = document.getElementById('start-pause-btn');
+    if (startPauseBtn) {
+        startPauseBtn.setAttribute('aria-label', 'Start or pause exercise timer');
+    }
+    
+    const skipBtn = document.getElementById('skip-btn');
+    if (skipBtn) {
+        skipBtn.setAttribute('aria-label', 'Skip current exercise');
+    }
+    
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    if (darkModeToggle) {
+        darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
+    }
+    
+    // Add ARIA live region for timer announcements
+    const timerDisplay = document.getElementById('timer-display');
+    if (timerDisplay) {
+        timerDisplay.setAttribute('aria-live', 'polite');
+        timerDisplay.setAttribute('aria-label', 'Exercise timer');
+    }
+}
+
+function setupKeyboardNavigation() {
+    // Add keyboard support for routine selection
+    const routineBtns = document.querySelectorAll('.routine-category-btn');
+    routineBtns.forEach(btn => {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+    
+    // Add keyboard support for timer controls
+    document.addEventListener('keydown', function(e) {
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    toggleTimer();
+                    break;
+                case 's':
+                case 'S':
+                    e.preventDefault();
+                    skipExercise();
+                    break;
+                case 'Escape':
+                    if (document.getElementById('exercise-display').classList.contains('active')) {
+                        showRoutineSelection();
+                    }
+                    break;
+            }
+        }
+    });
+}
+
+function setupScreenReaderAnnouncements() {
+    // Create announcement element
+    const announcement = document.createElement('div');
+    announcement.id = 'screen-reader-announcement';
+    announcement.setAttribute('aria-live', 'assertive');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.style.position = 'absolute';
+    announcement.style.left = '-10000px';
+    announcement.style.width = '1px';
+    announcement.style.height = '1px';
+    announcement.style.overflow = 'hidden';
+    document.body.appendChild(announcement);
+}
+
+function announceToScreenReader(message) {
+    const announcement = document.getElementById('screen-reader-announcement');
+    if (announcement) {
+        announcement.textContent = message;
+        // Clear after announcement
+        setTimeout(() => {
+            announcement.textContent = '';
+        }, 1000);
+    }
 }
 
 function showSideSwitchMessage() {

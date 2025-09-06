@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bend: Stretching & Flexibility</title>
+    <meta name="description" content="A gentle stretching and flexibility app designed for all ages and abilities">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A90E2' stroke='%232C5F8A' stroke-width='3'/%3E%3Cpath d='M30 40 Q50 20 70 40 Q50 60 30 40' fill='%23FFFFFF' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 35 Q50 25 65 35' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 45 Q50 55 65 45' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,7 +24,7 @@
         </header>
 
         <!-- Routine Category Selection -->
-        <section id="routine-selection" class="section active">
+        <section id="routine-selection" class="section active" role="main" aria-label="Routine selection">
             <h2 class="section-title">Choose a routine:</h2>
             <div class="routine-categories">
                 <button class="routine-category-btn" data-routine="wake-up">
@@ -111,15 +112,20 @@
                     <span>Wrists</span>
                     <p>Wrist mobility and flexibility</p>
                 </button>
+                <button class="routine-category-btn" data-routine="feet-ankles">
+                    <div class="icon">🦶</div>
+                    <span>Feet & Ankles</span>
+                    <p>Foot and ankle mobility routine</p>
+                </button>
             </div>
         </section>
 
         <!-- Exercise Display -->
-        <section id="exercise-display" class="section">
-            <button class="back-btn" onclick="showRoutineSelection()">← Back</button>
+        <section id="exercise-display" class="section" role="main" aria-label="Exercise display">
+            <button class="back-btn" onclick="showRoutineSelection()" aria-label="Go back to routine selection">← Back</button>
             <div class="exercise-header">
                 <h2 class="section-title" id="exercise-title">Exercise</h2>
-                <div class="progress">
+                <div class="progress" role="status" aria-label="Exercise progress">
                     <span id="current-exercise">1</span> of <span id="total-exercises">5</span>
                 </div>
             </div>
@@ -135,10 +141,10 @@
                 </div>
                 
                 <div class="timer-section">
-                    <div class="timer-display" id="timer-display">0:30</div>
+                    <div class="timer-display" id="timer-display" role="timer" aria-label="Exercise timer">0:30</div>
                     <div class="timer-controls">
-                        <button class="timer-btn" id="start-pause-btn">Start</button>
-                        <button class="timer-btn" id="skip-btn">Skip</button>
+                        <button class="timer-btn" id="start-pause-btn" aria-label="Start or pause exercise timer">Start</button>
+                        <button class="timer-btn" id="skip-btn" aria-label="Skip current exercise">Skip</button>
                     </div>
                     <div class="auto-start-toggle">
                         <label class="toggle-container">
