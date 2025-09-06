@@ -168,18 +168,18 @@ body {
 /* Share button */
 .share-button {
     background: var(--bg-secondary);
-    border: var(--high-contrast-border) solid var(--border-primary);
-    border-radius: 50%;
-    width: clamp(50px, 8vw, 70px);
-    height: clamp(50px, 8vw, 70px);
-    min-width: var(--min-touch-target);
-    min-height: var(--min-touch-target);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 8px 12px;
     cursor: pointer;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--shadow);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    min-height: var(--min-touch-target);
+    min-width: var(--min-touch-target);
 }
 
 .share-button:focus {
@@ -188,14 +188,14 @@ body {
 }
 
 .share-button:hover {
-    background: var(--accent-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-hover);
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
 }
 
 .share-icon {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    transition: transform 0.3s ease;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
 }
 
 .share-button:hover .share-icon {
@@ -1100,7 +1100,11 @@ body {
         gap: clamp(15px, 3vw, 25px);
     }
     
-    .share-button,
+    .share-button {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
     .dark-mode-toggle {
         align-self: center;
     }
@@ -1212,7 +1216,10 @@ body {
         transition-duration: 0.01ms !important;
     }
     
-    .share-button:hover,
+    .share-button:hover {
+        transform: none;
+    }
+    
     .dark-mode-toggle:hover {
         transform: none;
     }

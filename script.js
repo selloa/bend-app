@@ -2623,24 +2623,51 @@ function showSideSwitchMessage() {
 
 // Share app functionality
 function shareApp() {
+    console.log('🔍 Share button clicked');
+    console.log('🔍 Navigator.share available:', !!navigator.share);
+    console.log('🔍 Navigator.canShare available:', !!navigator.canShare);
+    
     const shareData = {
         title: 'Bend - Stretching & Flexibility',
         text: 'Check out this gentle stretching and flexibility app designed for all ages and abilities!',
         url: 'https://selloa.github.io/bend-app/'
     };
 
+    console.log('🔍 Share data:', shareData);
+
     // Check if Web Share API is supported (mobile devices)
-    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-        navigator.share(shareData)
-            .then(() => {
-                console.log('✅ App shared successfully via Web Share API');
-            })
-            .catch((error) => {
-                console.error('❌ Error sharing via Web Share API:', error);
-                // Fallback to clipboard
-                fallbackShare();
-            });
+    if (navigator.share) {
+        console.log('🔍 Web Share API is available');
+        
+        // Check if we can share this data
+        if (navigator.canShare && navigator.canShare(shareData)) {
+            console.log('🔍 Data can be shared, attempting to share...');
+            navigator.share(shareData)
+                .then(() => {
+                    console.log('✅ App shared successfully via Web Share API');
+                })
+                .catch((error) => {
+                    console.error('❌ Error sharing via Web Share API:', error);
+                    console.log('🔍 Falling back to clipboard method');
+                    // Fallback to clipboard
+                    fallbackShare();
+                });
+        } else {
+            console.log('🔍 Data cannot be shared, trying without canShare check...');
+            // Try sharing without canShare check (some browsers don't support it)
+            navigator.share(shareData)
+                .then(() => {
+                    console.log('✅ App shared successfully via Web Share API (without canShare check)');
+                })
+                .catch((error) => {
+                    console.error('❌ Error sharing via Web Share API (without canShare check):', error);
+                    console.log('🔍 Falling back to clipboard method');
+                    // Fallback to clipboard
+                    fallbackShare();
+                });
+        }
     } else {
+        console.log('🔍 Web Share API not available, using fallback method');
         // Fallback for desktop browsers
         fallbackShare();
     }
@@ -2648,19 +2675,24 @@ function shareApp() {
 
 // Fallback share method for desktop browsers
 function fallbackShare() {
+    console.log('🔍 Using fallback share method');
     const url = 'https://selloa.github.io/bend-app/';
     
     // Try to copy to clipboard
     if (navigator.clipboard && navigator.clipboard.writeText) {
+        console.log('🔍 Clipboard API available, attempting to copy URL');
         navigator.clipboard.writeText(url)
             .then(() => {
+                console.log('✅ URL copied to clipboard successfully');
                 showShareSuccess();
             })
             .catch((error) => {
                 console.error('❌ Error copying to clipboard:', error);
+                console.log('🔍 Showing manual copy prompt');
                 showSharePrompt(url);
             });
     } else {
+        console.log('🔍 Clipboard API not available, showing manual copy prompt');
         // Final fallback - show prompt
         showSharePrompt(url);
     }
@@ -2668,6 +2700,7 @@ function fallbackShare() {
 
 // Show success message when URL is copied
 function showShareSuccess() {
+    console.log('🔍 Showing share success message');
     // Create a temporary success message
     const successMessage = document.createElement('div');
     successMessage.className = 'share-success-message';
@@ -2724,8 +2757,11 @@ function showShareSuccess() {
 
 // Show share prompt for manual copying
 function showSharePrompt(url) {
+    console.log('🔍 Showing manual copy prompt');
     const prompt = window.prompt('Share this link:', url);
     if (prompt !== null) {
         console.log('✅ User copied link manually');
+    } else {
+        console.log('🔍 User cancelled manual copy prompt');
     }
 }
