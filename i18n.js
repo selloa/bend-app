@@ -613,7 +613,8 @@ class BendI18n {
                     startPauseTimer: "Start or pause exercise timer",
                     nextExercise: "Next exercise",
                     previousExercise: "Previous exercise",
-                    backToRoutines: "Go back to routine selection"
+                    backToRoutines: "Go back to routine selection",
+                    shareApp: "Share Bend app"
                 }
             },
             de: {
@@ -754,7 +755,8 @@ class BendI18n {
                     startPauseTimer: "Timer starten oder pausieren",
                     nextExercise: "Nächste Übung",
                     previousExercise: "Vorherige Übung",
-                    backToRoutines: "Zurück zur Routineauswahl"
+                    backToRoutines: "Zurück zur Routineauswahl",
+                    shareApp: "Bend App teilen"
                 }
             },
             es: {
@@ -895,7 +897,8 @@ class BendI18n {
                     startPauseTimer: "Iniciar o pausar temporizador",
                     nextExercise: "Siguiente ejercicio",
                     previousExercise: "Ejercicio anterior",
-                    backToRoutines: "Volver a selección de rutinas"
+                    backToRoutines: "Volver a selección de rutinas",
+                    shareApp: "Compartir aplicación Bend"
                 }
             },
             ta: {
@@ -1036,7 +1039,8 @@ class BendI18n {
                     startPauseTimer: "பயிற்சி டைமரைத் தொடங்கவும் அல்லது இடைநிறுத்தவும்",
                     nextExercise: "அடுத்த பயிற்சி",
                     previousExercise: "முந்தைய பயிற்சி",
-                    backToRoutines: "வழக்கங்கள் தேர்வுக்குத் திரும்பவும்"
+                    backToRoutines: "வழக்கங்கள் தேர்வுக்குத் திரும்பவும்",
+                    shareApp: "Bend பயன்பாட்டைப் பகிரவும்"
                 }
             }
         };

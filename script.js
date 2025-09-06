@@ -1946,6 +1946,19 @@ function setupEventListeners() {
             });
         }
         
+        // Share button
+        const shareButton = document.getElementById('share-button');
+        if (shareButton) {
+            shareButton.addEventListener('click', function() {
+                try {
+                    shareApp();
+                } catch (error) {
+                    console.error('Error in share functionality:', error);
+                    showGracefulError('Failed to share app. Please try again.');
+                }
+            });
+        }
+
         // Dark mode toggle
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         if (darkModeToggle) {
@@ -2606,4 +2619,113 @@ function showSideSwitchMessage() {
     sideSwitchMessageTimer = setTimeout(() => {
         messageElement.style.display = 'none';
     }, 3000);
+}
+
+// Share app functionality
+function shareApp() {
+    const shareData = {
+        title: 'Bend - Stretching & Flexibility',
+        text: 'Check out this gentle stretching and flexibility app designed for all ages and abilities!',
+        url: 'https://selloa.github.io/bend-app/'
+    };
+
+    // Check if Web Share API is supported (mobile devices)
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData)
+            .then(() => {
+                console.log('✅ App shared successfully via Web Share API');
+            })
+            .catch((error) => {
+                console.error('❌ Error sharing via Web Share API:', error);
+                // Fallback to clipboard
+                fallbackShare();
+            });
+    } else {
+        // Fallback for desktop browsers
+        fallbackShare();
+    }
+}
+
+// Fallback share method for desktop browsers
+function fallbackShare() {
+    const url = 'https://selloa.github.io/bend-app/';
+    
+    // Try to copy to clipboard
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                showShareSuccess();
+            })
+            .catch((error) => {
+                console.error('❌ Error copying to clipboard:', error);
+                showSharePrompt(url);
+            });
+    } else {
+        // Final fallback - show prompt
+        showSharePrompt(url);
+    }
+}
+
+// Show success message when URL is copied
+function showShareSuccess() {
+    // Create a temporary success message
+    const successMessage = document.createElement('div');
+    successMessage.className = 'share-success-message';
+    successMessage.innerHTML = `
+        <div class="share-success-content">
+            <div class="share-success-icon">✅</div>
+            <div class="share-success-text">Link copied to clipboard!</div>
+        </div>
+    `;
+    
+    // Add styles
+    successMessage.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--bg-secondary, #f8f9fa);
+        border: 2px solid var(--accent-primary, #4A90E2);
+        border-radius: 15px;
+        padding: 20px 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        z-index: 10000;
+        animation: fadeInOut 2s ease-in-out;
+        color: var(--text-primary, #333);
+        font-family: var(--font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+        font-size: 16px;
+        text-align: center;
+    `;
+    
+    // Add animation keyframes if not already present
+    if (!document.querySelector('#share-animations')) {
+        const style = document.createElement('style');
+        style.id = 'share-animations';
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(successMessage);
+    
+    // Remove after animation
+    setTimeout(() => {
+        if (successMessage.parentNode) {
+            successMessage.parentNode.removeChild(successMessage);
+        }
+    }, 2000);
+}
+
+// Show share prompt for manual copying
+function showSharePrompt(url) {
+    const prompt = window.prompt('Share this link:', url);
+    if (prompt !== null) {
+        console.log('✅ User copied link manually');
+    }
 }
