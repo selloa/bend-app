@@ -1406,10 +1406,6 @@ function setupEventListeners() {
                 }
             });
         }
-    } catch (error) {
-        console.error('Error setting up event listeners:', error);
-        showGracefulError('Failed to set up app controls. Please refresh the page.');
-    }
 
         // Routine category selection
         const routineCategoryBtns = document.querySelectorAll('.routine-category-btn');
@@ -1481,8 +1477,8 @@ function setupEventListeners() {
             });
         }
     } catch (error) {
-        console.error('Error setting up remaining event listeners:', error);
-        showGracefulError('Failed to set up some app controls. Please refresh the page.');
+        console.error('Error setting up event listeners:', error);
+        showGracefulError('Failed to set up app controls. Please refresh the page.');
     }
 }
 
