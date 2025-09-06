@@ -994,6 +994,7 @@ let timeRemaining = 0;
 let isTimerRunning = false;
 let routineStartTime = null;
 let totalRoutineTime = 0;
+let autoAdvanceEnabled = true;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -1013,6 +1014,18 @@ function setupEventListeners() {
     // Timer controls
     document.getElementById('start-pause-btn').addEventListener('click', toggleTimer);
     document.getElementById('skip-btn').addEventListener('click', skipExercise);
+    
+    // Auto-advance toggle
+    document.getElementById('auto-advance-toggle').addEventListener('change', function() {
+        autoAdvanceEnabled = this.checked;
+        // Update the toggle label to show current state
+        const label = document.querySelector('.toggle-label');
+        if (autoAdvanceEnabled) {
+            label.textContent = 'Auto-advance to next exercise';
+        } else {
+            label.textContent = 'Manual advance (click Next)';
+        }
+    });
 }
 
 function selectRoutine(routine) {
@@ -1105,16 +1118,33 @@ function startTimer() {
             isTimerRunning = false;
             document.getElementById('start-pause-btn').textContent = 'Start';
             
-            // Auto-advance to next exercise if not the last one
-            if (currentExerciseIndex < currentExercises.length - 1) {
-                setTimeout(() => {
-                    nextExercise();
-                }, 1000);
+            // Check if auto-advance is enabled
+            if (autoAdvanceEnabled) {
+                // Auto-advance to next exercise if not the last one
+                if (currentExerciseIndex < currentExercises.length - 1) {
+                    setTimeout(() => {
+                        nextExercise();
+                        // Automatically start the timer for the next exercise
+                        setTimeout(() => {
+                            startTimer();
+                        }, 500);
+                    }, 1000);
+                } else {
+                    // Routine completed
+                    setTimeout(() => {
+                        showCompletionScreen();
+                    }, 1000);
+                }
             } else {
-                // Routine completed
+                // Auto-advance is disabled, show a brief message
+                const timerDisplay = document.getElementById('timer-display');
+                timerDisplay.textContent = 'Complete!';
+                timerDisplay.style.color = '#27ae60';
+                
+                // Reset the display after 2 seconds
                 setTimeout(() => {
-                    showCompletionScreen();
-                }, 1000);
+                    timerDisplay.style.color = '#e74c3c';
+                }, 2000);
             }
         }
     }, 1000);

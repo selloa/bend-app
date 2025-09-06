@@ -272,6 +272,61 @@ body {
     background: #c0392b;
 }
 
+/* Auto-advance toggle */
+.auto-advance-toggle {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-container input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background: #bdc3c7;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-container input[type="checkbox"]:checked + .toggle-slider {
+    background: #27ae60;
+}
+
+.toggle-container input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(26px);
+}
+
+.toggle-label {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
 /* Navigation */
 .exercise-navigation {
     display: flex;
