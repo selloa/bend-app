@@ -256,6 +256,355 @@ class BendI18n {
                     deepbreathing: {
                         name: "Deep Breathing",
                         description: "Take 5 deep breaths, inhaling through your nose and exhaling through your mouth. Feel your body relax."
+                    },
+                    // New exercises for missing folders
+                    anklecircles: {
+                        name: "Ankle Circles",
+                        description: "Sit or stand, rotate ankles in circles both directions"
+                    },
+                    toeraises: {
+                        name: "Toe Raises",
+                        description: "Stand and lift toes up, then lower them down"
+                    },
+                    heelraises: {
+                        name: "Heel Raises",
+                        description: "Stand and lift heels up, then lower them down"
+                    },
+                    anklealphabet: {
+                        name: "Ankle Alphabet",
+                        description: "Trace alphabet with your big toe in the air"
+                    },
+                    toespreading: {
+                        name: "Toe Spreading",
+                        description: "Sit and spread toes apart, then bring them together"
+                    },
+                    singlelegbalance: {
+                        name: "Single Leg Balance",
+                        description: "Stand on one foot, maintain balance"
+                    },
+                    archstrengthening: {
+                        name: "Arch Strengthening",
+                        description: "Sit and lift arch of foot while keeping toes down"
+                    },
+                    plantarfasciastretch: {
+                        name: "Plantar Fascia Stretch",
+                        description: "Sit and pull toes back to stretch bottom of foot"
+                    },
+                    towelscrunches: {
+                        name: "Towel Scrunches",
+                        description: "Sit and use toes to scrunch up a towel"
+                    },
+                    marblepickup: {
+                        name: "Marble Pickup",
+                        description: "Use toes to pick up marbles and place in container"
+                    },
+                    ankleeversioninversion: {
+                        name: "Ankle Eversion/Inversion",
+                        description: "Turn foot inward and outward to strengthen ankle"
+                    },
+                    plank: {
+                        name: "Plank",
+                        description: "Hold plank position, keeping body straight"
+                    },
+                    deadbug: {
+                        name: "Dead Bug",
+                        description: "Lie on back, extend opposite arm and leg"
+                    },
+                    birddog: {
+                        name: "Bird Dog",
+                        description: "On hands and knees, extend opposite arm and leg"
+                    },
+                    sideplank: {
+                        name: "Side Plank",
+                        description: "Hold side plank position"
+                    },
+                    russiantwists: {
+                        name: "Russian Twists",
+                        description: "Sit and rotate torso side to side"
+                    },
+                    mountainclimbers: {
+                        name: "Mountain Climbers",
+                        description: "In plank, alternate bringing knees to chest"
+                    },
+                    bicyclecrunches: {
+                        name: "Bicycle Crunches",
+                        description: "Lie on back, bring opposite elbow to knee"
+                    },
+                    hollowbodyhold: {
+                        name: "Hollow Body Hold",
+                        description: "Lie on back, lift shoulders and legs off ground"
+                    },
+                    superman: {
+                        name: "Superman",
+                        description: "Lie on stomach, lift chest and legs simultaneously"
+                    },
+                    pallofpress: {
+                        name: "Pallof Press",
+                        description: "Stand with resistance, press arms out and pull back"
+                    },
+                    pushups: {
+                        name: "Push-ups",
+                        description: "Perform push-ups with proper form"
+                    },
+                    tricepdips: {
+                        name: "Tricep Dips",
+                        description: "Sit on edge of chair, lower and raise body"
+                    },
+                    pikepushups: {
+                        name: "Pike Push-ups",
+                        description: "Handstand position against wall, lower head to ground"
+                    },
+                    pullupschinups: {
+                        name: "Pull-ups/Chin-ups",
+                        description: "Hang from bar, pull body up"
+                    },
+                    lateralraises: {
+                        name: "Lateral Raises",
+                        description: "Hold weights, raise arms to sides"
+                    },
+                    bentoverrows: {
+                        name: "Bent-Over Rows",
+                        description: "Hinge at hips, pull weights to chest"
+                    },
+                    overheadpress: {
+                        name: "Overhead Press",
+                        description: "Press weights overhead from shoulders"
+                    },
+                    bicepcurls: {
+                        name: "Bicep Curls",
+                        description: "Curl weights up to shoulders"
+                    },
+                    squats: {
+                        name: "Squats",
+                        description: "Stand with feet shoulder-width apart, lower down and up"
+                    },
+                    lunges: {
+                        name: "Lunges",
+                        description: "Step forward into lunge position, alternate legs"
+                    },
+                    glutebridges: {
+                        name: "Glute Bridges",
+                        description: "Lie on back, lift hips up and down"
+                    },
+                    legswings: {
+                        name: "Leg Swings",
+                        description: "Hold wall, swing leg forward and back"
+                    },
+                    singlelegdeadlifts: {
+                        name: "Single Leg Deadlifts",
+                        description: "Stand on one leg, hinge forward while extending other leg back"
+                    },
+                    wallsits: {
+                        name: "Wall Sits",
+                        description: "Sit against wall with knees at 90 degrees"
+                    },
+                    stepups: {
+                        name: "Step-ups",
+                        description: "Step up onto platform, alternate legs"
+                    },
+                    hipthrusts: {
+                        name: "Hip Thrusts",
+                        description: "Lie on back, lift hips up with shoulders on ground"
+                    },
+                    bulgariansplitsquats: {
+                        name: "Bulgarian Split Squats",
+                        description: "Back foot on elevated surface, lunge down and up"
+                    },
+                    romaniandeadlifts: {
+                        name: "Romanian Deadlifts",
+                        description: "Stand with slight knee bend, hinge at hips"
+                    },
+                    jumpsquats: {
+                        name: "Jump Squats",
+                        description: "Squat down and jump up explosively"
+                    },
+                    seatedneckrolls: {
+                        name: "Seated Neck Rolls",
+                        description: "Sit tall, slowly roll head in circles"
+                    },
+                    seatedshouldershrugs: {
+                        name: "Seated Shoulder Shrugs",
+                        description: "Lift shoulders up toward ears, hold and relax"
+                    },
+                    seatedspinaltwist: {
+                        name: "Seated Spinal Twist",
+                        description: "Sit tall, rotate torso to one side, hold"
+                    },
+                    seatedhipcircles: {
+                        name: "Seated Hip Circles",
+                        description: "Sit and make circles with your knees"
+                    },
+                    seatedanklecircles: {
+                        name: "Seated Ankle Circles",
+                        description: "Rotate ankles in circles both directions"
+                    },
+                    seatedcalfraises: {
+                        name: "Seated Calf Raises",
+                        description: "Lift heels up and down while seated"
+                    },
+                    seatedlegextensions: {
+                        name: "Seated Leg Extensions",
+                        description: "Sit tall, extend one leg out and hold"
+                    },
+                    seatedarmcircles: {
+                        name: "Seated Arm Circles",
+                        description: "Make circles with your arms while seated"
+                    },
+                    seatedforwardfold: {
+                        name: "Seated Forward Fold",
+                        description: "Sit tall, hinge forward at hips"
+                    },
+                    seatedsidestretch: {
+                        name: "Seated Side Stretch",
+                        description: "Sit tall, reach one arm overhead and lean to side"
+                    },
+                    seatedkneetochest: {
+                        name: "Seated Knee to Chest",
+                        description: "Sit tall, pull one knee to chest"
+                    },
+                    seateddeepbreathing: {
+                        name: "Seated Deep Breathing",
+                        description: "Sit tall, take 5 deep breaths"
+                    },
+                    wallangels: {
+                        name: "Wall Angels",
+                        description: "Stand against wall, slide arms up and down"
+                    },
+                    chintucks: {
+                        name: "Chin Tucks",
+                        description: "Gently pull head back, creating double chin"
+                    },
+                    shoulderbladesqueezes: {
+                        name: "Shoulder Blade Squeezes",
+                        description: "Squeeze shoulder blades together and release"
+                    },
+                    chestopener: {
+                        name: "Chest Opener",
+                        description: "Clasp hands behind back, lift arms up"
+                    },
+                    hipflexorstretch: {
+                        name: "Hip Flexor Stretch",
+                        description: "Step forward into lunge, feel stretch in front hip"
+                    },
+                    posturecheck: {
+                        name: "Posture Check",
+                        description: "Stand tall, align ears over shoulders over hips"
+                    },
+                    catcowstretch: {
+                        name: "Cat-Cow Stretch",
+                        description: "On hands and knees, arch and round back"
+                    },
+                    thoracicextension: {
+                        name: "Thoracic Extension",
+                        description: "Place hands behind head, extend upper back"
+                    },
+                    postureawareness: {
+                        name: "Posture Awareness",
+                        description: "Stand tall, focus on maintaining good posture"
+                    },
+                    doorwaycheststretch: {
+                        name: "Doorway Chest Stretch",
+                        description: "Place forearm against doorway, lean forward"
+                    },
+                    wallcheststretch: {
+                        name: "Wall Chest Stretch",
+                        description: "Place hand on wall, turn body away"
+                    },
+                    chestexpansion: {
+                        name: "Chest Expansion",
+                        description: "Interlace fingers behind back, lift arms up"
+                    },
+                    pecstretch: {
+                        name: "Pec Stretch",
+                        description: "Lie on side, extend top arm back"
+                    },
+                    chestflystretch: {
+                        name: "Chest Fly Stretch",
+                        description: "Lie on back, extend arms to sides"
+                    },
+                    reversefly: {
+                        name: "Reverse Fly",
+                        description: "Bend forward, lift arms out to sides"
+                    },
+                    chestmassage: {
+                        name: "Chest Massage",
+                        description: "Use tennis ball to massage chest muscles"
+                    },
+                    chestbreathing: {
+                        name: "Chest Breathing",
+                        description: "Place hands on chest, breathe deeply"
+                    },
+                    chestcompression: {
+                        name: "Chest Compression",
+                        description: "Hug yourself, apply gentle pressure"
+                    },
+                    chestmobility: {
+                        name: "Chest Mobility",
+                        description: "Make circles with arms, focus on chest movement"
+                    },
+                    standinghamstringstretch: {
+                        name: "Standing Hamstring Stretch",
+                        description: "Stand with one foot forward, hinge at hips to stretch back leg"
+                    },
+                    seatedhamstringstretch: {
+                        name: "Seated Hamstring Stretch",
+                        description: "Sit with legs extended, reach forward to stretch hamstrings"
+                    },
+                    wallhamstringstretch: {
+                        name: "Wall Hamstring Stretch",
+                        description: "Lie on back, place leg against wall, straighten knee"
+                    },
+                    dynamiclegswings: {
+                        name: "Dynamic Leg Swings",
+                        description: "Hold wall, swing leg forward and back gently"
+                    },
+                    pigeonposehamstring: {
+                        name: "Pigeon Pose Hamstring",
+                        description: "From pigeon pose, extend back leg and flex foot"
+                    },
+                    supinehamstringstretch: {
+                        name: "Supine Hamstring Stretch",
+                        description: "Lie on back, use strap or towel to pull leg toward chest"
+                    },
+                    hamstringcurls: {
+                        name: "Hamstring Curls",
+                        description: "Lie on stomach, bend knees to bring heels toward glutes"
+                    },
+                    glutehamraises: {
+                        name: "Glute-Ham Raises",
+                        description: "Kneel and slowly lower chest toward ground, then return up"
+                    },
+                    neckretraction: {
+                        name: "Neck Retraction",
+                        description: "Gently pull head back, creating double chin"
+                    },
+                    eartoshoulder: {
+                        name: "Ear to Shoulder",
+                        description: "Gently tilt head toward shoulder, hold"
+                    },
+                    neckrotation: {
+                        name: "Neck Rotation",
+                        description: "Slowly turn head to look over shoulder"
+                    },
+                    uppertrapstretch: {
+                        name: "Upper Trap Stretch",
+                        description: "Place hand behind back, tilt head, gently pull with other hand"
+                    },
+                    levatorscapulaestretch: {
+                        name: "Levator Scapulae Stretch",
+                        description: "Turn head 45 degrees, look down, gently pull head forward and down"
+                    },
+                    suboccipitalrelease: {
+                        name: "Suboccipital Release",
+                        description: "Place fingers at base of skull, gently massage and hold pressure"
+                    },
+                    neckisometrics: {
+                        name: "Neck Isometrics",
+                        description: "Place hand on forehead, gently push while resisting with neck muscles"
+                    },
+                    sideneckisometrics: {
+                        name: "Side Neck Isometrics",
+                        description: "Place hand on side of head, gently push while resisting with neck muscles"
                     }
                 },
                 accessibility: {

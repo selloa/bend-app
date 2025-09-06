@@ -311,18 +311,20 @@ class TranslationMonitor {
     }
 }
 
-// Auto-start monitoring when page loads
+// Auto-start monitoring when page loads (DISABLED to prevent background activity)
 if (typeof window !== 'undefined') {
     window.translationMonitor = new TranslationMonitor();
     
-    // Start monitoring after a short delay
-    setTimeout(() => {
-        if (window.i18n) {
-            window.translationMonitor.startMonitoring();
-        }
-    }, 1000);
+    // Don't auto-start monitoring to prevent background activity
+    // Uncomment the lines below if you want to enable monitoring
+    // setTimeout(() => {
+    //     if (window.i18n) {
+    //         window.translationMonitor.startMonitoring();
+    //     }
+    // }, 1000);
     
-    console.log('🔍 Translation Monitor loaded!');
+    console.log('🔍 Translation Monitor loaded (not auto-started)!');
+    console.log('Use: window.translationMonitor.startMonitoring() to start');
     console.log('Use: window.translationMonitor.getReport() to see issues');
     console.log('Use: window.translationMonitor.stopMonitoring() to stop');
 }
