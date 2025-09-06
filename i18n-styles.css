@@ -8,12 +8,7 @@
 
 .language-selector {
     position: relative;
-    display: inline-block;
-}
-
-/* Hide language selector by default */
-.language-selector {
-    display: none;
+    display: inline-block; /* Show by default for debugging */
 }
 
 /* Show language selector only when routine selection is active */
