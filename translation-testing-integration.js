@@ -233,9 +233,17 @@
     // Clean up any existing testing reports
     function cleanupExistingReports() {
         // Remove any existing translation testing reports
-        const existingReports = document.querySelectorAll('[id*="translation"], [id*="validation"], [class*="report"]');
+        const existingReports = document.querySelectorAll('[id*="translation"], [id*="validation"], [class*="report"], [class*="fixer"]');
         existingReports.forEach(report => {
             if (report.style && report.style.position === 'fixed') {
+                report.remove();
+            }
+        });
+        
+        // Also remove any Smart Translation Fixer reports
+        const fixerReports = document.querySelectorAll('[style*="position: fixed"][style*="z-index"]');
+        fixerReports.forEach(report => {
+            if (report.innerHTML && (report.innerHTML.includes('Smart Translation Fixer') || report.innerHTML.includes('Real Issues Found'))) {
                 report.remove();
             }
         });

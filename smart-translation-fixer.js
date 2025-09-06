@@ -28,8 +28,8 @@ class SmartTranslationFixer {
             console.log('✅ Verifying fixes...');
             await this.verifyFixes();
             
-            // Generate report
-            this.generateReport();
+            // Don't generate report automatically - only when explicitly requested
+            // this.generateReport();
             
         } catch (error) {
             console.error('❌ Smart fixer error:', error);
@@ -509,16 +509,17 @@ class SmartTranslationFixer {
 if (typeof window !== 'undefined') {
     window.SmartTranslationFixer = SmartTranslationFixer;
     
-    // Auto-run after a short delay
-    setTimeout(async () => {
-        if (window.i18n) {
-            const fixer = new SmartTranslationFixer();
-            await fixer.runAndFix();
-        }
-    }, 2000);
+    // Don't auto-run - only run when explicitly requested in debug mode
+    // setTimeout(async () => {
+    //     if (window.i18n) {
+    //         const fixer = new SmartTranslationFixer();
+    //         await fixer.runAndFix();
+    //     }
+    // }, 2000);
     
-    console.log('🔧 Smart Translation Fixer loaded!');
+    console.log('🔧 Smart Translation Fixer loaded (not auto-started)!');
     console.log('Run: new SmartTranslationFixer().runAndFix() to start fixing');
+    console.log('Or use debug mode: enableDebugMode() then run tests');
 }
 
 // Export for module systems
