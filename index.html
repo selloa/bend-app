@@ -210,44 +210,49 @@
 
         <!-- Exercise Display -->
         <section id="exercise-display" class="section" role="main" aria-label="Exercise display">
-            <button class="back-btn" onclick="showRoutineSelection()" aria-label="Go back to routine selection">← Back</button>
-            <div class="exercise-header">
-                <h2 class="section-title" id="exercise-title">Exercise</h2>
-                <div class="progress" role="status" aria-label="Exercise progress">
-                    <span id="current-exercise">1</span> of <span id="total-exercises">5</span>
-                </div>
+            <!-- Progress indicator at top -->
+            <div class="exercise-progress" role="status" aria-label="Exercise progress">
+                <span id="current-exercise">1</span> of <span id="total-exercises">8</span>
             </div>
             
-            <div class="exercise-content">
-                <div class="exercise-image">
-                    <div class="placeholder-image" id="exercise-image">📱</div>
+            <!-- Main exercise content -->
+            <div class="exercise-main">
+                <!-- Circular exercise illustration -->
+                <div class="exercise-circle">
+                    <div class="circle-timer" id="circle-timer">
+                        <svg class="timer-ring" viewBox="0 0 100 100">
+                            <circle class="timer-ring-bg" cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                            <circle class="timer-ring-progress" cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-dasharray="283" stroke-dashoffset="283"/>
+                        </svg>
+                    </div>
+                    <div class="exercise-emoji" id="exercise-emoji">💪</div>
                 </div>
                 
-                <div class="exercise-info">
-                    <h3 class="exercise-name" id="exercise-name">Exercise Name</h3>
-                    <p class="exercise-description" id="exercise-description">Exercise description will appear here.</p>
-                </div>
+                <!-- Exercise title -->
+                <h2 class="exercise-title" id="exercise-name">Exercise Name</h2>
                 
-                <div class="timer-section">
-                    <div class="timer-display" id="timer-display" role="timer" aria-label="Exercise timer">0:30</div>
-                    <div class="timer-controls">
-                        <button class="timer-btn" id="start-pause-btn" aria-label="Start or pause exercise timer">Start</button>
-                        <button class="timer-btn" id="skip-btn" aria-label="Skip current exercise">Skip</button>
-                    </div>
-                    <div class="auto-start-toggle">
-                        <label class="toggle-container">
-                            <input type="checkbox" id="auto-start-toggle" checked>
-                            <span class="toggle-slider"></span>
-                            <span class="toggle-label">Auto-start timer on exercise load</span>
-                        </label>
-                    </div>
-                </div>
+                <!-- Exercise description -->
+                <p class="exercise-description" id="exercise-description">Exercise description will appear here.</p>
+                
+                <!-- Timer display -->
+                <div class="timer-display" id="timer-display" role="timer" aria-label="Exercise timer">0:30</div>
             </div>
             
-            <div class="exercise-navigation">
-                <button class="nav-btn" id="prev-btn" onclick="previousExercise()">Previous</button>
-                <button class="nav-btn" id="next-btn" onclick="nextExercise()">Next</button>
+            <!-- Bottom navigation controls -->
+            <div class="exercise-controls">
+                <button class="control-btn" id="prev-btn" aria-label="Previous exercise">
+                    <span class="control-icon">⏮</span>
+                </button>
+                <button class="control-btn control-btn-main" id="start-pause-btn" aria-label="Start or pause exercise timer">
+                    <span class="control-icon" id="play-pause-icon">▶</span>
+                </button>
+                <button class="control-btn" id="next-btn" aria-label="Next exercise">
+                    <span class="control-icon">⏭</span>
+                </button>
             </div>
+            
+            <!-- Hidden back button for navigation -->
+            <button class="back-btn-hidden" onclick="showRoutineSelection()" aria-label="Go back to routine selection">← Back</button>
         </section>
 
         <!-- Completion Screen -->

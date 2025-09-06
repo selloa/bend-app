@@ -1351,7 +1351,10 @@ function setupEventListeners() {
         }
         toggleTimer();
     });
-    document.getElementById('skip-btn').addEventListener('click', skipExercise);
+    
+    // Navigation controls
+    document.getElementById('prev-btn').addEventListener('click', previousExercise);
+    document.getElementById('next-btn').addEventListener('click', nextExercise);
     
     // Auto-start timer toggle
     const autoStartToggle = document.getElementById('auto-start-toggle');
@@ -1478,7 +1481,6 @@ function showCompletionScreen() {
 function displayCurrentExercise() {
     const exercise = currentExercises[currentExerciseIndex];
     const totalExercises = currentExercises.length;
-    const routineData = bendRoutines[currentRoutine];
     
     // Reset side to left for new exercises
     currentSide = 'left';
@@ -1488,10 +1490,9 @@ function displayCurrentExercise() {
     document.getElementById('total-exercises').textContent = totalExercises;
     
     // Update exercise info
-    document.getElementById('exercise-title').textContent = routineData.name;
     document.getElementById('exercise-name').textContent = exercise.name;
     document.getElementById('exercise-description').textContent = exercise.description;
-    document.getElementById('exercise-image').textContent = exercise.emoji;
+    document.getElementById('exercise-emoji').textContent = exercise.emoji;
     
     // Reset timer
     timeRemaining = exercise.duration;
@@ -1527,7 +1528,7 @@ function toggleTimer() {
 
 function startTimer() {
     isTimerRunning = true;
-    document.getElementById('start-pause-btn').textContent = 'Pause';
+    document.getElementById('play-pause-icon').textContent = '⏸';
     
     timer = setInterval(() => {
         timeRemaining--;
@@ -1585,7 +1586,7 @@ function startTimer() {
 
 function pauseTimer() {
     isTimerRunning = false;
-    document.getElementById('start-pause-btn').textContent = 'Start';
+    document.getElementById('play-pause-icon').textContent = '▶';
     if (timer) {
         clearInterval(timer);
         timer = null;
