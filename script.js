@@ -1064,7 +1064,7 @@ function showCompletionScreen() {
     document.getElementById('total-exercises-completed').textContent = currentExercises.length;
 }
 
-function displayCurrentExercise() {
+function displayCurrentExercise(autoStartTimer = false) {
     const exercise = currentExercises[currentExerciseIndex];
     const totalExercises = currentExercises.length;
     const routineData = bendRoutines[currentRoutine];
@@ -1093,6 +1093,13 @@ function displayCurrentExercise() {
     if (timer) {
         clearInterval(timer);
         timer = null;
+    }
+    
+    // Auto-start timer if requested
+    if (autoStartTimer) {
+        setTimeout(() => {
+            startTimer();
+        }, 100);
     }
 }
 
@@ -1123,11 +1130,7 @@ function startTimer() {
                 // Auto-advance to next exercise if not the last one
                 if (currentExerciseIndex < currentExercises.length - 1) {
                     setTimeout(() => {
-                        nextExercise();
-                        // Automatically start the timer for the next exercise
-                        setTimeout(() => {
-                            startTimer();
-                        }, 500);
+                        nextExercise(true); // Pass true to auto-start the timer
                     }, 1000);
                 } else {
                     // Routine completed
@@ -1175,10 +1178,10 @@ function skipExercise() {
     }
 }
 
-function nextExercise() {
+function nextExercise(autoStartTimer = false) {
     if (currentExerciseIndex < currentExercises.length - 1) {
         currentExerciseIndex++;
-        displayCurrentExercise();
+        displayCurrentExercise(autoStartTimer);
     }
 }
 
