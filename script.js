@@ -1383,7 +1383,46 @@ function selectRoutine(routine, folderKey = null) {
     displayCurrentExercise();
 }
 
+// Stop all timers and cleanup exercise state
+function stopAllTimers() {
+    // Stop main timer
+    if (timer) {
+        clearInterval(timer);
+        timer = null;
+    }
+    
+    // Stop side switch message timer
+    if (sideSwitchMessageTimer) {
+        clearTimeout(sideSwitchMessageTimer);
+        sideSwitchMessageTimer = null;
+    }
+    
+    // Stop circular timer animation
+    if (circularTimerAnimation) {
+        cancelAnimationFrame(circularTimerAnimation);
+        circularTimerAnimation = null;
+    }
+    
+    // Reset timer state
+    isTimerRunning = false;
+    
+    // Remove side switch message if it exists
+    const sideSwitchMessage = document.getElementById('side-switch-message');
+    if (sideSwitchMessage) {
+        sideSwitchMessage.remove();
+    }
+    
+    // Reset play/pause button
+    const playPauseIcon = document.getElementById('play-pause-icon');
+    if (playPauseIcon) {
+        playPauseIcon.textContent = '▶';
+    }
+}
+
 function showRoutineSelection() {
+    // Stop all timers and cleanup before showing routine selection
+    stopAllTimers();
+    
     document.getElementById('routine-selection').classList.add('active');
     document.getElementById('folder-view').classList.remove('active');
     document.getElementById('exercise-display').classList.remove('active');
