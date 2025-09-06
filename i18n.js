@@ -156,6 +156,26 @@ class BendI18n {
                     neckShoulders5min: "Neck & Shoulders - 5 min",
                     neckShoulders10min: "Neck & Shoulders - 10 min"
                 },
+                routineDescriptions: {
+                    wakeUp: "Quick morning mobility flow",
+                    postureReset: "Seated stretches for better posture",
+                    fullBody: "Comprehensive flexibility routine",
+                    sleep: "Gentle stretches for better sleep",
+                    expert: "Advanced flexibility training",
+                    hips: "Deep hip opening stretches",
+                    hamstrings: "Targeted hamstring flexibility",
+                    lowerBack: "Relief for lower back pain",
+                    isometric: "Strength through static holds",
+                    neck: "Relieve neck tension and stiffness",
+                    shoulders: "Release shoulder tension",
+                    feet: "Foot flexibility and health",
+                    ankle: "Ankle mobility and flexibility",
+                    knees: "Knee mobility and joint health",
+                    hands: "Hand and finger dexterity",
+                    fingers: "Individual finger flexibility",
+                    wrists: "Wrist mobility and flexibility",
+                    feetAnkles: "Foot and ankle mobility routine"
+                },
                 folders: {
                     hips: "Hips",
                     shoulders: "Shoulders",
@@ -169,6 +189,20 @@ class BendI18n {
                     seated: "Seated",
                     posture: "Posture",
                     chest: "Chest"
+                },
+                folderDescriptions: {
+                    hips: "Hip mobility and flexibility routines",
+                    shoulders: "Shoulder mobility and flexibility routines",
+                    lowerBack: "Lower back relief and strengthening routines",
+                    neck: "Neck mobility and tension relief routines",
+                    hamstrings: "Hamstring flexibility and mobility routines",
+                    feetAnkles: "Foot and ankle mobility routines",
+                    core: "Core strength and stability routines",
+                    upperBody: "Upper body mobility and strength routines",
+                    lowerBody: "Lower body mobility and strength routines",
+                    seated: "Seated exercises for office or limited mobility",
+                    posture: "Posture correction and alignment routines",
+                    chest: "Chest opening and flexibility routines"
                 },
                 exercises: {
                     neckrolls: {
@@ -263,6 +297,26 @@ class BendI18n {
                     neckShoulders5min: "Nacken & Schultern - 5 Min",
                     neckShoulders10min: "Nacken & Schultern - 10 Min"
                 },
+                routineDescriptions: {
+                    wakeUp: "Schneller morgendlicher Mobilitätsfluss",
+                    postureReset: "Sitzende Dehnungen für bessere Haltung",
+                    fullBody: "Umfassende Flexibilitätsroutine",
+                    sleep: "Sanfte Dehnungen für besseren Schlaf",
+                    expert: "Fortgeschrittenes Flexibilitätstraining",
+                    hips: "Tiefe Hüftöffnungsdehnungen",
+                    hamstrings: "Gezielte Oberschenkelrückseiten-Flexibilität",
+                    lowerBack: "Linderung bei Rückenschmerzen",
+                    isometric: "Kraft durch statische Halteübungen",
+                    neck: "Nackenspannung und Steifheit lindern",
+                    shoulders: "Schulterspannung lösen",
+                    feet: "Fußflexibilität und Gesundheit",
+                    ankle: "Knöchelmobilität und Flexibilität",
+                    knees: "Kniemobilität und Gelenkgesundheit",
+                    hands: "Hand- und Fingerfertigkeit",
+                    fingers: "Einzelne Fingerflexibilität",
+                    wrists: "Handgelenkmobilität und Flexibilität",
+                    feetAnkles: "Fuß- und Knöchelmobilitätsroutine"
+                },
                 folders: {
                     hips: "Hüften",
                     shoulders: "Schultern",
@@ -276,6 +330,20 @@ class BendI18n {
                     seated: "Sitzend",
                     posture: "Haltung",
                     chest: "Brust"
+                },
+                folderDescriptions: {
+                    hips: "Hüftmobilität und Flexibilitätsroutinen",
+                    shoulders: "Schultermobilität und Flexibilitätsroutinen",
+                    lowerBack: "Unterer Rücken Entlastung und Kräftigungsroutinen",
+                    neck: "Nackenmobilität und Spannungsabbau-Routinen",
+                    hamstrings: "Oberschenkelrückseiten-Flexibilität und Mobilitätsroutinen",
+                    feetAnkles: "Fuß- und Knöchelmobilitätsroutinen",
+                    core: "Rumpfkraft und Stabilitätsroutinen",
+                    upperBody: "Oberkörper-Mobilität und Kraftroutinen",
+                    lowerBody: "Unterkörper-Mobilität und Kraftroutinen",
+                    seated: "Sitzende Übungen für Büro oder eingeschränkte Mobilität",
+                    posture: "Haltungskorrektur und Ausrichtungsroutinen",
+                    chest: "Brustöffnung und Flexibilitätsroutinen"
                 },
                 exercises: {
                     neckrolls: {
@@ -370,6 +438,26 @@ class BendI18n {
                     neckShoulders5min: "Cuello y Hombros - 5 min",
                     neckShoulders10min: "Cuello y Hombros - 10 min"
                 },
+                routineDescriptions: {
+                    wakeUp: "Flujo de movilidad matutina rápida",
+                    postureReset: "Estiramientos sentados para mejor postura",
+                    fullBody: "Rutina integral de flexibilidad",
+                    sleep: "Estiramientos suaves para mejor sueño",
+                    expert: "Entrenamiento avanzado de flexibilidad",
+                    hips: "Estiramientos profundos de apertura de cadera",
+                    hamstrings: "Flexibilidad dirigida de isquiotibiales",
+                    lowerBack: "Alivio para dolor de espalda baja",
+                    isometric: "Fuerza a través de posiciones estáticas",
+                    neck: "Aliviar tensión y rigidez del cuello",
+                    shoulders: "Liberar tensión de hombros",
+                    feet: "Flexibilidad y salud del pie",
+                    ankle: "Movilidad y flexibilidad del tobillo",
+                    knees: "Movilidad de rodilla y salud articular",
+                    hands: "Destreza de manos y dedos",
+                    fingers: "Flexibilidad individual de dedos",
+                    wrists: "Movilidad y flexibilidad de muñeca",
+                    feetAnkles: "Rutina de movilidad de pies y tobillos"
+                },
                 folders: {
                     hips: "Caderas",
                     shoulders: "Hombros",
@@ -383,6 +471,20 @@ class BendI18n {
                     seated: "Sentado",
                     posture: "Postura",
                     chest: "Pecho"
+                },
+                folderDescriptions: {
+                    hips: "Rutinas de movilidad y flexibilidad de cadera",
+                    shoulders: "Rutinas de movilidad y flexibilidad de hombros",
+                    lowerBack: "Rutinas de alivio y fortalecimiento de espalda baja",
+                    neck: "Rutinas de movilidad de cuello y alivio de tensión",
+                    hamstrings: "Rutinas de flexibilidad y movilidad de isquiotibiales",
+                    feetAnkles: "Rutinas de movilidad de pies y tobillos",
+                    core: "Rutinas de fuerza y estabilidad del núcleo",
+                    upperBody: "Rutinas de movilidad y fuerza de parte superior",
+                    lowerBody: "Rutinas de movilidad y fuerza de parte inferior",
+                    seated: "Ejercicios sentados para oficina o movilidad limitada",
+                    posture: "Rutinas de corrección y alineación de postura",
+                    chest: "Rutinas de apertura y flexibilidad de pecho"
                 },
                 exercises: {
                     neckrolls: {
@@ -477,6 +579,26 @@ class BendI18n {
                     neckShoulders5min: "கழுத்து மற்றும் தோள்கள் - 5 நிமிடம்",
                     neckShoulders10min: "கழுத்து மற்றும் தோள்கள் - 10 நிமிடம்"
                 },
+                routineDescriptions: {
+                    wakeUp: "விரைவான காலை இயக்கத்திறன் ஓட்டம்",
+                    postureReset: "சிறந்த உடல்நிலைக்கு உட்கார்ந்த நீட்சிகள்",
+                    fullBody: "விரிவான நெகிழ்வு வழக்கம்",
+                    sleep: "சிறந்த தூக்கத்திற்கு மென்மையான நீட்சிகள்",
+                    expert: "மேம்பட்ட நெகிழ்வு பயிற்சி",
+                    hips: "ஆழமான இடுப்பு திறப்பு நீட்சிகள்",
+                    hamstrings: "இலக்கு பின்புற துடை எலும்பு நெகிழ்வு",
+                    lowerBack: "கீழ் முதுகு வலிக்கு நிவாரணம்",
+                    isometric: "நிலையான பிடிப்புகள் மூலம் வலிமை",
+                    neck: "கழுத்து பதற்றம் மற்றும் விறைப்பை நிவாரணம்",
+                    shoulders: "தோள் பதற்றத்தை விடுவித்தல்",
+                    feet: "பாத நெகிழ்வு மற்றும் ஆரோக்கியம்",
+                    ankle: "கணுக்கால் இயக்கத்திறன் மற்றும் நெகிழ்வு",
+                    knees: "முழங்கால் இயக்கத்திறன் மற்றும் மூட்டு ஆரோக்கியம்",
+                    hands: "கை மற்றும் விரல் திறமை",
+                    fingers: "தனிப்பட்ட விரல் நெகிழ்வு",
+                    wrists: "மணிக்கட்டு இயக்கத்திறன் மற்றும் நெகிழ்வு",
+                    feetAnkles: "பாத மற்றும் கணுக்கால் இயக்கத்திறன் வழக்கம்"
+                },
                 folders: {
                     hips: "இடுப்புகள்",
                     shoulders: "தோள்கள்",
@@ -490,6 +612,20 @@ class BendI18n {
                     seated: "உட்கார்ந்து",
                     posture: "உடல்நிலை",
                     chest: "மார்பு"
+                },
+                folderDescriptions: {
+                    hips: "இடுப்பு இயக்கத்திறன் மற்றும் நெகிழ்வு வழக்கங்கள்",
+                    shoulders: "தோள் இயக்கத்திறன் மற்றும் நெகிழ்வு வழக்கங்கள்",
+                    lowerBack: "கீழ் முதுகு நிவாரணம் மற்றும் வலிமைப்படுத்தும் வழக்கங்கள்",
+                    neck: "கழுத்து இயக்கத்திறன் மற்றும் பதற்ற நிவாரண வழக்கங்கள்",
+                    hamstrings: "பின்புற துடை எலும்பு நெகிழ்வு மற்றும் இயக்கத்திறன் வழக்கங்கள்",
+                    feetAnkles: "பாத மற்றும் கணுக்கால் இயக்கத்திறன் வழக்கங்கள்",
+                    core: "மைய வலிமை மற்றும் நிலைப்பாடு வழக்கங்கள்",
+                    upperBody: "மேல் உடல் இயக்கத்திறன் மற்றும் வலிமை வழக்கங்கள்",
+                    lowerBody: "கீழ் உடல் இயக்கத்திறன் மற்றும் வலிமை வழக்கங்கள்",
+                    seated: "அலுவலகம் அல்லது வரையறுக்கப்பட்ட இயக்கத்திறனுக்கான உட்கார்ந்த பயிற்சிகள்",
+                    posture: "உடல்நிலை திருத்தம் மற்றும் சீரமைப்பு வழக்கங்கள்",
+                    chest: "மார்பு திறப்பு மற்றும் நெகிழ்வு வழக்கங்கள்"
                 },
                 exercises: {
                     neckrolls: {
