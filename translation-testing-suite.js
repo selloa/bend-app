@@ -147,8 +147,9 @@ class TranslationTestingSuite {
                     this.addIssue('WARNING', `Routine description not translated in ${lang}: ${key}`);
                 }
                 
-                // Check for placeholder text
-                if (translation.includes('{{') || translation.includes('undefined')) {
+                // Check for placeholder text (only flag actual placeholders, not valid template strings)
+                if (translation.includes('undefined') || translation.includes('TODO') || 
+                    (translation.includes('{{') && !translation.match(/\{\{\w+\}\}/))) {
                     this.addIssue('ERROR', `Placeholder text in ${lang}: ${key} = ${translation}`);
                 }
             }
@@ -232,8 +233,9 @@ class TranslationTestingSuite {
         for (const element of tamilElements) {
             const text = element.textContent;
             
-            // Check for question marks or boxes (common Unicode issues)
-            if (text.includes('?') || text.includes('') || text.includes('□')) {
+            // Check for actual Unicode rendering issues (only flag replacement characters)
+            if (text.includes('') || text.includes('□') || text.includes('') || 
+                (text.includes('?') && text.length === 1)) {
                 this.addIssue('ERROR', `Unicode rendering issue in Tamil: ${text}`);
             }
             

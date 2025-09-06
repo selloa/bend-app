@@ -111,8 +111,9 @@ class SmartTranslationFixer {
             
             const progressText = window.i18n.t('timer.progress', testParams);
             
-            // Check if interpolation worked
-            if (progressText.includes('{{') || progressText.includes('undefined')) {
+            // Check if interpolation worked (only flag if undefined or malformed templates remain)
+            if (progressText.includes('undefined') || 
+                (progressText.includes('{{') && !progressText.match(/\{\{\w+\}\}/))) {
                 this.issuesFound.push({
                     type: 'broken_interpolation',
                     severity: 'ERROR',

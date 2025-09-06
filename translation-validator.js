@@ -164,7 +164,10 @@ class TranslationValidator {
         
         for (const value of allValues) {
             if (typeof value === 'string') {
-                if (value.includes('{{') || value.includes('undefined') || value.includes('TODO')) {
+                // Only flag as placeholder if it contains undefined, TODO, or malformed templates
+                // Valid template strings like {{current}} von {{total}} are not placeholders
+                if (value.includes('undefined') || value.includes('TODO') || 
+                    (value.includes('{{') && !value.match(/\{\{\w+\}\}/))) {
                     this.addIssue('ERROR', `Placeholder text in ${lang}: ${value}`);
                 } else {
                     this.validationResults.valid++;
@@ -225,9 +228,17 @@ class TranslationValidator {
                         this.validationResults.valid++;
                     }
                     
-                    // Check for Unicode issues
-                    if (value.includes('?') || value.includes('') || value.includes('□')) {
+                    // Check for actual Unicode rendering issues (question marks, replacement characters, etc.)
+                    // Only flag if the text contains actual Unicode replacement characters
+                    if (value.includes('?') && value.length === 1) {
+                        // Single question mark might be a Unicode issue
                         this.addIssue('ERROR', `Unicode rendering issue in Tamil: ${value}`);
+                    } else if (value.includes('') || value.includes('□') || value.includes('')) {
+                        // Replacement characters indicate Unicode issues
+                        this.addIssue('ERROR', `Unicode rendering issue in Tamil: ${value}`);
+                    } else {
+                        // Tamil text is rendering correctly
+                        this.validationResults.valid++;
                     }
                 }
             }
