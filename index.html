@@ -284,16 +284,16 @@
                 <div class="completion-stats">
                     <div class="stat">
                         <span class="stat-number" id="total-time">0</span>
-                        <span class="stat-label">Minutes</span>
+                        <span class="stat-label" data-i18n="timer.minutes">Minutes</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number" id="total-exercises-completed">0</span>
-                        <span class="stat-label">Exercises</span>
+                        <span class="stat-label" data-i18n="timer.exercises">Exercises</span>
                     </div>
                 </div>
                 <div class="completion-actions">
-                    <button class="action-btn primary" onclick="startNewRoutine()">Start New Routine</button>
-                    <button class="action-btn secondary" onclick="showRoutineSelection()">Back to Routines</button>
+                    <button class="action-btn primary" onclick="startNewRoutine()" data-i18n="timer.startNewRoutine">Start New Routine</button>
+                    <button class="action-btn secondary" onclick="showRoutineSelection()" data-i18n="navigation.backToRoutines">Back to Routines</button>
                 </div>
             </div>
         </section>
@@ -316,9 +316,9 @@
     <footer class="editorial-footer">
         <div class="editorial-content">
             <p class="editorial-text">
-                Created by <strong>selloa</strong> in 2025<br>
-                Please share with family, friends and colleagues<br>
-                For business inquiries: <a href="https://github.com/selloa" target="_blank" rel="noopener noreferrer">github.com/selloa</a>
+                <span data-i18n="editorial.createdBy"></span> <strong>selloa</strong> <span data-i18n="editorial.inYear"></span><br>
+                <span data-i18n="editorial.shareMessage"></span><br>
+                <span data-i18n="editorial.businessInquiries"></span> <a href="https://github.com/selloa" target="_blank" rel="noopener noreferrer">github.com/selloa</a>
             </p>
         </div>
     </footer>

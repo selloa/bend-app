@@ -140,5 +140,11 @@
   },
   "meta": {
     "description": "Eine sanfte Dehnungs- und Flexibilitäts-App für alle Altersgruppen und Fähigkeiten"
+  },
+  "editorial": {
+    "createdBy": "Erstellt von",
+    "inYear": "im Jahr 2025",
+    "shareMessage": "Bitte teilen Sie mit Familie, Freunden und Kollegen",
+    "businessInquiries": "Für Geschäftsanfragen:"
   }
 }

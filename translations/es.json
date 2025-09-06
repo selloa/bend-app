@@ -140,5 +140,11 @@
   },
   "meta": {
     "description": "Una aplicación suave de estiramiento y flexibilidad diseñada para todas las edades y habilidades"
+  },
+  "editorial": {
+    "createdBy": "Creado por",
+    "inYear": "en 2025",
+    "shareMessage": "Por favor comparte con familia, amigos y colegas",
+    "businessInquiries": "Para consultas comerciales:"
   }
 }

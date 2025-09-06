@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Translation Test - Bend App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .language-selector {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .language-selector button:hover {
+            background: #e9e9e9;
+        }
+        .language-selector button.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .exercise-demo {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .exercise-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        .exercise-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .tamil-text {
+            font-family: 'Arial Unicode MS', 'Tahoma', sans-serif;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .test-result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .test-result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏃‍♂️ Exercise Translation Test</h1>
+    <p>This test verifies that exercise names and descriptions translate correctly when switching languages.</p>
+
+    <div class="language-selector">
+        <h3>Select Language:</h3>
+        <button onclick="testLanguage('en')" class="active" id="btn-en">🇺🇸 English</button>
+        <button onclick="testLanguage('de')" id="btn-de">🇩🇪 Deutsch</button>
+        <button onclick="testLanguage('es')" id="btn-es">🇪🇸 Español</button>
+        <button onclick="testLanguage('ta')" id="btn-ta">🇱🇰 தமிழ்</button>
+    </div>
+
+    <div class="test-section">
+        <h3>Exercise Translations:</h3>
+        <div id="exercise-display"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test Results:</h3>
+        <div id="test-results"></div>
+    </div>
+
+    <!-- Include i18n system -->
+    <script src="i18n.js"></script>
+
+    <script>
+        // Test exercises from the wake-up routine
+        const testExercises = [
+            { name: "Neck Rolls", key: "neckrolls" },
+            { name: "Shoulder Shrugs", key: "shouldershrugs" },
+            { name: "Side Neck Stretch", key: "sideneckstretch" },
+            { name: "Forward Neck Stretch", key: "forwardneckstretch" },
+            { name: "Arm Circles", key: "armcircles" },
+            { name: "Gentle Twist", key: "gentleTwist" },
+            { name: "Calf Raises", key: "calfraises" },
+            { name: "Deep Breathing", key: "deepbreathing" },
+            { name: "Cactus Arms", key: "cactusarms" },
+            { name: "Divers", key: "divers" },
+            { name: "Seated Back Twist", key: "seatedbacktwist" },
+            { name: "Shoulder Blade Squeeze", key: "shoulderbladesqueeze" },
+            { name: "Chin Tucks", key: "chintucks" }
+        ];
+
+        function testLanguage(lang) {
+            console.log(`Testing language: ${lang}`);
+            
+            // Update active button
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // Change language
+            window.i18n.changeLanguage(lang);
+
+            // Display exercises
+            displayExercises(lang);
+            
+            // Test translations
+            testExerciseTranslations(lang);
+        }
+
+        function displayExercises(lang) {
+            const container = document.getElementById('exercise-display');
+            const langName = {
+                en: 'English',
+                de: 'Deutsch', 
+                es: 'Español',
+                ta: 'தமிழ்'
+            }[lang];
+
+            let html = `<h4>${langName} (${lang}) Exercise Translations:</h4><div class="exercise-grid">`;
+            
+            testExercises.forEach(exercise => {
+                const translatedName = window.i18n.t(`exercises.${exercise.key}.name`, {}, exercise.name);
+                const translatedDescription = window.i18n.t(`exercises.${exercise.key}.description`, {}, exercise.description);
+                
+                html += `
+                    <div class="exercise-demo">
+                        <div class="exercise-name ${lang === 'ta' ? 'tamil-text' : ''}">${translatedName}</div>
+                        <div class="exercise-description ${lang === 'ta' ? 'tamil-text' : ''}">${translatedDescription}</div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function testExerciseTranslations(lang) {
+            const results = [];
+            
+            // Expected translations for each language (sample)
+            const expectedTranslations = {
+                en: {
+                    neckrolls: { name: "Neck Rolls", description: "Slowly roll your head in a circle, first clockwise, then counterclockwise. Keep movements gentle and controlled." },
+                    shouldershrugs: { name: "Shoulder Shrugs", description: "Lift your shoulders up toward your ears, hold for 3 seconds, then relax. Repeat slowly." }
+                },
+                de: {
+                    neckrolls: { name: "Nackenrollen", description: "Rollen Sie Ihren Kopf langsam im Kreis, zuerst im Uhrzeigersinn, dann gegen den Uhrzeigersinn. Halten Sie die Bewegungen sanft und kontrolliert." },
+                    shouldershrugs: { name: "Schulterzucken", description: "Heben Sie Ihre Schultern zu den Ohren, halten Sie 3 Sekunden, dann entspannen Sie. Wiederholen Sie langsam." }
+                },
+                es: {
+                    neckrolls: { name: "Rotaciones de Cuello", description: "Rote su cabeza lentamente en círculo, primero en el sentido de las agujas del reloj, luego en sentido contrario. Mantenga los movimientos suaves y controlados." },
+                    shouldershrugs: { name: "Encogimiento de Hombros", description: "Levante los hombros hacia las orejas, mantenga 3 segundos, luego relaje. Repita lentamente." }
+                },
+                ta: {
+                    neckrolls: { name: "கழுத்து சுழற்சி", description: "உங்கள் தலையை மெதுவாக வட்டமாக சுழற்றுங்கள், முதலில் கடிகார திசையில், பின்னர் எதிர் திசையில். இயக்கங்களை மென்மையாகவும் கட்டுப்பாட்டுடனும் வைத்திருங்கள்." },
+                    shouldershrugs: { name: "தோள் உயர்த்துதல்", description: "உங்கள் தோள்களை காதுகளுக்கு நோக்கி உயர்த்துங்கள், 3 வினாடிகள் வைத்திருங்கள், பின்னர் தளர்த்துங்கள். மெதுவாக மீண்டும் செய்யுங்கள்." }
+                }
+            };
+
+            const expected = expectedTranslations[lang];
+            if (!expected) return;
+            
+            // Test key exercises
+            Object.keys(expected).forEach(key => {
+                const actualName = window.i18n.t(`exercises.${key}.name`);
+                const actualDescription = window.i18n.t(`exercises.${key}.description`);
+                const expectedName = expected[key].name;
+                const expectedDescription = expected[key].description;
+                
+                const nameCorrect = actualName === expectedName;
+                const descriptionCorrect = actualDescription === expectedDescription;
+                
+                results.push({
+                    key: key,
+                    nameCorrect: nameCorrect,
+                    descriptionCorrect: descriptionCorrect,
+                    expectedName: expectedName,
+                    actualName: actualName,
+                    expectedDescription: expectedDescription,
+                    actualDescription: actualDescription
+                });
+            });
+
+            // Display results
+            displayTestResults(lang, results);
+        }
+
+        function displayTestResults(lang, results) {
+            const container = document.getElementById('test-results');
+            const langName = {
+                en: 'English',
+                de: 'Deutsch', 
+                es: 'Español',
+                ta: 'தமிழ்'
+            }[lang];
+
+            let html = `<h4>${langName} (${lang}) Test Results:</h4>`;
+            
+            results.forEach(result => {
+                const nameStatusClass = result.nameCorrect ? 'success' : 'error';
+                const nameStatusIcon = result.nameCorrect ? '✅' : '❌';
+                const descStatusClass = result.descriptionCorrect ? 'success' : 'error';
+                const descStatusIcon = result.descriptionCorrect ? '✅' : '❌';
+                
+                html += `
+                    <div class="test-result ${result.nameCorrect && result.descriptionCorrect ? 'success' : 'error'}">
+                        <strong>${result.key}</strong><br>
+                        ${nameStatusIcon} Name: "${result.actualName}" ${result.nameCorrect ? '' : `(Expected: "${result.expectedName}")`}<br>
+                        ${descStatusIcon} Description: "${result.actualDescription.substring(0, 50)}..." ${result.descriptionCorrect ? '' : `(Expected: "${result.expectedDescription.substring(0, 50)}...")`}
+                    </div>
+                `;
+            });
+
+            // Overall result
+            const allCorrect = results.every(r => r.nameCorrect && r.descriptionCorrect);
+            const overallClass = allCorrect ? 'success' : 'error';
+            const overallIcon = allCorrect ? '✅' : '❌';
+            
+            html += `
+                <div class="test-result ${overallClass}">
+                    ${overallIcon} <strong>Overall Result:</strong> 
+                    ${allCorrect ? 'Exercise translations working correctly!' : 'Some translations need attention.'}
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Initialize with English
+        document.addEventListener('DOMContentLoaded', () => {
+            testLanguage('en');
+        });
+    </script>
+</body>
+</html>

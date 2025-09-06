@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder Title Translation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .language-selector {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+        }
+        .language-selector button:hover {
+            background-color: #0056b3;
+        }
+        .language-selector button.active {
+            background-color: #28a745;
+        }
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .folder-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            text-align: center;
+        }
+        .folder-item.translated {
+            background-color: #e8f5e8;
+            border-color: #28a745;
+        }
+        .folder-item.not-translated {
+            background-color: #ffe8e8;
+            border-color: #dc3545;
+        }
+        .folder-key {
+            font-size: 12px;
+            color: #999;
+            font-family: monospace;
+            margin-bottom: 5px;
+        }
+        .folder-name {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📁 Folder Title Translation Test</h1>
+        <p>Testing folder title translations to ensure no i18n keys are showing</p>
+    </div>
+
+    <div class="language-selector">
+        <button onclick="testLanguage('en')" id="btn-en">🇺🇸 English</button>
+        <button onclick="testLanguage('de')" id="btn-de">🇩🇪 German</button>
+        <button onclick="testLanguage('es')" id="btn-es">🇪🇸 Spanish</button>
+        <button onclick="testLanguage('ta')" id="btn-ta">🇮🇳 Tamil</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Folder Titles</h2>
+        <div id="status-container"></div>
+        <div id="folder-container" class="folder-grid"></div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        // All the folder keys that were showing i18n keys
+        const folderKeys = [
+            'hips', 'shoulders', 'lowerBack', 'neck', 'hamstrings', 'feetAnkles',
+            'core', 'upperBody', 'lowerBody', 'seated', 'posture', 'chest',
+            'upper-body', 'lower-body'  // The kebab-case versions that were missing
+        ];
+
+        let currentLanguage = 'en';
+
+        function testLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            
+            // Set language
+            if (window.i18n) {
+                window.i18n.setLanguage(lang);
+            }
+            
+            // Update folder display
+            updateFolderDisplay();
+        }
+
+        function updateFolderDisplay() {
+            const container = document.getElementById('folder-container');
+            const statusContainer = document.getElementById('status-container');
+            container.innerHTML = '';
+            
+            let allTranslated = true;
+            let errors = [];
+            
+            folderKeys.forEach(folderKey => {
+                const folderName = window.i18n.t(`folders.${folderKey}`, folderKey);
+                
+                // Check if translation worked (not showing the key)
+                const isTranslated = folderName !== folderKey && !folderName.includes('folders.');
+                
+                if (!isTranslated) {
+                    allTranslated = false;
+                    errors.push(`${folderKey}: ${folderName}`);
+                }
+                
+                const folderItem = document.createElement('div');
+                folderItem.className = `folder-item ${isTranslated ? 'translated' : 'not-translated'}`;
+                
+                folderItem.innerHTML = `
+                    <div class="folder-key">Key: ${folderKey}</div>
+                    <div class="folder-name">${folderName}</div>
+                `;
+                
+                container.appendChild(folderItem);
+            });
+            
+            // Show status
+            if (allTranslated) {
+                statusContainer.innerHTML = `
+                    <div class="status success">
+                        ✅ All ${folderKeys.length} folder titles are properly translated in ${currentLanguage.toUpperCase()}!
+                    </div>
+                `;
+            } else {
+                statusContainer.innerHTML = `
+                    <div class="status error">
+                        ❌ Translation issues found:
+                        <ul>
+                            ${errors.map(error => `<li>${error}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for i18n to load
+            setTimeout(() => {
+                testLanguage('en');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

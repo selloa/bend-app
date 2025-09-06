@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Exercise Translation Test - Bend App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .language-selector {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .language-selector button:hover {
+            background: #e9e9e9;
+        }
+        .language-selector button.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .exercise-card {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .exercise-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .exercise-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .tamil-text {
+            font-family: 'Arial Unicode MS', 'Tahoma', sans-serif;
+        }
+        .test-summary {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-translated {
+            background: #28a745;
+        }
+        .status-missing {
+            background: #dc3545;
+        }
+        .status-partial {
+            background: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏃‍♂️ Comprehensive Exercise Translation Test</h1>
+    <p>This test shows the current state of exercise translations across all languages. You were absolutely right - there were many missing translations!</p>
+
+    <div class="language-selector">
+        <h3>Select Language:</h3>
+        <button onclick="testLanguage('en')" class="active" id="btn-en">🇺🇸 English</button>
+        <button onclick="testLanguage('de')" id="btn-de">🇩🇪 Deutsch</button>
+        <button onclick="testLanguage('es')" id="btn-es">🇪🇸 Español</button>
+        <button onclick="testLanguage('ta')" id="btn-ta">🇱🇰 தமிழ்</button>
+    </div>
+
+    <div class="test-summary">
+        <h3>Translation Status Summary:</h3>
+        <p><span class="status-indicator status-translated"></span> <strong>Translated:</strong> Exercises with full translations in all languages</p>
+        <p><span class="status-indicator status-partial"></span> <strong>Partial:</strong> Exercises with some translations but missing in some languages</p>
+        <p><span class="status-indicator status-missing"></span> <strong>Missing:</strong> Exercises that fall back to English (need translation)</p>
+    </div>
+
+    <div class="test-section">
+        <h3>Exercise Translations by Category:</h3>
+        <div id="exercise-display"></div>
+    </div>
+
+    <!-- Include i18n system -->
+    <script src="i18n.js"></script>
+
+    <script>
+        // Test exercises organized by category
+        const testExercises = {
+            "Core Exercises (Wake Up Routine)": [
+                { name: "Neck Rolls", key: "neckrolls" },
+                { name: "Shoulder Shrugs", key: "shouldershrugs" },
+                { name: "Side Neck Stretch", key: "sideneckstretch" },
+                { name: "Forward Neck Stretch", key: "forwardneckstretch" },
+                { name: "Arm Circles", key: "armcircles" },
+                { name: "Gentle Twist", key: "gentleTwist" },
+                { name: "Calf Raises", key: "calfraises" },
+                { name: "Deep Breathing", key: "deepbreathing" }
+            ],
+            "Posture Reset Routine": [
+                { name: "Cactus Arms", key: "cactusarms" },
+                { name: "Divers", key: "divers" },
+                { name: "Seated Back Twist", key: "seatedbacktwist" },
+                { name: "Shoulder Blade Squeeze", key: "shoulderbladesqueeze" },
+                { name: "Chin Tucks", key: "chintucks" }
+            ],
+            "Yoga & Advanced Poses": [
+                { name: "Sun Salutation", key: "sunsalutation" },
+                { name: "Full Body Stretch", key: "fullbodystretch" },
+                { name: "Child's Pose", key: "childspose" },
+                { name: "Downward Dog", key: "downwarddog" },
+                { name: "Warrior I", key: "warriori" },
+                { name: "Triangle Pose", key: "trianglepose" },
+                { name: "Butterfly Stretch", key: "butterflystretch" },
+                { name: "Supine Twist", key: "supinetwist" },
+                { name: "Happy Baby", key: "happybaby" }
+            ],
+            "Relaxation & Recovery": [
+                { name: "Rag Doll", key: "ragdoll" },
+                { name: "Knees to Chest", key: "kneestochest" },
+                { name: "Legs Up the Wall", key: "legsupthewall" },
+                { name: "Corpse Pose", key: "corpsepose" },
+                { name: "Final Relaxation", key: "finalrelaxation" }
+            ],
+            "Missing Translations (Sample)": [
+                { name: "Squat Stretch", key: "squatstretch" },
+                { name: "Reverse Lunge", key: "reverselunge" },
+                { name: "Toe Squats", key: "toesquats" },
+                { name: "Pigeon Pose", key: "pigeonpose" },
+                { name: "Folded Butterfly", key: "foldedbutterfly" },
+                { name: "Seated Straddle", key: "seatedstraddle" },
+                { name: "Wheel Pose", key: "wheelpose" },
+                { name: "Headstand Prep", key: "headstandprep" }
+            ]
+        };
+
+        function testLanguage(lang) {
+            console.log(`Testing language: ${lang}`);
+            
+            // Update active button
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // Change language
+            window.i18n.changeLanguage(lang);
+
+            // Display exercises
+            displayExercises(lang);
+        }
+
+        function displayExercises(lang) {
+            const container = document.getElementById('exercise-display');
+            const langName = {
+                en: 'English',
+                de: 'Deutsch', 
+                es: 'Español',
+                ta: 'தமிழ்'
+            }[lang];
+
+            let html = `<h4>${langName} (${lang}) Exercise Translations:</h4>`;
+            
+            Object.entries(testExercises).forEach(([category, exercises]) => {
+                html += `<h5 style="color: #007bff; margin: 20px 0 10px 0;">${category}</h5>`;
+                html += '<div class="exercise-grid">';
+                
+                exercises.forEach(exercise => {
+                    const translatedName = window.i18n.t(`exercises.${exercise.key}.name`, {}, exercise.name);
+                    const translatedDescription = window.i18n.t(`exercises.${exercise.key}.description`, {}, exercise.description);
+                    
+                    // Check if translation exists (not just fallback to English)
+                    const hasTranslation = translatedName !== exercise.name || translatedDescription !== exercise.description;
+                    const statusClass = hasTranslation ? 'status-translated' : 'status-missing';
+                    
+                    html += `
+                        <div class="exercise-card">
+                            <div class="exercise-name ${lang === 'ta' ? 'tamil-text' : ''}">
+                                <span class="status-indicator ${statusClass}"></span>${translatedName}
+                            </div>
+                            <div class="exercise-description ${lang === 'ta' ? 'tamil-text' : ''}">${translatedDescription}</div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Initialize with English
+        document.addEventListener('DOMContentLoaded', () => {
+            testLanguage('en');
+        });
+    </script>
+</body>
+</html>

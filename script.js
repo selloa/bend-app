@@ -1815,6 +1815,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Listen for language changes to update exercise display
+document.addEventListener('languageChanged', function(event) {
+    console.log('Language changed to:', event.detail.language);
+    // If we're currently displaying an exercise, update it with new translations
+    if (currentExercises && currentExercises.length > 0 && document.getElementById('exercise-display').classList.contains('active')) {
+        displayCurrentExercise();
+    }
+    // If we're currently in folder view, update it with new translations
+    if (currentFolder && document.getElementById('folder-view').classList.contains('active')) {
+        showFolderView(currentFolder);
+    }
+});
+
 // Graceful error display function
 function showGracefulError(message) {
     try {
@@ -2059,8 +2072,9 @@ function showFolderView(folderKey) {
     const folder = bodyAreaFolders[folderKey];
     if (!folder) return;
     
-    // Update folder title
-    document.getElementById('folder-title').textContent = folder.name;
+    // Update folder title with translation
+    const translatedFolderName = window.i18n.t(`folders.${folderKey}`, folder.name);
+    document.getElementById('folder-title').textContent = translatedFolderName;
     
     // Populate folder routines
     const folderRoutinesContainer = document.getElementById('folder-routines');
@@ -2071,10 +2085,15 @@ function showFolderView(folderKey) {
         const routineBtn = document.createElement('button');
         routineBtn.className = 'routine-category-btn';
         routineBtn.setAttribute('data-routine', routineKey);
+        
+        // Get translated routine name and description
+        const translatedRoutineName = window.i18n.t(`routines.${routineKey}`, routine.name);
+        const translatedRoutineDescription = window.i18n.t(`routineDescriptions.${routineKey}`, routine.description);
+        
         routineBtn.innerHTML = `
             <div class="icon">${getRoutineIcon(routineKey)}</div>
-            <span>${routine.name}</span>
-            <p>${routine.description}</p>
+            <span>${translatedRoutineName}</span>
+            <p>${translatedRoutineDescription}</p>
         `;
         
         routineBtn.addEventListener('click', function() {
@@ -2137,9 +2156,11 @@ function showCompletionScreen() {
     // Calculate total time
     totalRoutineTime = Math.floor((Date.now() - routineStartTime) / 1000 / 60);
     
-    // Update completion screen
+    // Update completion screen with translations
     const routineData = bendRoutines[currentRoutine];
-    document.getElementById('completion-message').textContent = `You've completed the ${routineData.name} routine!`;
+    const translatedRoutineName = window.i18n.t(`routines.${currentRoutine}`, routineData.name);
+    const completionMessage = window.i18n.t('timer.routineCompleteMessage', `You've completed the ${translatedRoutineName} routine!`).replace('{{routineName}}', translatedRoutineName);
+    document.getElementById('completion-message').textContent = completionMessage;
     document.getElementById('total-time').textContent = totalRoutineTime;
     document.getElementById('total-exercises-completed').textContent = currentExercises.length;
 }
