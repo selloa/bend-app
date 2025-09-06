@@ -1,4 +1,4 @@
-// Bend App - Data Management System
+// Tend App - Data Management System
 // Handles loading, caching, and managing exercise and routine data
 
 class ExerciseDataManager {

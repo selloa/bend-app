@@ -1,7 +1,7 @@
-// Bend App - Internationalization System
+// Tend App - Internationalization System
 // Lightweight i18n system for English, German, and Spanish
 
-class BendI18n {
+class TendI18n {
     constructor() {
         this.currentLang = this.detectLanguage();
         this.translations = this.getBuiltInTranslations();
@@ -128,7 +128,7 @@ class BendI18n {
         return {
             en: {
                 app: {
-                    title: "Bend",
+                    title: "Tend",
                     subtitle: "Stretching & Flexibility",
                     description: "A gentle stretching and flexibility app designed for all ages and abilities"
                 },
@@ -524,7 +524,7 @@ class BendI18n {
                     },
                     reversefly: {
                         name: "Reverse Fly",
-                        description: "Bend forward, lift arms out to sides"
+                        description: "Tend forward, lift arms out to sides"
                     },
                     chestmassage: {
                         name: "Chest Massage",
@@ -614,7 +614,7 @@ class BendI18n {
                     nextExercise: "Next exercise",
                     previousExercise: "Previous exercise",
                     backToRoutines: "Go back to routine selection",
-                    shareApp: "Share Bend app"
+                    shareApp: "Share Tend app"
                 },
                 share: {
                     shareWithFriend: "Share with a friend"
@@ -622,7 +622,7 @@ class BendI18n {
             },
             de: {
                 app: {
-                    title: "Bend",
+                    title: "Tend",
                     subtitle: "Dehnung & Flexibilität",
                     description: "Eine sanfte Dehnungs- und Flexibilitäts-App für alle Altersgruppen und Fähigkeiten"
                 },
@@ -759,7 +759,7 @@ class BendI18n {
                     nextExercise: "Nächste Übung",
                     previousExercise: "Vorherige Übung",
                     backToRoutines: "Zurück zur Routineauswahl",
-                    shareApp: "Bend App teilen"
+                    shareApp: "Tend App teilen"
                 },
                 share: {
                     shareWithFriend: "Mit einem Freund teilen"
@@ -767,7 +767,7 @@ class BendI18n {
             },
             es: {
                 app: {
-                    title: "Bend",
+                    title: "Tend",
                     subtitle: "Estiramiento y Flexibilidad",
                     description: "Una aplicación suave de estiramiento y flexibilidad diseñada para todas las edades y habilidades"
                 },
@@ -904,7 +904,7 @@ class BendI18n {
                     nextExercise: "Siguiente ejercicio",
                     previousExercise: "Ejercicio anterior",
                     backToRoutines: "Volver a selección de rutinas",
-                    shareApp: "Compartir aplicación Bend"
+                    shareApp: "Compartir aplicación Tend"
                 },
                 share: {
                     shareWithFriend: "Compartir con un amigo"
@@ -912,7 +912,7 @@ class BendI18n {
             },
             ta: {
                 app: {
-                    title: "Bend",
+                    title: "Tend",
                     subtitle: "நீட்சி மற்றும் நெகிழ்வு",
                     description: "அனைத்து வயதினருக்கும் மற்றும் திறன்களுக்கும் வடிவமைக்கப்பட்ட மென்மையான நீட்சி மற்றும் நெகிழ்வு பயன்பாடு"
                 },
@@ -1049,7 +1049,7 @@ class BendI18n {
                     nextExercise: "அடுத்த பயிற்சி",
                     previousExercise: "முந்தைய பயிற்சி",
                     backToRoutines: "வழக்கங்கள் தேர்வுக்குத் திரும்பவும்",
-                    shareApp: "Bend பயன்பாட்டைப் பகிரவும்"
+                    shareApp: "Tend பயன்பாட்டைப் பகிரவும்"
                 },
                 share: {
                     shareWithFriend: "ஒரு நண்பருடன் பகிரவும்"
@@ -1159,7 +1159,7 @@ function setupLanguageSelector() {
 }
 
 // Initialize global i18n instance
-window.i18n = new BendI18n();
+window.i18n = new TendI18n();
 
 // Setup language selector and apply translations when DOM is ready
 function initializeApp() {
@@ -1178,5 +1178,5 @@ if (document.readyState === 'loading') {
 
 // Export for module systems
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = BendI18n;
+    module.exports = TendI18n;
 }

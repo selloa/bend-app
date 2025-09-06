@@ -1,4 +1,4 @@
-// Bend: Stretching & Flexibility App - Exercise Data
+// Tend: Stretching & Flexibility App - Exercise Data
 const bendRoutines = {
     "wake-up": {
         name: "Wake Up",
@@ -1807,9 +1807,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show language selector on initial load (routine selection is default active)
         document.body.classList.add('routine-selection-active');
         
-        console.log('✅ Bend app initialized successfully');
+        console.log('✅ Tend app initialized successfully');
     } catch (error) {
-        console.error('❌ Error initializing Bend app:', error);
+        console.error('❌ Error initializing Tend app:', error);
         // Graceful fallback - show a simple message instead of crashing
         showGracefulError('App initialization failed. Please refresh the page.');
     }
@@ -2628,7 +2628,7 @@ function shareApp() {
     console.log('🔍 Navigator.canShare available:', !!navigator.canShare);
     
     const shareData = {
-        title: 'Bend - Stretching & Flexibility',
+        title: 'Tend - Stretching & Flexibility',
         text: 'Check out this gentle stretching and flexibility app designed for all ages and abilities!',
         url: 'https://selloa.github.io/bend-app/'
     };

@@ -11,7 +11,7 @@ test.describe('Accessibility Tests', () => {
     // Check main heading
     const mainTitle = page.locator('.main-title');
     await expect(mainTitle).toBeVisible();
-    await expect(mainTitle).toContainText('Bend');
+    await expect(mainTitle).toContainText('Tend');
     
     // Check section headings
     const sectionTitle = page.locator('.section-title');
@@ -327,7 +327,7 @@ test.describe('Accessibility Tests', () => {
     // Check that essential information is still accessible
     const mainTitle = page.locator('.main-title');
     await expect(mainTitle).toBeVisible();
-    await expect(mainTitle).toContainText('Bend');
+    await expect(mainTitle).toContainText('Tend');
   });
 
   test('should complete routine with keyboard only', async ({ page }) => {

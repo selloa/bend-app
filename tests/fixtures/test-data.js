@@ -1,4 +1,4 @@
-// Test data fixtures for Bend app testing
+// Test data fixtures for Tend app testing
 
 export const testRoutines = {
   "test-routine": {

@@ -1,4 +1,4 @@
-// Bend App - Data Migration Tool
+// Tend App - Data Migration Tool
 // Migrates from current hardcoded structure to new modular JSON files
 
 class DataMigrationTool {

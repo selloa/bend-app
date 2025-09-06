@@ -1,6 +1,6 @@
 /* CSS Custom Properties for theming and accessibility */
 :root {
-    /* Light theme colors - Inspired by Bend app design with warmer tones */
+    /* Light theme colors - Inspired by Tend app design with warmer tones */
     --bg-primary: linear-gradient(135deg, #FDF6F0 0%, #F5E6D3 100%);
     --bg-secondary: #FEFCF9;
     --bg-tertiary: #F8F0E6;
@@ -18,7 +18,7 @@
     --accent-danger: #E56575;
     --placeholder-bg: #E0E0E0;
     
-    /* Additional pastel accent colors from Bend design */
+    /* Additional pastel accent colors from Tend design */
     --pastel-teal: #C0E0D8;
     --pastel-peach: #F8D0B8;
     --pastel-blue: #B8D8E8;
@@ -352,7 +352,7 @@ body {
     line-height: 1.4;
 }
 
-/* Individual routine button colors inspired by Bend design */
+/* Individual routine button colors inspired by Tend design */
 .routine-category-btn[data-routine="wake-up"] {
     border-color: var(--pastel-peach);
     background: linear-gradient(135deg, var(--pastel-peach) 0%, #FAD8C0 100%);
@@ -1400,5 +1400,69 @@ body {
     
     .exercise-name {
         color: #000;
+    }
+}
+
+/* Editorial Footer */
+.editorial-footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-tertiary);
+    text-align: center;
+}
+
+.editorial-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.editorial-text {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.editorial-text strong {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.editorial-text a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.editorial-text a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
+/* Dark theme adjustments for editorial footer */
+[data-theme="dark"] .editorial-footer {
+    background: var(--bg-tertiary);
+    border-top-color: var(--border-tertiary);
+}
+
+[data-theme="dark"] .editorial-text {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .editorial-text strong {
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .editorial-footer {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+    
+    .editorial-text {
+        font-size: 0.85rem;
     }
 }

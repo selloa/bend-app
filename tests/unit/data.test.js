@@ -2,7 +2,7 @@
 import { testRoutines, invalidRoutineData } from '../fixtures/test-data.js';
 
 // Mock the actual bendRoutines from script.js
-const mockBendRoutines = {
+const mockTendRoutines = {
   "wake-up": {
     name: "Wake Up",
     description: "A simple, quick, convenient flow designed to maintain mobility and range of motion.",
@@ -40,7 +40,7 @@ const mockBendRoutines = {
 describe('Data Structure Validation', () => {
   describe('Routine Data Structure', () => {
     test('should have all required routine properties', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         expect(routine).toHaveProperty('name');
         expect(routine).toHaveProperty('description');
         expect(routine).toHaveProperty('duration');
@@ -54,25 +54,25 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have non-empty routine names', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         expect(routine.name.trim().length).toBeGreaterThan(0);
       });
     });
 
     test('should have non-empty routine descriptions', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         expect(routine.description.trim().length).toBeGreaterThan(0);
       });
     });
 
     test('should have valid duration format', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         expect(routine.duration).toMatch(/^\d+\s+minutes?$/);
       });
     });
 
     test('should have at least one exercise per routine', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         expect(routine.exercises.length).toBeGreaterThan(0);
       });
     });
@@ -80,7 +80,7 @@ describe('Data Structure Validation', () => {
 
   describe('Exercise Data Structure', () => {
     test('should have all required exercise properties', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise).toHaveProperty('name');
           expect(exercise).toHaveProperty('description');
@@ -96,7 +96,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have non-empty exercise names', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise.name.trim().length).toBeGreaterThan(0);
         });
@@ -104,7 +104,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have non-empty exercise descriptions', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise.description.trim().length).toBeGreaterThan(0);
         });
@@ -112,7 +112,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have positive duration values', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise.duration).toBeGreaterThan(0);
           expect(Number.isInteger(exercise.duration)).toBe(true);
@@ -121,7 +121,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have valid emoji characters', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise.emoji.length).toBeGreaterThan(0);
           // Check if it's a valid emoji (basic check)
@@ -133,13 +133,13 @@ describe('Data Structure Validation', () => {
 
   describe('Data Consistency', () => {
     test('should have unique routine keys', () => {
-      const routineKeys = Object.keys(mockBendRoutines);
+      const routineKeys = Object.keys(mockTendRoutines);
       const uniqueKeys = new Set(routineKeys);
       expect(uniqueKeys.size).toBe(routineKeys.length);
     });
 
     test('should have consistent exercise naming within routines', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         const exerciseNames = routine.exercises.map(ex => ex.name);
         const uniqueNames = new Set(exerciseNames);
         expect(uniqueNames.size).toBe(exerciseNames.length);
@@ -147,7 +147,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have reasonable duration ranges', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           expect(exercise.duration).toBeGreaterThanOrEqual(10); // Minimum 10 seconds
           expect(exercise.duration).toBeLessThanOrEqual(300); // Maximum 5 minutes
@@ -156,7 +156,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should have reasonable total routine durations', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         const totalSeconds = routine.exercises.reduce((sum, ex) => sum + ex.duration, 0);
         const totalMinutes = Math.ceil(totalSeconds / 60);
         
@@ -238,7 +238,7 @@ describe('Data Structure Validation', () => {
     };
 
     test('should validate correct routine data', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         const errors = validateRoutine(routine);
         expect(errors).toHaveLength(0);
       });
@@ -252,7 +252,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should validate correct exercise data', () => {
-      Object.values(mockBendRoutines).forEach(routine => {
+      Object.values(mockTendRoutines).forEach(routine => {
         routine.exercises.forEach(exercise => {
           const errors = validateExercise(exercise);
           expect(errors).toHaveLength(0);
@@ -283,31 +283,31 @@ describe('Data Structure Validation', () => {
     };
 
     test('should retrieve routine by valid ID', () => {
-      const routine = getRoutineById(mockBendRoutines, 'wake-up');
+      const routine = getRoutineById(mockTendRoutines, 'wake-up');
       expect(routine).toBeDefined();
       expect(routine.name).toBe('Wake Up');
     });
 
     test('should return null for invalid routine ID', () => {
-      const routine = getRoutineById(mockBendRoutines, 'invalid-id');
+      const routine = getRoutineById(mockTendRoutines, 'invalid-id');
       expect(routine).toBeNull();
     });
 
     test('should retrieve exercise by valid index', () => {
-      const routine = getRoutineById(mockBendRoutines, 'wake-up');
+      const routine = getRoutineById(mockTendRoutines, 'wake-up');
       const exercise = getExerciseByIndex(routine, 0);
       expect(exercise).toBeDefined();
       expect(exercise.name).toBe('Neck Rolls');
     });
 
     test('should return null for invalid exercise index', () => {
-      const routine = getRoutineById(mockBendRoutines, 'wake-up');
+      const routine = getRoutineById(mockTendRoutines, 'wake-up');
       const exercise = getExerciseByIndex(routine, 999);
       expect(exercise).toBeNull();
     });
 
     test('should calculate total routine duration', () => {
-      const routine = getRoutineById(mockBendRoutines, 'wake-up');
+      const routine = getRoutineById(mockTendRoutines, 'wake-up');
       const totalDuration = getTotalRoutineDuration(routine);
       expect(totalDuration).toBe(60); // 30 + 30 seconds
     });
@@ -344,7 +344,7 @@ describe('Data Structure Validation', () => {
     });
 
     test('should generate routine summary', () => {
-      const routine = mockBendRoutines['wake-up'];
+      const routine = mockTendRoutines['wake-up'];
       const summary = getRoutineSummary(routine);
       
       expect(summary.name).toBe('Wake Up');

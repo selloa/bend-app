@@ -1,4 +1,4 @@
-// Playwright configuration for Bend app E2E testing
+// Playwright configuration for Tend app E2E testing
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({

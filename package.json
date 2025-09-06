@@ -1,5 +1,5 @@
 {
-  "name": "bend-app",
+  "name": "tend-app",
   "version": "1.0.0",
   "description": "Stretching and flexibility app with comprehensive testing",
   "main": "script.js",
@@ -51,6 +51,6 @@
     }
   },
   "keywords": ["stretching", "fitness", "accessibility", "elderly-friendly"],
-  "author": "Bend App Team",
+  "author": "Tend App Team",
   "license": "MIT"
 }

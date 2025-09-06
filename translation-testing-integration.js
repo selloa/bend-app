@@ -1,5 +1,5 @@
 // Translation Testing Integration - Adds testing tools to main app
-// This script adds testing capabilities to the main Bend app
+// This script adds testing capabilities to the main Tend app
 
 (function() {
     'use strict';
