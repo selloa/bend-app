@@ -21,7 +21,8 @@ const bendRoutines = {
                 name: "Side Neck Stretch",
                 description: "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side.",
                 duration: 30,
-                emoji: "↔️"
+                emoji: "↔️",
+                needsSideSwitch: true
             },
             {
                 name: "Forward Neck Stretch",
@@ -82,7 +83,8 @@ const bendRoutines = {
                 name: "Seated Back Twist",
                 description: "Sit tall and gently twist your torso to the right, placing your left hand on your right knee. Hold and repeat on other side.",
                 duration: 30,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Shoulder Blade Squeeze",
@@ -173,7 +175,8 @@ const bendRoutines = {
                 name: "Supine Twist",
                 description: "Lie on your back, bring your knees to one side, keeping your shoulders on the floor. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Happy Baby",
@@ -222,7 +225,8 @@ const bendRoutines = {
                 name: "Supine Twist",
                 description: "Lie on your back, bring your knees to one side, keeping your shoulders on the floor. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Legs Up the Wall",
@@ -259,7 +263,8 @@ const bendRoutines = {
                 name: "Reverse Lunge",
                 description: "Step one foot back into a lunge, keeping your front knee over your ankle, and hold the position.",
                 duration: 90,
-                emoji: "🏃"
+                emoji: "🏃",
+                needsSideSwitch: true
             },
             {
                 name: "Toe Squats",
@@ -271,7 +276,8 @@ const bendRoutines = {
                 name: "Pigeon Pose",
                 description: "From hands and knees, bring one knee forward and place it behind your wrist, extend the other leg back.",
                 duration: 90,
-                emoji: "🕊️"
+                emoji: "🕊️",
+                needsSideSwitch: true
             },
             {
                 name: "Folded Butterfly",
@@ -326,13 +332,15 @@ const bendRoutines = {
                 name: "Hip Flexor Stretch",
                 description: "Step one foot forward into a lunge position, keeping your back leg straight and your front knee over your ankle.",
                 duration: 60,
-                emoji: "🏃"
+                emoji: "🏃",
+                needsSideSwitch: true
             },
             {
                 name: "Pigeon Pose",
                 description: "From hands and knees, bring one knee forward and place it behind your wrist, extend the other leg back.",
                 duration: 60,
-                emoji: "🕊️"
+                emoji: "🕊️",
+                needsSideSwitch: true
             },
             {
                 name: "Butterfly Stretch",
@@ -344,19 +352,22 @@ const bendRoutines = {
                 name: "Figure 4 Stretch",
                 description: "Lie on your back, place one ankle on the opposite knee, and pull the bottom leg toward your chest.",
                 duration: 60,
-                emoji: "4️⃣"
+                emoji: "4️⃣",
+                needsSideSwitch: true
             },
             {
                 name: "Seated Hip Stretch",
                 description: "Sit with one leg extended, cross the other leg over, and gently twist toward the bent knee.",
                 duration: 60,
-                emoji: "🪑"
+                emoji: "🪑",
+                needsSideSwitch: true
             },
             {
                 name: "Lizard Pose",
                 description: "From downward dog, step one foot forward outside your hand, lower your forearms to the floor.",
                 duration: 60,
-                emoji: "🦎"
+                emoji: "🦎",
+                needsSideSwitch: true
             },
             {
                 name: "Happy Baby",
@@ -368,7 +379,8 @@ const bendRoutines = {
                 name: "Supine Hip Stretch",
                 description: "Lie on your back, bring one knee to your chest, then gently pull it across your body.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -399,19 +411,22 @@ const bendRoutines = {
                 name: "Single Leg Forward Fold",
                 description: "Stand on one leg, extend the other leg forward, and reach toward your extended foot.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Pyramid Pose",
                 description: "Step one foot forward, keep both legs straight, and fold forward over your front leg.",
                 duration: 60,
-                emoji: "🔺"
+                emoji: "🔺",
+                needsSideSwitch: true
             },
             {
                 name: "Reclined Hand to Big Toe",
                 description: "Lie on your back, lift one leg up, and hold your big toe or use a strap to pull your leg closer.",
                 duration: 60,
-                emoji: "🦶"
+                emoji: "🦶",
+                needsSideSwitch: true
             },
             {
                 name: "Downward Dog",
@@ -423,7 +438,8 @@ const bendRoutines = {
                 name: "Standing Split",
                 description: "From downward dog, lift one leg up high, keeping your hips square to the floor.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -454,13 +470,15 @@ const bendRoutines = {
                 name: "Knee to Chest",
                 description: "Lie on your back, bring one knee to your chest, hold with your hands. Repeat with the other leg.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Supine Twist",
                 description: "Lie on your back, bring your knees to one side, keeping your shoulders on the floor. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Pelvic Tilts",
@@ -472,13 +490,15 @@ const bendRoutines = {
                 name: "Hip Flexor Stretch",
                 description: "Step one foot forward into a lunge position, keeping your back leg straight and your front knee over your ankle.",
                 duration: 60,
-                emoji: "🏃"
+                emoji: "🏃",
+                needsSideSwitch: true
             },
             {
                 name: "Seated Back Twist",
                 description: "Sit tall and gently twist your torso to the right, placing your left hand on your right knee. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -527,13 +547,15 @@ const bendRoutines = {
                 name: "Single Leg Stand",
                 description: "Stand on one leg, lift the other leg slightly off the ground, and hold the position for balance.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Isometric Lunge",
                 description: "Step one foot forward into a lunge position, hold the position without moving up or down.",
                 duration: 60,
-                emoji: "🏃"
+                emoji: "🏃",
+                needsSideSwitch: true
             },
             {
                 name: "Dead Bug Hold",
@@ -570,7 +592,8 @@ const bendRoutines = {
                 name: "Side Neck Stretch",
                 description: "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side.",
                 duration: 60,
-                emoji: "↔️"
+                emoji: "↔️",
+                needsSideSwitch: true
             },
             {
                 name: "Forward Neck Stretch",
@@ -594,13 +617,15 @@ const bendRoutines = {
                 name: "Neck Rotation",
                 description: "Slowly turn your head to the right as far as comfortable, hold for 10 seconds, then repeat on the left.",
                 duration: 60,
-                emoji: "↩️"
+                emoji: "↩️",
+                needsSideSwitch: true
             },
             {
                 name: "Diagonal Neck Stretch",
                 description: "Gently tilt your head diagonally down and to the right, then repeat on the left side.",
                 duration: 60,
-                emoji: "↘️"
+                emoji: "↘️",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -637,19 +662,22 @@ const bendRoutines = {
                 name: "Cross-Body Shoulder Stretch",
                 description: "Bring one arm across your chest, use your other arm to gently pull it closer. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🤗"
+                emoji: "🤗",
+                needsSideSwitch: true
             },
             {
                 name: "Behind-Back Shoulder Stretch",
                 description: "Reach one arm behind your back, use your other hand to gently pull it up. Hold and repeat on other side.",
                 duration: 60,
-                emoji: "🤲"
+                emoji: "🤲",
+                needsSideSwitch: true
             },
             {
                 name: "Overhead Shoulder Stretch",
                 description: "Reach one arm overhead and bend it behind your head, use your other hand to gently pull the elbow. Hold and repeat.",
                 duration: 60,
-                emoji: "🙋"
+                emoji: "🙋",
+                needsSideSwitch: true
             },
             {
                 name: "Doorway Chest Stretch",
@@ -686,13 +714,15 @@ const bendRoutines = {
                 name: "Ankle Circles",
                 description: "Sit with one leg extended, rotate your ankle in circles, first clockwise, then counterclockwise.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Plantar Fascia Stretch",
                 description: "Sit and place one foot on the opposite knee, gently pull your toes back toward your shin.",
                 duration: 60,
-                emoji: "🦶"
+                emoji: "🦶",
+                needsSideSwitch: true
             },
             {
                 name: "Calf Raises",
@@ -729,7 +759,8 @@ const bendRoutines = {
                 name: "Ankle Circles",
                 description: "Sit with one leg extended, rotate your ankle in circles, first clockwise, then counterclockwise.",
                 duration: 60,
-                emoji: "🔄"
+                emoji: "🔄",
+                needsSideSwitch: true
             },
             {
                 name: "Ankle Flexion",
@@ -747,19 +778,22 @@ const bendRoutines = {
                 name: "Calf Stretch",
                 description: "Stand facing a wall, place one foot forward, lean into the wall to stretch your calf and ankle.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Achilles Stretch",
                 description: "Stand on a step, let one heel hang off the edge, and gently lower it to stretch your Achilles tendon.",
                 duration: 60,
-                emoji: "🦶"
+                emoji: "🦶",
+                needsSideSwitch: true
             },
             {
                 name: "Ankle Alphabet",
                 description: "Sit with one leg extended, use your big toe to trace the alphabet in the air.",
                 duration: 60,
-                emoji: "🔤"
+                emoji: "🔤",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -784,19 +818,22 @@ const bendRoutines = {
                 name: "Knee to Chest",
                 description: "Lie on your back, bring one knee to your chest, hold with your hands. Repeat with the other leg.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Seated Knee Extensions",
                 description: "Sit tall, extend one leg straight out, hold for 5 seconds, then lower. Repeat with other leg.",
                 duration: 60,
-                emoji: "🪑"
+                emoji: "🪑",
+                needsSideSwitch: true
             },
             {
                 name: "Quad Stretch",
                 description: "Stand and bend one knee, bringing your heel toward your glutes. Hold your ankle and gently pull.",
                 duration: 60,
-                emoji: "🦵"
+                emoji: "🦵",
+                needsSideSwitch: true
             },
             {
                 name: "Hamstring Stretch",
@@ -808,7 +845,8 @@ const bendRoutines = {
                 name: "IT Band Stretch",
                 description: "Stand and cross one leg behind the other, lean to the side to stretch your IT band.",
                 duration: 60,
-                emoji: "↔️"
+                emoji: "↔️",
+                needsSideSwitch: true
             },
             {
                 name: "Knee Hugs",
@@ -863,13 +901,15 @@ const bendRoutines = {
                 name: "Wrist Flexor Stretch",
                 description: "Extend one arm, use your other hand to gently pull your fingers back toward your forearm.",
                 duration: 60,
-                emoji: "🤲"
+                emoji: "🤲",
+                needsSideSwitch: true
             },
             {
                 name: "Hand Massage",
                 description: "Use your thumb to gently massage the palm of your other hand, then switch hands.",
                 duration: 60,
-                emoji: "👐"
+                emoji: "👐",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -967,13 +1007,15 @@ const bendRoutines = {
                 name: "Wrist Extensor Stretch",
                 description: "Extend one arm, use your other hand to gently pull your fingers down toward your forearm.",
                 duration: 60,
-                emoji: "⬇️"
+                emoji: "⬇️",
+                needsSideSwitch: true
             },
             {
                 name: "Wrist Flexor Stretch",
                 description: "Extend one arm, use your other hand to gently pull your fingers back toward your forearm.",
                 duration: 60,
-                emoji: "⬆️"
+                emoji: "⬆️",
+                needsSideSwitch: true
             },
             {
                 name: "Final Relaxation",
@@ -995,10 +1037,13 @@ let isTimerRunning = false;
 let routineStartTime = null;
 let totalRoutineTime = 0;
 let autoAdvanceEnabled = true;
+let currentSide = 'left'; // 'left' or 'right'
+let sideSwitchMessageTimer = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
+    initializeDarkMode();
 });
 
 function setupEventListeners() {
@@ -1016,16 +1061,15 @@ function setupEventListeners() {
     document.getElementById('skip-btn').addEventListener('click', skipExercise);
     
     // Auto-advance toggle
-    document.getElementById('auto-advance-toggle').addEventListener('change', function() {
-        autoAdvanceEnabled = this.checked;
-        // Update the toggle label to show current state
-        const label = document.querySelector('.toggle-label');
-        if (autoAdvanceEnabled) {
-            label.textContent = 'Auto-advance to next exercise';
-        } else {
-            label.textContent = 'Manual advance (click Next)';
-        }
-    });
+    const autoAdvanceToggle = document.getElementById('auto-advance-toggle');
+    if (autoAdvanceToggle) {
+        autoAdvanceToggle.addEventListener('change', function() {
+            autoAdvanceEnabled = this.checked;
+        });
+    }
+    
+    // Dark mode toggle
+    document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
 }
 
 function selectRoutine(routine) {
@@ -1064,10 +1108,13 @@ function showCompletionScreen() {
     document.getElementById('total-exercises-completed').textContent = currentExercises.length;
 }
 
-function displayCurrentExercise(autoStartTimer = false) {
+function displayCurrentExercise() {
     const exercise = currentExercises[currentExerciseIndex];
     const totalExercises = currentExercises.length;
     const routineData = bendRoutines[currentRoutine];
+    
+    // Reset side to left for new exercises
+    currentSide = 'left';
     
     // Update progress
     document.getElementById('current-exercise').textContent = currentExerciseIndex + 1;
@@ -1094,13 +1141,6 @@ function displayCurrentExercise(autoStartTimer = false) {
         clearInterval(timer);
         timer = null;
     }
-    
-    // Auto-start timer if requested
-    if (autoStartTimer) {
-        setTimeout(() => {
-            startTimer();
-        }, 100);
-    }
 }
 
 function toggleTimer() {
@@ -1125,29 +1165,34 @@ function startTimer() {
             isTimerRunning = false;
             document.getElementById('start-pause-btn').textContent = 'Start';
             
-            // Check if auto-advance is enabled
-            if (autoAdvanceEnabled) {
-                // Auto-advance to next exercise if not the last one
-                if (currentExerciseIndex < currentExercises.length - 1) {
-                    setTimeout(() => {
-                        nextExercise(true); // Pass true to auto-start the timer
-                    }, 1000);
-                } else {
-                    // Routine completed
-                    setTimeout(() => {
-                        showCompletionScreen();
-                    }, 1000);
-                }
-            } else {
-                // Auto-advance is disabled, show a brief message
-                const timerDisplay = document.getElementById('timer-display');
-                timerDisplay.textContent = 'Complete!';
-                timerDisplay.style.color = '#27ae60';
-                
-                // Reset the display after 2 seconds
+            // Check if current exercise needs side switching
+            const currentExercise = currentExercises[currentExerciseIndex];
+            if (currentExercise.needsSideSwitch && currentSide === 'left') {
+                // Switch to right side
+                currentSide = 'right';
+                showSideSwitchMessage();
+                // Reset timer for the other side
+                timeRemaining = currentExercise.duration;
+                updateTimerDisplay();
+                return;
+            }
+            
+            // Auto-advance to next exercise if not the last one
+            if (currentExerciseIndex < currentExercises.length - 1) {
                 setTimeout(() => {
-                    timerDisplay.style.color = '#e74c3c';
-                }, 2000);
+                    nextExercise();
+                    // If auto-advance is enabled, automatically start the timer for the next exercise
+                    if (autoAdvanceEnabled) {
+                        setTimeout(() => {
+                            startTimer();
+                        }, 500); // Small delay to let the UI update
+                    }
+                }, 1000);
+            } else {
+                // Routine completed
+                setTimeout(() => {
+                    showCompletionScreen();
+                }, 1000);
             }
         }
     }, 1000);
@@ -1178,10 +1223,10 @@ function skipExercise() {
     }
 }
 
-function nextExercise(autoStartTimer = false) {
+function nextExercise() {
     if (currentExerciseIndex < currentExercises.length - 1) {
         currentExerciseIndex++;
-        displayCurrentExercise(autoStartTimer);
+        displayCurrentExercise();
     }
 }
 
@@ -1201,4 +1246,68 @@ function updateTimerDisplay() {
 
 function startNewRoutine() {
     showRoutineSelection();
+}
+
+// Dark mode functionality
+function initializeDarkMode() {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('bend-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        enableDarkMode();
+    } else {
+        enableLightMode();
+    }
+}
+
+function toggleDarkMode() {
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    
+    if (isDarkMode) {
+        enableLightMode();
+    } else {
+        enableDarkMode();
+    }
+}
+
+function enableDarkMode() {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.querySelector('.toggle-icon').textContent = '☀️';
+    localStorage.setItem('bend-theme', 'dark');
+}
+
+function enableLightMode() {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.querySelector('.toggle-icon').textContent = '🌙';
+    localStorage.setItem('bend-theme', 'light');
+}
+
+function showSideSwitchMessage() {
+    // Create or update side switch message
+    let messageElement = document.getElementById('side-switch-message');
+    if (!messageElement) {
+        messageElement = document.createElement('div');
+        messageElement.id = 'side-switch-message';
+        messageElement.className = 'side-switch-message';
+        document.body.appendChild(messageElement);
+    }
+    
+    messageElement.innerHTML = `
+        <div class="side-switch-content">
+            <div class="side-switch-icon">🔄</div>
+            <div class="side-switch-text">Switch to ${currentSide} side!</div>
+        </div>
+    `;
+    
+    // Show message for 3 seconds
+    messageElement.style.display = 'block';
+    
+    if (sideSwitchMessageTimer) {
+        clearTimeout(sideSwitchMessageTimer);
+    }
+    
+    sideSwitchMessageTimer = setTimeout(() => {
+        messageElement.style.display = 'none';
+    }, 3000);
 }
