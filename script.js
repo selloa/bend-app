@@ -1493,6 +1493,9 @@ function displayCurrentExercise() {
     timeRemaining = exercise.duration;
     updateTimerDisplay();
     
+    // Reset circular timer
+    resetCircularTimer();
+    
     // Update navigation buttons
     document.getElementById('prev-btn').disabled = currentExerciseIndex === 0;
     document.getElementById('next-btn').disabled = currentExerciseIndex === totalExercises - 1;
@@ -1623,6 +1626,32 @@ function updateTimerDisplay() {
     const seconds = timeRemaining % 60;
     const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     document.getElementById('timer-display').textContent = display;
+    
+    // Update circular timer progress
+    updateCircularTimer();
+}
+
+function updateCircularTimer() {
+    const exercise = currentExercises[currentExerciseIndex];
+    if (!exercise) return;
+    
+    const totalDuration = exercise.duration;
+    const progress = (totalDuration - timeRemaining) / totalDuration;
+    const circumference = 2 * Math.PI * 45; // radius = 45
+    const strokeDashoffset = circumference - (progress * circumference);
+    
+    const progressCircle = document.querySelector('.timer-ring-progress');
+    if (progressCircle) {
+        progressCircle.style.strokeDashoffset = strokeDashoffset;
+    }
+}
+
+function resetCircularTimer() {
+    const progressCircle = document.querySelector('.timer-ring-progress');
+    if (progressCircle) {
+        const circumference = 2 * Math.PI * 45; // radius = 45
+        progressCircle.style.strokeDashoffset = circumference;
+    }
 }
 
 function startNewRoutine() {

@@ -762,21 +762,29 @@ body {
 }
 
 .timer-ring-bg {
-    stroke: rgba(255, 255, 255, 0.2);
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 3;
 }
 
 .timer-ring-progress {
     stroke: var(--accent-secondary);
     stroke-linecap: round;
-    transition: stroke-dashoffset 1s linear;
+    transition: stroke-dashoffset 0.1s ease-out;
+    stroke-dasharray: 283; /* 2 * PI * 45 */
+    stroke-dashoffset: 283; /* Start with full circle hidden */
+    stroke-width: 4;
+    filter: drop-shadow(0 0 4px rgba(224, 96, 112, 0.3));
 }
 
 [data-theme="dark"] .timer-ring-bg {
-    stroke: rgba(255, 255, 255, 0.3);
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 3;
 }
 
 [data-theme="dark"] .timer-ring-progress {
     stroke: var(--accent-secondary);
+    stroke-width: 4;
+    filter: drop-shadow(0 0 6px rgba(104, 211, 145, 0.4));
 }
 
 .exercise-emoji {
