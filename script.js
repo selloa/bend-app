@@ -1356,13 +1356,8 @@ function setupEventListeners() {
     document.getElementById('prev-btn').addEventListener('click', previousExercise);
     document.getElementById('next-btn').addEventListener('click', nextExercise);
     
-    // Auto-start timer toggle
-    const autoStartToggle = document.getElementById('auto-start-toggle');
-    if (autoStartToggle) {
-        autoStartToggle.addEventListener('change', function() {
-            autoStartTimerEnabled = this.checked;
-        });
-    }
+    // Auto-start timer toggle (removed from UI, but keep functionality)
+    // autoStartTimerEnabled is set to true by default
     
     // Dark mode toggle
     document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
@@ -1503,7 +1498,7 @@ function displayCurrentExercise() {
     document.getElementById('next-btn').disabled = currentExerciseIndex === totalExercises - 1;
     
     // Reset timer button
-    document.getElementById('start-pause-btn').textContent = 'Start';
+    document.getElementById('play-pause-icon').textContent = '▶';
     isTimerRunning = false;
     if (timer) {
         clearInterval(timer);
@@ -1543,7 +1538,7 @@ function startTimer() {
             clearInterval(timer);
             timer = null;
             isTimerRunning = false;
-            document.getElementById('start-pause-btn').textContent = 'Start';
+            document.getElementById('play-pause-icon').textContent = '▶';
             
             // Play timer end beep
             playTimerEndBeep();
