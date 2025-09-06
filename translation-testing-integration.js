@@ -87,6 +87,21 @@
             // Run testing suite
             const testResults = await TranslationTestingSuite.quickTest();
             
+            // Only show reports if in debug mode
+            if (validationResults.issues && validationResults.issues.length > 0) {
+                // Show validation report
+                const validator = new TranslationValidator();
+                validator.validationResults = validationResults;
+                validator.generateValidationReport();
+            }
+            
+            if (testResults.issues && testResults.issues.length > 0) {
+                // Show testing report
+                const testingSuite = new TranslationTestingSuite();
+                testingSuite.testResults = testResults;
+                testingSuite.generateReport();
+            }
+            
             // Update status
             const totalIssues = validationResults.invalid + testResults.failed;
             const totalWarnings = validationResults.warnings + testResults.warnings;
@@ -215,10 +230,25 @@
         }
     });
 
+    // Clean up any existing testing reports
+    function cleanupExistingReports() {
+        // Remove any existing translation testing reports
+        const existingReports = document.querySelectorAll('[id*="translation"], [id*="validation"], [class*="report"]');
+        existingReports.forEach(report => {
+            if (report.style && report.style.position === 'fixed') {
+                report.remove();
+            }
+        });
+    }
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', addTestingTools);
+        document.addEventListener('DOMContentLoaded', () => {
+            cleanupExistingReports();
+            addTestingTools();
+        });
     } else {
+        cleanupExistingReports();
         addTestingTools();
     }
 

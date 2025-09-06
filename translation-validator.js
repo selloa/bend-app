@@ -27,7 +27,8 @@ class TranslationValidator {
         this.validateSpecialCharacters();
         this.validateFallbackBehavior();
 
-        this.generateValidationReport();
+        // Don't generate report automatically - only when explicitly requested
+        // this.generateValidationReport();
         return this.validationResults;
     }
 

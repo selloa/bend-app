@@ -32,8 +32,8 @@ class TranslationTestingSuite {
         await this.testSpecialCharacters();
         await this.testFallbackBehavior();
 
-        // Generate report
-        this.generateReport();
+        // Don't generate report automatically - only when explicitly requested
+        // this.generateReport();
         return this.testResults;
     }
 
