@@ -1,9 +1,9 @@
 /* CSS Custom Properties for theming and accessibility */
 :root {
-    /* Light theme colors - Inspired by Bend app design */
-    --bg-primary: linear-gradient(135deg, #F8F8F8 0%, #E8E8E8 100%);
-    --bg-secondary: #FCFCFC;
-    --bg-tertiary: #F0F0F0;
+    /* Light theme colors - Inspired by Bend app design with warmer tones */
+    --bg-primary: linear-gradient(135deg, #FDF6F0 0%, #F5E6D3 100%);
+    --bg-secondary: #FEFCF9;
+    --bg-tertiary: #F8F0E6;
     --text-primary: #282828;
     --text-secondary: #282828;
     --text-tertiary: #909090;
