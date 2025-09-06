@@ -222,6 +222,79 @@ body {
     box-shadow: 0 8px 25px var(--shadow-hover);
 }
 
+/* Folder button styles */
+.folder-btn {
+    border: var(--high-contrast-border) solid var(--border-primary);
+    border-radius: clamp(15px, 2vw, 25px);
+    padding: clamp(20px, 4vw, 35px) clamp(15px, 3vw, 25px);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: var(--min-touch-target);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.folder-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(47, 79, 111, 0.1) 0%, rgba(224, 96, 112, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.folder-btn:hover::before {
+    opacity: 1;
+}
+
+.folder-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+.folder-btn:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.folder-btn .icon {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: clamp(10px, 2vw, 20px);
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.folder-btn span {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    margin-bottom: clamp(6px, 1vw, 12px);
+    display: block;
+    position: relative;
+    z-index: 1;
+    line-height: 1.3;
+}
+
+.folder-btn p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: var(--text-tertiary);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    line-height: 1.4;
+}
+
 /* Individual routine button colors inspired by Bend design */
 .routine-category-btn[data-routine="wake-up"] {
     border-color: var(--pastel-peach);
@@ -561,6 +634,74 @@ body {
     background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-mint) 100%);
     border-color: var(--accent-primary);
     box-shadow: 0 4px 15px rgba(99, 179, 237, 0.3);
+}
+
+/* Folder view styles */
+.folder-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(20px, 4vw, 40px);
+    gap: clamp(15px, 3vw, 25px);
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 12px);
+    padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 20px);
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
+    border-radius: clamp(8px, 1vw, 12px);
+    color: var(--text-primary);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: var(--min-touch-target);
+}
+
+.back-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-hover);
+}
+
+.back-btn:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.back-icon {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: bold;
+}
+
+.folder-routines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 90vw), 1fr));
+    gap: clamp(15px, 3vw, 25px);
+}
+
+/* Dark mode folder styles */
+[data-theme="dark"] .folder-btn {
+    background: var(--bg-secondary);
+    border-color: var(--border-primary);
+}
+
+[data-theme="dark"] .folder-btn::before {
+    background: linear-gradient(135deg, rgba(99, 179, 237, 0.1) 0%, rgba(104, 211, 145, 0.1) 100%);
+}
+
+[data-theme="dark"] .back-btn {
+    background: var(--bg-tertiary);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .back-btn:hover {
+    background: var(--accent-primary);
+    color: white;
 }
 
 .exercise-info {

@@ -1089,6 +1089,214 @@ const bendRoutines = {
     }
 };
 
+// Folder system for organizing routines by body areas
+const bodyAreaFolders = {
+    "hips": {
+        name: "Hips",
+        icon: "🦴",
+        description: "Hip mobility and flexibility routines",
+        routines: {
+            "hips-5min": {
+                name: "Hips - 5 min",
+                description: "Quick hip mobility routine",
+                duration: "5 minutes",
+                exercises: [
+                    { name: "Hip Circles", description: "Stand with hands on hips, make slow circles with your hips", duration: 30, emoji: "🔄" },
+                    { name: "Hip Flexor Stretch", description: "Step forward into a lunge, feel stretch in front hip", duration: 45, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Figure 4 Stretch", description: "Sit and place ankle on opposite knee, lean forward", duration: 45, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Seated Hip Stretch", description: "Sit with one leg extended, pull other knee to chest", duration: 45, emoji: "🪑", needsSideSwitch: true },
+                    { name: "Hip Circles Seated", description: "Sit and make circles with your knees", duration: 30, emoji: "🔄" }
+                ]
+            },
+            "hips-10min": {
+                name: "Hips - 10 min",
+                description: "Comprehensive hip flexibility routine",
+                duration: "10 minutes",
+                exercises: [
+                    { name: "Hip Circles", description: "Stand with hands on hips, make slow circles with your hips", duration: 30, emoji: "🔄" },
+                    { name: "Hip Flexor Stretch", description: "Step forward into a lunge, feel stretch in front hip", duration: 60, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Figure 4 Stretch", description: "Sit and place ankle on opposite knee, lean forward", duration: 60, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Seated Hip Stretch", description: "Sit with one leg extended, pull other knee to chest", duration: 60, emoji: "🪑", needsSideSwitch: true },
+                    { name: "Pigeon Pose", description: "From downward dog, bring knee forward and extend back leg", duration: 90, emoji: "🕊️", needsSideSwitch: true },
+                    { name: "Lizard Pose", description: "Low lunge with forearms on ground", duration: 60, emoji: "🦎", needsSideSwitch: true },
+                    { name: "Supine Hip Stretch", description: "Lie down, pull knee to chest, then across body", duration: 60, emoji: "🛌", needsSideSwitch: true },
+                    { name: "Hip Circles Seated", description: "Sit and make circles with your knees", duration: 30, emoji: "🔄" }
+                ]
+            },
+            "hips-15min": {
+                name: "Hips - 15 min",
+                description: "Extended hip mobility and strength routine",
+                duration: "15 minutes",
+                exercises: [
+                    { name: "Hip Circles", description: "Stand with hands on hips, make slow circles with your hips", duration: 45, emoji: "🔄" },
+                    { name: "Hip Flexor Stretch", description: "Step forward into a lunge, feel stretch in front hip", duration: 75, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Figure 4 Stretch", description: "Sit and place ankle on opposite knee, lean forward", duration: 75, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Seated Hip Stretch", description: "Sit with one leg extended, pull other knee to chest", duration: 75, emoji: "🪑", needsSideSwitch: true },
+                    { name: "Pigeon Pose", description: "From downward dog, bring knee forward and extend back leg", duration: 120, emoji: "🕊️", needsSideSwitch: true },
+                    { name: "Lizard Pose", description: "Low lunge with forearms on ground", duration: 90, emoji: "🦎", needsSideSwitch: true },
+                    { name: "Supine Hip Stretch", description: "Lie down, pull knee to chest, then across body", duration: 90, emoji: "🛌", needsSideSwitch: true },
+                    { name: "Hip Circles Seated", description: "Sit and make circles with your knees", duration: 45, emoji: "🔄" },
+                    { name: "Hip Abduction", description: "Lie on side, lift top leg up and down", duration: 60, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Hip Adduction", description: "Lie on side, lift bottom leg up", duration: 60, emoji: "🦵", needsSideSwitch: true }
+                ]
+            },
+            "hips-20min": {
+                name: "Hips - 20 min",
+                description: "Complete hip mobility, flexibility and strength routine",
+                duration: "20 minutes",
+                exercises: [
+                    { name: "Hip Circles", description: "Stand with hands on hips, make slow circles with your hips", duration: 60, emoji: "🔄" },
+                    { name: "Hip Flexor Stretch", description: "Step forward into a lunge, feel stretch in front hip", duration: 90, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Figure 4 Stretch", description: "Sit and place ankle on opposite knee, lean forward", duration: 90, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Seated Hip Stretch", description: "Sit with one leg extended, pull other knee to chest", duration: 90, emoji: "🪑", needsSideSwitch: true },
+                    { name: "Pigeon Pose", description: "From downward dog, bring knee forward and extend back leg", duration: 150, emoji: "🕊️", needsSideSwitch: true },
+                    { name: "Lizard Pose", description: "Low lunge with forearms on ground", duration: 120, emoji: "🦎", needsSideSwitch: true },
+                    { name: "Supine Hip Stretch", description: "Lie down, pull knee to chest, then across body", duration: 120, emoji: "🛌", needsSideSwitch: true },
+                    { name: "Hip Circles Seated", description: "Sit and make circles with your knees", duration: 60, emoji: "🔄" },
+                    { name: "Hip Abduction", description: "Lie on side, lift top leg up and down", duration: 90, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Hip Adduction", description: "Lie on side, lift bottom leg up", duration: 90, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Hip Bridge", description: "Lie on back, lift hips up and down", duration: 60, emoji: "🌉" },
+                    { name: "Hip Flexor Strengthening", description: "Standing leg lifts to front and side", duration: 90, emoji: "🦵", needsSideSwitch: true }
+                ]
+            }
+        }
+    },
+    "shoulders": {
+        name: "Shoulders",
+        icon: "🤲",
+        description: "Shoulder mobility and flexibility routines",
+        routines: {
+            "shoulders-4min": {
+                name: "Shoulders - 4 min",
+                description: "Quick shoulder mobility routine",
+                duration: "4 minutes",
+                exercises: [
+                    { name: "Shoulder Shrugs", description: "Lift shoulders up toward ears, hold and relax", duration: 30, emoji: "🤷" },
+                    { name: "Arm Circles", description: "Make circles with your arms, forward and backward", duration: 30, emoji: "⭕", needsSideSwitch: true },
+                    { name: "Cross-Body Shoulder Stretch", description: "Pull arm across chest, feel stretch in shoulder", duration: 45, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Behind-Back Shoulder Stretch", description: "Reach one arm up and one down behind back", duration: 45, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Overhead Shoulder Stretch", description: "Reach arm overhead and pull gently", duration: 45, emoji: "🤲", needsSideSwitch: true }
+                ]
+            },
+            "shoulders-8min": {
+                name: "Shoulders - 8 min",
+                description: "Comprehensive shoulder flexibility routine",
+                duration: "8 minutes",
+                exercises: [
+                    { name: "Shoulder Shrugs", description: "Lift shoulders up toward ears, hold and relax", duration: 45, emoji: "🤷" },
+                    { name: "Arm Circles", description: "Make circles with your arms, forward and backward", duration: 45, emoji: "⭕", needsSideSwitch: true },
+                    { name: "Cross-Body Shoulder Stretch", description: "Pull arm across chest, feel stretch in shoulder", duration: 60, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Behind-Back Shoulder Stretch", description: "Reach one arm up and one down behind back", duration: 60, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Overhead Shoulder Stretch", description: "Reach arm overhead and pull gently", duration: 60, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Wall Slides", description: "Stand against wall, slide arms up and down", duration: 60, emoji: "🧱" },
+                    { name: "Shoulder Blade Squeezes", description: "Squeeze shoulder blades together and release", duration: 45, emoji: "🤲" }
+                ]
+            },
+            "shoulders-12min": {
+                name: "Shoulders - 12 min",
+                description: "Extended shoulder mobility and strength routine",
+                duration: "12 minutes",
+                exercises: [
+                    { name: "Shoulder Shrugs", description: "Lift shoulders up toward ears, hold and relax", duration: 60, emoji: "🤷" },
+                    { name: "Arm Circles", description: "Make circles with your arms, forward and backward", duration: 60, emoji: "⭕", needsSideSwitch: true },
+                    { name: "Cross-Body Shoulder Stretch", description: "Pull arm across chest, feel stretch in shoulder", duration: 75, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Behind-Back Shoulder Stretch", description: "Reach one arm up and one down behind back", duration: 75, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Overhead Shoulder Stretch", description: "Reach arm overhead and pull gently", duration: 75, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Wall Slides", description: "Stand against wall, slide arms up and down", duration: 90, emoji: "🧱" },
+                    { name: "Shoulder Blade Squeezes", description: "Squeeze shoulder blades together and release", duration: 60, emoji: "🤲" },
+                    { name: "Doorway Chest Stretch", description: "Place forearm on doorframe, lean forward", duration: 60, emoji: "🚪", needsSideSwitch: true },
+                    { name: "Shoulder External Rotation", description: "Hold band or towel, rotate arm outward", duration: 60, emoji: "🔄", needsSideSwitch: true }
+                ]
+            },
+            "shoulders-16min": {
+                name: "Shoulders - 16 min",
+                description: "Complete shoulder mobility, flexibility and strength routine",
+                duration: "16 minutes",
+                exercises: [
+                    { name: "Shoulder Shrugs", description: "Lift shoulders up toward ears, hold and relax", duration: 75, emoji: "🤷" },
+                    { name: "Arm Circles", description: "Make circles with your arms, forward and backward", duration: 75, emoji: "⭕", needsSideSwitch: true },
+                    { name: "Cross-Body Shoulder Stretch", description: "Pull arm across chest, feel stretch in shoulder", duration: 90, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Behind-Back Shoulder Stretch", description: "Reach one arm up and one down behind back", duration: 90, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Overhead Shoulder Stretch", description: "Reach arm overhead and pull gently", duration: 90, emoji: "🤲", needsSideSwitch: true },
+                    { name: "Wall Slides", description: "Stand against wall, slide arms up and down", duration: 120, emoji: "🧱" },
+                    { name: "Shoulder Blade Squeezes", description: "Squeeze shoulder blades together and release", duration: 75, emoji: "🤲" },
+                    { name: "Doorway Chest Stretch", description: "Place forearm on doorframe, lean forward", duration: 90, emoji: "🚪", needsSideSwitch: true },
+                    { name: "Shoulder External Rotation", description: "Hold band or towel, rotate arm outward", duration: 90, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Shoulder Internal Rotation", description: "Hold band or towel, rotate arm inward", duration: 90, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Scapular Wall Slides", description: "Wall slides focusing on shoulder blade movement", duration: 90, emoji: "🧱" }
+                ]
+            }
+        }
+    },
+    "lower-back": {
+        name: "Lower Back",
+        icon: "🫁",
+        description: "Lower back relief and strengthening routines",
+        routines: {
+            "lower-back-5min": {
+                name: "Lower Back - 5 min",
+                description: "Quick lower back relief routine",
+                duration: "5 minutes",
+                exercises: [
+                    { name: "Cat-Cow Stretch", description: "On hands and knees, arch and round your back", duration: 60, emoji: "🐱" },
+                    { name: "Child's Pose", description: "Sit back on heels, reach arms forward", duration: 60, emoji: "🧘" },
+                    { name: "Seated Back Twist", description: "Sit tall, twist to one side, hold", duration: 45, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Knee to Chest", description: "Lie down, pull one knee to chest", duration: 45, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Supine Twist", description: "Lie down, drop knees to one side", duration: 45, emoji: "🔄", needsSideSwitch: true }
+                ]
+            },
+            "lower-back-10min": {
+                name: "Lower Back - 10 min",
+                description: "Comprehensive lower back relief routine",
+                duration: "10 minutes",
+                exercises: [
+                    { name: "Cat-Cow Stretch", description: "On hands and knees, arch and round your back", duration: 90, emoji: "🐱" },
+                    { name: "Child's Pose", description: "Sit back on heels, reach arms forward", duration: 90, emoji: "🧘" },
+                    { name: "Seated Back Twist", description: "Sit tall, twist to one side, hold", duration: 60, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Knee to Chest", description: "Lie down, pull one knee to chest", duration: 60, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Supine Twist", description: "Lie down, drop knees to one side", duration: 60, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Pelvic Tilts", description: "Lie down, tilt pelvis up and down", duration: 60, emoji: "🦴" },
+                    { name: "Lower Back Stretch", description: "Lie on back, bring knees to chest", duration: 60, emoji: "🫁" }
+                ]
+            },
+            "lower-back-15min": {
+                name: "Lower Back - 15 min",
+                description: "Extended lower back relief and strengthening routine",
+                duration: "15 minutes",
+                exercises: [
+                    { name: "Cat-Cow Stretch", description: "On hands and knees, arch and round your back", duration: 120, emoji: "🐱" },
+                    { name: "Child's Pose", description: "Sit back on heels, reach arms forward", duration: 120, emoji: "🧘" },
+                    { name: "Seated Back Twist", description: "Sit tall, twist to one side, hold", duration: 75, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Knee to Chest", description: "Lie down, pull one knee to chest", duration: 75, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Supine Twist", description: "Lie down, drop knees to one side", duration: 75, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Pelvic Tilts", description: "Lie down, tilt pelvis up and down", duration: 90, emoji: "🦴" },
+                    { name: "Lower Back Stretch", description: "Lie on back, bring knees to chest", duration: 90, emoji: "🫁" },
+                    { name: "Bird Dog", description: "On hands and knees, extend opposite arm and leg", duration: 90, emoji: "🐕", needsSideSwitch: true },
+                    { name: "Dead Bug", description: "Lie on back, extend opposite arm and leg", duration: 90, emoji: "🐛", needsSideSwitch: true }
+                ]
+            },
+            "lower-back-20min": {
+                name: "Lower Back - 20 min",
+                description: "Complete lower back relief, flexibility and strengthening routine",
+                duration: "20 minutes",
+                exercises: [
+                    { name: "Cat-Cow Stretch", description: "On hands and knees, arch and round your back", duration: 150, emoji: "🐱" },
+                    { name: "Child's Pose", description: "Sit back on heels, reach arms forward", duration: 150, emoji: "🧘" },
+                    { name: "Seated Back Twist", description: "Sit tall, twist to one side, hold", duration: 90, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Knee to Chest", description: "Lie down, pull one knee to chest", duration: 90, emoji: "🦵", needsSideSwitch: true },
+                    { name: "Supine Twist", description: "Lie down, drop knees to one side", duration: 90, emoji: "🔄", needsSideSwitch: true },
+                    { name: "Pelvic Tilts", description: "Lie down, tilt pelvis up and down", duration: 120, emoji: "🦴" },
+                    { name: "Lower Back Stretch", description: "Lie on back, bring knees to chest", duration: 120, emoji: "🫁" },
+                    { name: "Bird Dog", description: "On hands and knees, extend opposite arm and leg", duration: 120, emoji: "🐕", needsSideSwitch: true },
+                    { name: "Dead Bug", description: "Lie on back, extend opposite arm and leg", duration: 120, emoji: "🐛", needsSideSwitch: true },
+                    { name: "Glute Bridge", description: "Lie on back, lift hips up and down", duration: 90, emoji: "🌉" },
+                    { name: "Lower Back Strengthening", description: "Lie on stomach, lift chest and legs", duration: 90, emoji: "🫁" }
+                ]
+            }
+        }
+    }
+};
+
 // Global variables
 let currentRoutine = '';
 let currentExerciseIndex = 0;
@@ -1100,6 +1308,8 @@ let routineStartTime = null;
 let totalRoutineTime = 0;
 let autoStartTimerEnabled = true;
 let currentSide = 'left'; // 'left' or 'right'
+let currentView = 'main'; // 'main' or 'folder'
+let currentFolder = null;
 let sideSwitchMessageTimer = null;
 let audioContext = null;
 
@@ -1112,6 +1322,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupEventListeners() {
+    // Folder selection
+    const folderBtns = document.querySelectorAll('.folder-btn');
+    folderBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const folder = this.getAttribute('data-folder');
+            showFolderView(folder);
+        });
+    });
+
+    // Back to main view
+    document.getElementById('back-to-main').addEventListener('click', showMainView);
+
     // Routine category selection
     const routineCategoryBtns = document.querySelectorAll('.routine-category-btn');
     routineCategoryBtns.forEach(btn => {
@@ -1143,9 +1365,19 @@ function setupEventListeners() {
     document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
 }
 
-function selectRoutine(routine) {
+function selectRoutine(routine, folderKey = null) {
     currentRoutine = routine;
-    currentExercises = bendRoutines[routine].exercises;
+    
+    // Check if it's a folder routine or regular routine
+    if (folderKey && bodyAreaFolders[folderKey] && bodyAreaFolders[folderKey].routines[routine]) {
+        currentExercises = bodyAreaFolders[folderKey].routines[routine].exercises;
+    } else if (bendRoutines[routine]) {
+        currentExercises = bendRoutines[routine].exercises;
+    } else {
+        console.error('Routine not found:', routine);
+        return;
+    }
+    
     currentExerciseIndex = 0;
     routineStartTime = Date.now();
     showExerciseDisplay();
@@ -1154,14 +1386,78 @@ function selectRoutine(routine) {
 
 function showRoutineSelection() {
     document.getElementById('routine-selection').classList.add('active');
+    document.getElementById('folder-view').classList.remove('active');
+    document.getElementById('exercise-display').classList.remove('active');
+    document.getElementById('completion-screen').classList.remove('active');
+    currentView = 'main';
+}
+
+function showFolderView(folderKey) {
+    currentFolder = folderKey;
+    currentView = 'folder';
+    
+    const folder = bodyAreaFolders[folderKey];
+    if (!folder) return;
+    
+    // Update folder title
+    document.getElementById('folder-title').textContent = folder.name;
+    
+    // Populate folder routines
+    const folderRoutinesContainer = document.getElementById('folder-routines');
+    folderRoutinesContainer.innerHTML = '';
+    
+    Object.keys(folder.routines).forEach(routineKey => {
+        const routine = folder.routines[routineKey];
+        const routineBtn = document.createElement('button');
+        routineBtn.className = 'routine-category-btn';
+        routineBtn.setAttribute('data-routine', routineKey);
+        routineBtn.innerHTML = `
+            <div class="icon">${getRoutineIcon(routineKey)}</div>
+            <span>${routine.name}</span>
+            <p>${routine.description}</p>
+        `;
+        
+        routineBtn.addEventListener('click', function() {
+            selectRoutine(routineKey, folderKey);
+        });
+        
+        folderRoutinesContainer.appendChild(routineBtn);
+    });
+    
+    // Show folder view
+    document.getElementById('routine-selection').classList.remove('active');
+    document.getElementById('folder-view').classList.add('active');
     document.getElementById('exercise-display').classList.remove('active');
     document.getElementById('completion-screen').classList.remove('active');
 }
 
+function showMainView() {
+    showRoutineSelection();
+}
+
 function showExerciseDisplay() {
     document.getElementById('routine-selection').classList.remove('active');
+    document.getElementById('folder-view').classList.remove('active');
     document.getElementById('exercise-display').classList.add('active');
     document.getElementById('completion-screen').classList.remove('active');
+}
+
+function getRoutineIcon(routineKey) {
+    const iconMap = {
+        'hips-5min': '🦴',
+        'hips-10min': '🦴',
+        'hips-15min': '🦴',
+        'hips-20min': '🦴',
+        'shoulders-4min': '🤲',
+        'shoulders-8min': '🤲',
+        'shoulders-12min': '🤲',
+        'shoulders-16min': '🤲',
+        'lower-back-5min': '🫁',
+        'lower-back-10min': '🫁',
+        'lower-back-15min': '🫁',
+        'lower-back-20min': '🫁'
+    };
+    return iconMap[routineKey] || '💪';
 }
 
 function showCompletionScreen() {
