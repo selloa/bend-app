@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Test Runner - Bend App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .test-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-align: center;
+        }
+        .test-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .test-button:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            background: rgba(46, 204, 113, 0.2);
+            border: 2px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .status.error {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+        }
+        .status.warning {
+            background: rgba(241, 196, 15, 0.2);
+            border: 2px solid #f1c40f;
+        }
+        .console-output {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .test-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 5px solid #ff6b6b;
+        }
+        .test-card h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .test-card p {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Translation Test Runner</h1>
+        
+        <div class="test-section">
+            <h2 class="test-title">🚀 Quick Tests</h2>
+            <div style="text-align: center;">
+                <button class="test-button" onclick="runQuickTests()">Run All Quick Tests</button>
+                <button class="test-button" onclick="runValidation()">Run Validation</button>
+                <button class="test-button" onclick="runTestingSuite()">Run Testing Suite</button>
+                <button class="test-button" onclick="startMonitoring()">Start Monitoring</button>
+                <button class="test-button" onclick="stopMonitoring()">Stop Monitoring</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">🔍 Individual Tests</h2>
+            <div class="test-grid">
+                <div class="test-card">
+                    <h3>Translation Completeness</h3>
+                    <p>Checks if all required translations are present for all languages.</p>
+                    <button class="test-button" onclick="testCompleteness()">Test Completeness</button>
+                </div>
+                <div class="test-card">
+                    <h3>Language Switching</h3>
+                    <p>Tests switching between languages and verifies translations are applied.</p>
+                    <button class="test-button" onclick="testLanguageSwitching()">Test Language Switching</button>
+                </div>
+                <div class="test-card">
+                    <h3>Special Characters</h3>
+                    <p>Validates Unicode rendering, especially for Tamil characters.</p>
+                    <button class="test-button" onclick="testSpecialCharacters()">Test Special Characters</button>
+                </div>
+                <div class="test-card">
+                    <h3>Exercise Translations</h3>
+                    <p>Tests exercise name and description translations during workouts.</p>
+                    <button class="test-button" onclick="testExerciseTranslations()">Test Exercise Translations</button>
+                </div>
+                <div class="test-card">
+                    <h3>Fallback Behavior</h3>
+                    <p>Tests what happens when translations are missing or invalid.</p>
+                    <button class="test-button" onclick="testFallbackBehavior()">Test Fallback Behavior</button>
+                </div>
+                <div class="test-card">
+                    <h3>UI Element Translations</h3>
+                    <p>Checks all UI elements with data-i18n attributes are translated.</p>
+                    <button class="test-button" onclick="testUIElements()">Test UI Elements</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">📊 Test Results</h2>
+            <div id="test-results">
+                <p>Click a test button to see results here...</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2 class="test-title">📝 Console Output</h2>
+            <div class="console-output" id="console-output">
+                <p>Console logs will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the main app scripts -->
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Load testing scripts -->
+    <script src="translation-testing-suite.js"></script>
+    <script src="translation-monitor.js"></script>
+    <script src="translation-validator.js"></script>
+
+    <script>
+        // Capture console output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addToConsole(message, type = 'log') {
+            const consoleDiv = document.getElementById('console-output');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.style.color = type === 'error' ? '#ff6b6b' : type === 'warn' ? '#f39c12' : '#2ecc71';
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${message}`;
+            consoleDiv.appendChild(logEntry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToConsole(args.join(' '), 'warn');
+        };
+
+        // Test functions
+        async function runQuickTests() {
+            updateProgress(0);
+            updateResults('Running quick tests...', 'status');
+            
+            try {
+                // Run validation
+                updateProgress(25);
+                const validationResults = await TranslationValidator.quickValidate();
+                
+                // Run testing suite
+                updateProgress(50);
+                const testResults = await TranslationTestingSuite.quickTest();
+                
+                // Check monitoring status
+                updateProgress(75);
+                const monitorReport = window.translationMonitor.getReport();
+                
+                updateProgress(100);
+                updateResults(`
+                    <h3>Quick Test Results</h3>
+                    <p><strong>Validation:</strong> ${validationResults.valid} valid, ${validationResults.invalid} invalid, ${validationResults.warnings} warnings</p>
+                    <p><strong>Testing Suite:</strong> ${testResults.passed} passed, ${testResults.failed} failed, ${testResults.warnings} warnings</p>
+                    <p><strong>Monitoring:</strong> ${monitorReport.isMonitoring ? 'Active' : 'Inactive'}</p>
+                `, 'status');
+                
+            } catch (error) {
+                updateResults(`Error running quick tests: ${error.message}`, 'error');
+            }
+        }
+
+        async function runValidation() {
+            updateResults('Running validation...', 'status');
+            try {
+                const results = await TranslationValidator.quickValidate();
+                updateResults(`
+                    <h3>Validation Results</h3>
+                    <p><strong>Valid:</strong> ${results.valid}</p>
+                    <p><strong>Invalid:</strong> ${results.invalid}</p>
+                    <p><strong>Warnings:</strong> ${results.warnings}</p>
+                    ${results.issues.length > 0 ? `<p><strong>Issues:</strong> ${results.issues.length} found</p>` : ''}
+                `, results.invalid > 0 ? 'error' : results.warnings > 0 ? 'warning' : 'status');
+            } catch (error) {
+                updateResults(`Validation error: ${error.message}`, 'error');
+            }
+        }
+
+        async function runTestingSuite() {
+            updateResults('Running testing suite...', 'status');
+            try {
+                const results = await TranslationTestingSuite.quickTest();
+                updateResults(`
+                    <h3>Testing Suite Results</h3>
+                    <p><strong>Passed:</strong> ${results.passed}</p>
+                    <p><strong>Failed:</strong> ${results.failed}</p>
+                    <p><strong>Warnings:</strong> ${results.warnings}</p>
+                    ${results.issues.length > 0 ? `<p><strong>Issues:</strong> ${results.issues.length} found</p>` : ''}
+                `, results.failed > 0 ? 'error' : results.warnings > 0 ? 'warning' : 'status');
+            } catch (error) {
+                updateResults(`Testing suite error: ${error.message}`, 'error');
+            }
+        }
+
+        function startMonitoring() {
+            window.translationMonitor.startMonitoring();
+            updateResults('Translation monitoring started', 'status');
+        }
+
+        function stopMonitoring() {
+            window.translationMonitor.stopMonitoring();
+            updateResults('Translation monitoring stopped', 'status');
+        }
+
+        // Individual test functions
+        async function testCompleteness() {
+            updateResults('Testing translation completeness...', 'status');
+            // Implementation would go here
+        }
+
+        async function testLanguageSwitching() {
+            updateResults('Testing language switching...', 'status');
+            // Implementation would go here
+        }
+
+        async function testSpecialCharacters() {
+            updateResults('Testing special characters...', 'status');
+            // Implementation would go here
+        }
+
+        async function testExerciseTranslations() {
+            updateResults('Testing exercise translations...', 'status');
+            // Implementation would go here
+        }
+
+        async function testFallbackBehavior() {
+            updateResults('Testing fallback behavior...', 'status');
+            // Implementation would go here
+        }
+
+        async function testUIElements() {
+            updateResults('Testing UI elements...', 'status');
+            // Implementation would go here
+        }
+
+        // Helper functions
+        function updateResults(message, type = 'status') {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = message;
+            resultsDiv.className = type;
+        }
+
+        function updateProgress(percent) {
+            const progressFill = document.getElementById('progress-fill');
+            progressFill.style.width = percent + '%';
+        }
+
+        // Auto-run quick tests on page load
+        window.addEventListener('load', () => {
+            console.log('Translation Test Runner loaded');
+            setTimeout(() => {
+                runQuickTests();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
