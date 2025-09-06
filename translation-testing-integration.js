@@ -39,7 +39,7 @@
 
         document.body.appendChild(testingPanel);
 
-        // Add toggle button
+        // Add toggle button (hidden by default)
         const toggleButton = document.createElement('button');
         toggleButton.id = 'translation-testing-toggle';
         toggleButton.innerHTML = '🧪';
@@ -58,6 +58,7 @@
             z-index: 10001;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            display: none; /* Hidden by default */
         `;
 
         toggleButton.addEventListener('click', () => {
@@ -159,19 +160,58 @@
         document.getElementById('testing-status').textContent = 'Issues cleared';
     };
 
+    // Enable debugging mode (shows debug button)
+    window.enableDebugMode = function() {
+        const toggleButton = document.getElementById('translation-testing-toggle');
+        if (toggleButton) {
+            toggleButton.style.display = 'block';
+            console.log('🧪 Debug mode enabled - Testing tools are now visible');
+        }
+    };
+
+    // Disable debugging mode (hides debug button)
+    window.disableDebugMode = function() {
+        const toggleButton = document.getElementById('translation-testing-toggle');
+        const panel = document.getElementById('translation-testing-panel');
+        if (toggleButton) {
+            toggleButton.style.display = 'none';
+        }
+        if (panel) {
+            panel.style.display = 'none';
+        }
+        console.log('🧪 Debug mode disabled - Testing tools are now hidden');
+    };
+
     // Add keyboard shortcut for testing
     document.addEventListener('keydown', function(event) {
-        // Ctrl+Shift+T for testing panel
-        if (event.ctrlKey && event.shiftKey && event.key === 'T') {
+        // Ctrl+Shift+D to enable/disable debug mode
+        if (event.ctrlKey && event.shiftKey && event.key === 'D') {
             event.preventDefault();
-            const panel = document.getElementById('translation-testing-panel');
-            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            const toggleButton = document.getElementById('translation-testing-toggle');
+            if (toggleButton.style.display === 'none') {
+                window.enableDebugMode();
+            } else {
+                window.disableDebugMode();
+            }
         }
         
-        // Ctrl+Shift+R for quick test
+        // Ctrl+Shift+T for testing panel (only if debug mode is enabled)
+        if (event.ctrlKey && event.shiftKey && event.key === 'T') {
+            event.preventDefault();
+            const toggleButton = document.getElementById('translation-testing-toggle');
+            if (toggleButton.style.display !== 'none') {
+                const panel = document.getElementById('translation-testing-panel');
+                panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+        
+        // Ctrl+Shift+R for quick test (only if debug mode is enabled)
         if (event.ctrlKey && event.shiftKey && event.key === 'R') {
             event.preventDefault();
-            runQuickTranslationTest();
+            const toggleButton = document.getElementById('translation-testing-toggle');
+            if (toggleButton.style.display !== 'none') {
+                runQuickTranslationTest();
+            }
         }
     });
 
@@ -183,14 +223,17 @@
     }
 
     // Add console commands for easy testing
-    console.log('🧪 Translation Testing Tools loaded!');
-    console.log('Available commands:');
+    console.log('🧪 Translation Testing Tools loaded (hidden by default)!');
+    console.log('To enable debug mode, use:');
+    console.log('  - enableDebugMode() (or Ctrl+Shift+D)');
+    console.log('Available commands (when debug mode is enabled):');
     console.log('  - runQuickTranslationTest()');
     console.log('  - toggleTranslationMonitoring()');
     console.log('  - showTranslationReport()');
     console.log('  - clearTranslationIssues()');
     console.log('Keyboard shortcuts:');
-    console.log('  - Ctrl+Shift+T: Toggle testing panel');
-    console.log('  - Ctrl+Shift+R: Run quick test');
+    console.log('  - Ctrl+Shift+D: Enable/disable debug mode');
+    console.log('  - Ctrl+Shift+T: Toggle testing panel (debug mode only)');
+    console.log('  - Ctrl+Shift+R: Run quick test (debug mode only)');
 
 })();

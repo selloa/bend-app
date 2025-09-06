@@ -23,15 +23,21 @@ class BendI18n {
         return ['en', 'de', 'es', 'ta'].includes(lang) ? lang : 'en';
     }
 
-    // Get translation for a key
+    // Get translation for a key with error handling
     t(key, params = {}, fallback = null) {
-        const translation = this.getNestedValue(this.translations[this.currentLang], key) ||
-                          this.getNestedValue(this.translations.en, key) ||
-                          fallback ||
-                          key;
-        
-        // Replace parameters in translation
-        return this.interpolate(translation, params);
+        try {
+            const translation = this.getNestedValue(this.translations[this.currentLang], key) ||
+                              this.getNestedValue(this.translations.en, key) ||
+                              fallback ||
+                              key;
+            
+            // Replace parameters in translation
+            return this.interpolate(translation, params);
+        } catch (error) {
+            console.error('Translation error for key:', key, error);
+            // Return the key itself as a fallback
+            return key;
+        }
     }
 
     // Get nested object value by dot notation
@@ -39,9 +45,15 @@ class BendI18n {
         return key.split('.').reduce((o, k) => (o && o[k] !== undefined) ? o[k] : null, obj);
     }
 
-    // Replace parameters in translation strings
+    // Replace parameters in translation strings with error handling
     interpolate(str, params) {
-        return str.replace(/\{\{(\w+)\}\}/g, (match, key) => params[key] || match);
+        try {
+            if (typeof str !== 'string') return str;
+            return str.replace(/\{\{(\w+)\}\}/g, (match, key) => params[key] || match);
+        } catch (error) {
+            console.error('Interpolation error:', error);
+            return str;
+        }
     }
 
     // Change language

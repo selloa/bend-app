@@ -1314,76 +1314,201 @@ let sideSwitchMessageTimer = null;
 let audioContext = null;
 let circularTimerAnimation = null;
 
-// Initialize the app
+// Initialize the app with graceful error handling
 document.addEventListener('DOMContentLoaded', function() {
-    setupEventListeners();
-    initializeDarkMode();
-    initializeAudio();
-    setupAccessibility();
-    
-    // Show language selector on initial load (routine selection is default active)
-    document.body.classList.add('routine-selection-active');
+    try {
+        setupEventListeners();
+        initializeDarkMode();
+        initializeAudio();
+        setupAccessibility();
+        
+        // Show language selector on initial load (routine selection is default active)
+        document.body.classList.add('routine-selection-active');
+        
+        console.log('✅ Bend app initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing Bend app:', error);
+        // Graceful fallback - show a simple message instead of crashing
+        showGracefulError('App initialization failed. Please refresh the page.');
+    }
 });
 
+// Graceful error display function
+function showGracefulError(message) {
+    try {
+        // Create a simple error overlay
+        const errorOverlay = document.createElement('div');
+        errorOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        `;
+        
+        errorOverlay.innerHTML = `
+            <div style="background: #e74c3c; padding: 30px; border-radius: 10px; max-width: 400px;">
+                <h2 style="margin: 0 0 15px 0;">⚠️ Something went wrong</h2>
+                <p style="margin: 0 0 20px 0;">${message}</p>
+                <button onclick="location.reload()" style="
+                    background: #2ecc71;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                ">Refresh Page</button>
+            </div>
+        `;
+        
+        document.body.appendChild(errorOverlay);
+    } catch (fallbackError) {
+        // If even the error display fails, just log it
+        console.error('Failed to show error message:', fallbackError);
+    }
+}
+
 function setupEventListeners() {
-    // Folder selection
-    const folderBtns = document.querySelectorAll('.folder-btn');
-    folderBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const folder = this.getAttribute('data-folder');
-            showFolderView(folder);
+    try {
+        // Folder selection
+        const folderBtns = document.querySelectorAll('.folder-btn');
+        folderBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                try {
+                    const folder = this.getAttribute('data-folder');
+                    showFolderView(folder);
+                } catch (error) {
+                    console.error('Error in folder selection:', error);
+                    showGracefulError('Failed to load folder. Please try again.');
+                }
+            });
         });
-    });
 
-    // Back to main view
-    document.getElementById('back-to-main').addEventListener('click', showMainView);
-
-    // Routine category selection
-    const routineCategoryBtns = document.querySelectorAll('.routine-category-btn');
-    routineCategoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const routine = this.getAttribute('data-routine');
-            selectRoutine(routine);
-        });
-    });
-
-    // Timer controls
-    document.getElementById('start-pause-btn').addEventListener('click', function() {
-        // Initialize audio context on first user interaction
-        if (audioContext && audioContext.state === 'suspended') {
-            audioContext.resume();
+        // Back to main view
+        const backBtn = document.getElementById('back-to-main');
+        if (backBtn) {
+            backBtn.addEventListener('click', function() {
+                try {
+                    showMainView();
+                } catch (error) {
+                    console.error('Error returning to main view:', error);
+                    showGracefulError('Failed to return to main view. Please refresh the page.');
+                }
+            });
         }
-        toggleTimer();
-    });
-    
-    // Navigation controls
-    document.getElementById('prev-btn').addEventListener('click', previousExercise);
-    document.getElementById('next-btn').addEventListener('click', nextExercise);
-    
-    // Auto-start timer toggle (removed from UI, but keep functionality)
-    // autoStartTimerEnabled is set to true by default
-    
-    // Dark mode toggle
-    document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    } catch (error) {
+        console.error('Error setting up event listeners:', error);
+        showGracefulError('Failed to set up app controls. Please refresh the page.');
+    }
+
+        // Routine category selection
+        const routineCategoryBtns = document.querySelectorAll('.routine-category-btn');
+        routineCategoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                try {
+                    const routine = this.getAttribute('data-routine');
+                    selectRoutine(routine);
+                } catch (error) {
+                    console.error('Error in routine selection:', error);
+                    showGracefulError('Failed to load routine. Please try again.');
+                }
+            });
+        });
+
+        // Timer controls
+        const startPauseBtn = document.getElementById('start-pause-btn');
+        if (startPauseBtn) {
+            startPauseBtn.addEventListener('click', function() {
+                try {
+                    // Initialize audio context on first user interaction
+                    if (audioContext && audioContext.state === 'suspended') {
+                        audioContext.resume();
+                    }
+                    toggleTimer();
+                } catch (error) {
+                    console.error('Error in timer control:', error);
+                    showGracefulError('Failed to control timer. Please try again.');
+                }
+            });
+        }
+        
+        // Navigation controls
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                try {
+                    previousExercise();
+                } catch (error) {
+                    console.error('Error in previous exercise:', error);
+                    showGracefulError('Failed to go to previous exercise. Please try again.');
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                try {
+                    nextExercise();
+                } catch (error) {
+                    console.error('Error in next exercise:', error);
+                    showGracefulError('Failed to go to next exercise. Please try again.');
+                }
+            });
+        }
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', function() {
+                try {
+                    toggleDarkMode();
+                } catch (error) {
+                    console.error('Error in dark mode toggle:', error);
+                    showGracefulError('Failed to toggle dark mode. Please try again.');
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error setting up remaining event listeners:', error);
+        showGracefulError('Failed to set up some app controls. Please refresh the page.');
+    }
 }
 
 function selectRoutine(routine, folderKey = null) {
-    currentRoutine = routine;
-    
-    // Check if it's a folder routine or regular routine
-    if (folderKey && bodyAreaFolders[folderKey] && bodyAreaFolders[folderKey].routines[routine]) {
-        currentExercises = bodyAreaFolders[folderKey].routines[routine].exercises;
-    } else if (bendRoutines[routine]) {
-        currentExercises = bendRoutines[routine].exercises;
-    } else {
-        console.error('Routine not found:', routine);
-        return;
+    try {
+        currentRoutine = routine;
+        
+        // Check if it's a folder routine or regular routine
+        if (folderKey && bodyAreaFolders[folderKey] && bodyAreaFolders[folderKey].routines[routine]) {
+            currentExercises = bodyAreaFolders[folderKey].routines[routine].exercises;
+        } else if (bendRoutines[routine]) {
+            currentExercises = bendRoutines[routine].exercises;
+        } else {
+            console.error('Routine not found:', routine);
+            showGracefulError('Routine not found. Please try selecting a different routine.');
+            return;
+        }
+        
+        currentExerciseIndex = 0;
+        routineStartTime = Date.now();
+        showExerciseDisplay();
+        displayCurrentExercise();
+    } catch (error) {
+        console.error('Error selecting routine:', error);
+        showGracefulError('Failed to load routine. Please try again.');
     }
-    
-    currentExerciseIndex = 0;
-    routineStartTime = Date.now();
-    showExerciseDisplay();
-    displayCurrentExercise();
 }
 
 // Stop all timers and cleanup exercise state
@@ -1591,8 +1716,8 @@ function displayCurrentExercise() {
         timer = null;
     }
     
-    // Auto-start timer if enabled
-    if (autoStartTimerEnabled) {
+    // Auto-start timer if enabled and we're actually in the exercise display view
+    if (autoStartTimerEnabled && document.getElementById('exercise-display').classList.contains('active')) {
         setTimeout(() => {
             startTimer();
         }, 500); // Small delay to let the UI update
@@ -1600,6 +1725,11 @@ function displayCurrentExercise() {
 }
 
 function toggleTimer() {
+    // Safety check: only allow timer toggle if we're in the exercise display view
+    if (!document.getElementById('exercise-display').classList.contains('active')) {
+        return;
+    }
+    
     if (isTimerRunning) {
         pauseTimer();
     } else {
@@ -1608,6 +1738,11 @@ function toggleTimer() {
 }
 
 function startTimer() {
+    // Safety check: only start timer if we're in the exercise display view
+    if (!document.getElementById('exercise-display').classList.contains('active')) {
+        return;
+    }
+    
     isTimerRunning = true;
     document.getElementById('play-pause-icon').textContent = '⏸';
     
