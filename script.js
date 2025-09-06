@@ -1642,10 +1642,15 @@ function updateCircularTimer() {
     
     const progressCircle = document.querySelector('.timer-ring-progress');
     if (progressCircle) {
-        // Use requestAnimationFrame for smoother animation
-        requestAnimationFrame(() => {
-            progressCircle.style.strokeDashoffset = strokeDashoffset;
-        });
+        // Direct update without transition for continuous motion
+        progressCircle.style.transition = 'none';
+        progressCircle.style.strokeDashoffset = strokeDashoffset;
+        
+        // Force reflow to ensure the change is applied
+        progressCircle.offsetHeight;
+        
+        // Re-enable smooth transition for next update
+        progressCircle.style.transition = 'stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     }
 }
 
@@ -1653,10 +1658,8 @@ function resetCircularTimer() {
     const progressCircle = document.querySelector('.timer-ring-progress');
     if (progressCircle) {
         const circumference = 2 * Math.PI * 45; // radius = 45
-        // Smooth reset animation
-        requestAnimationFrame(() => {
-            progressCircle.style.strokeDashoffset = circumference;
-        });
+        // Reset with smooth transition
+        progressCircle.style.strokeDashoffset = circumference;
     }
 }
 
