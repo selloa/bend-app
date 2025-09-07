@@ -1,0 +1,190 @@
+{
+  "app": {
+    "title": "Tend",
+    "subtitle": "Stretching & Flexibility",
+    "description": "A gentle stretching and flexibility app designed for all ages and abilities"
+  },
+  "navigation": {
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "start": "Start",
+    "pause": "Pause",
+    "skip": "Skip",
+    "chooseRoutine": "Choose a routine:"
+  },
+  "timer": {
+    "switchSides": "Switch sides",
+    "exerciseComplete": "Exercise Complete",
+    "routineComplete": "Routine Complete",
+    "routineCompleteMessage": "You've completed the {{routineName}} routine!",
+    "startNewRoutine": "Start New Routine",
+    "minutes": "Minutes",
+    "exercises": "Exercises",
+    "progress": "{{current}} of {{total}}"
+  },
+  "routines": {
+    "wakeUp": "Wake Up",
+    "bedTime": "Bed Time",
+    "neckShoulders": "Neck & Shoulders",
+    "backSpine": "Back & Spine",
+    "legsHips": "Legs & Hips",
+    "armsWrists": "Arms & Wrists",
+    "feetAnkles": "Feet & Ankles",
+    "fullBody": "Full Body",
+    "quickStretch": "Quick Stretch",
+    "postureReset": "Posture Reset",
+    "sleep": "Sleep",
+    "expert": "Expert",
+    "hips": "Hips",
+    "hamstrings": "Hamstrings",
+    "lowerBack": "Lower Back",
+    "isometric": "Isometric",
+    "neck": "Neck",
+    "shoulders": "Shoulders",
+    "feet": "Feet",
+    "ankle": "Ankle",
+    "knees": "Knees",
+    "hands": "Hands",
+    "fingers": "Fingers",
+    "wrists": "Wrists"
+  },
+  "routineDescriptions": {
+    "wakeUp": "Quick morning mobility flow",
+    "postureReset": "Seated stretches for better posture",
+    "fullBody": "Comprehensive flexibility routine",
+    "sleep": "Gentle stretches for better sleep",
+    "expert": "Advanced flexibility training",
+    "hips": "Deep hip opening stretches",
+    "hamstrings": "Targeted hamstring flexibility",
+    "lowerBack": "Relief for lower back pain",
+    "isometric": "Strength through static holds",
+    "neck": "Relieve neck tension and stiffness",
+    "shoulders": "Release shoulder tension",
+    "feet": "Foot flexibility and health",
+    "ankle": "Ankle mobility and flexibility",
+    "knees": "Knee mobility and joint health",
+    "hands": "Hand and finger dexterity",
+    "fingers": "Individual finger flexibility",
+    "wrists": "Wrist mobility and flexibility",
+    "feetAnkles": "Foot and ankle mobility routine"
+  },
+  "folders": {
+    "hips": "Hips",
+    "shoulders": "Shoulders",
+    "lowerBack": "Lower Back",
+    "neck": "Neck",
+    "hamstrings": "Hamstrings",
+    "feetAnkles": "Feet & Ankles",
+    "core": "Core",
+    "upperBody": "Upper Body",
+    "lowerBody": "Lower Body",
+    "seated": "Seated",
+    "posture": "Posture",
+    "chest": "Chest"
+  },
+  "folderDescriptions": {
+    "hips": "Hip mobility and flexibility routines",
+    "shoulders": "Shoulder mobility and flexibility routines",
+    "lowerBack": "Lower back relief and strengthening routines",
+    "neck": "Neck mobility and tension relief routines",
+    "hamstrings": "Hamstring flexibility and mobility routines",
+    "feetAnkles": "Foot and ankle mobility routines",
+    "core": "Core strength and stability routines",
+    "upperBody": "Upper body mobility and strength routines",
+    "lowerBody": "Lower body mobility and strength routines",
+    "seated": "Seated exercises for office or limited mobility",
+    "posture": "Posture correction and alignment routines",
+    "chest": "Chest opening and flexibility routines"
+  },
+  "exercises": {
+    "neckRolls": {
+      "name": "Neck Rolls",
+      "description": "Slowly roll your head in a circle, first clockwise, then counterclockwise. Keep movements gentle and controlled.",
+      "instructions": "Start with small circles and gradually increase the range of motion."
+    },
+    "shoulderShrugs": {
+      "name": "Shoulder Shrugs",
+      "description": "Lift your shoulders up toward your ears, hold for 3 seconds, then relax. Repeat slowly.",
+      "instructions": "Keep the movements controlled and avoid quick shrugging motions."
+    },
+    "sideNeckStretch": {
+      "name": "Side Neck Stretch",
+      "description": "Gently tilt your head to the right, hold for 15 seconds, then repeat on the left side.",
+      "instructions": "Keep your shoulders relaxed and avoid pulling with your hand."
+    },
+    "forwardNeckStretch": {
+      "name": "Forward Neck Stretch",
+      "description": "Slowly lower your chin toward your chest, feeling a gentle stretch in the back of your neck.",
+      "instructions": "Hold the stretch gently and avoid excessive tension."
+    },
+    "armCircles": {
+      "name": "Arm Circles",
+      "description": "Make small circles with your arms, first forward, then backward. Keep movements slow and controlled.",
+      "instructions": "Start with small circles and gradually increase the radius."
+    },
+    "gentleTwist": {
+      "name": "Gentle Twist",
+      "description": "Stand with feet hip-width apart, place your hands on your hips, and gently twist from side to side.",
+      "instructions": "Keep the movements controlled and breathe evenly."
+    },
+    "calfRaises": {
+      "name": "Calf Raises",
+      "description": "Stand tall and slowly rise up onto your toes, then lower back down. Keep movements controlled.",
+      "instructions": "Maintain your balance and avoid jerky movements."
+    },
+    "deepBreathing": {
+      "name": "Deep Breathing",
+      "description": "Take 5 deep breaths, inhaling through your nose and exhaling through your mouth. Feel your body relax.",
+      "instructions": "Focus on slow, deep breaths."
+    },
+    "cactusArms": {
+      "name": "Cactus Arms",
+      "description": "Sit tall, bring your arms up to shoulder height, bend your elbows to 90 degrees, and press your arms back against your chair.",
+      "instructions": "Keep your shoulder blades squeezed together."
+    },
+    "divers": {
+      "name": "Divers",
+      "description": "Sit tall, reach your arms forward and up, then dive them down between your legs, rounding your spine.",
+      "instructions": "Move slowly and controlled through the entire movement."
+    },
+    "seatedBackTwist": {
+      "name": "Seated Back Twist",
+      "description": "Sit tall and gently twist your torso to the right, placing your left hand on your right knee. Hold and repeat on other side.",
+      "instructions": "Keep your hips straight and twist only your upper body."
+    },
+    "shoulderBladeSqueeze": {
+      "name": "Shoulder Blade Squeeze",
+      "description": "Squeeze your shoulder blades together, hold for 5 seconds, then release. Keep your shoulders relaxed.",
+      "instructions": "Focus on squeezing the shoulder blades together, not lifting the shoulders."
+    },
+    "chinTucks": {
+      "name": "Chin Tucks",
+      "description": "Gently pull your chin back, creating a double chin. Hold for 5 seconds, then release. Repeat slowly.",
+      "instructions": "Imagine you're making a double chin."
+    }
+  },
+  "accessibility": {
+    "toggleDarkMode": "Toggle dark mode",
+    "languageSelector": "Language selector",
+    "startPauseTimer": "Start or pause timer",
+    "nextExercise": "Next exercise",
+    "previousExercise": "Previous exercise",
+    "backToRoutines": "Back to routine selection",
+    "timerLabel": "Timer label",
+    "progressLabel": "Progress label",
+    "routineSelection": "Routine selection"
+  },
+  "meta": {
+    "description": "A gentle stretching and flexibility app designed for all ages and abilities"
+  },
+  "editorial": {
+    "createdBy": "Created by",
+    "inYear": "in 2025",
+    "shareMessage": "Please share with family, friends and colleagues",
+    "businessInquiries": "For business inquiries:"
+  },
+  "share": {
+    "shareWithFriend": "Share with a friend"
+  }
+}
