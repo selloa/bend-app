@@ -98,6 +98,26 @@
     "posture": "Posture correction and alignment routines",
     "chest": "Chest opening and flexibility routines"
   },
+  "routineDescriptions": {
+    "wakeUp": "Quick morning mobility flow",
+    "postureReset": "Seated stretches for better posture",
+    "fullBody": "Comprehensive flexibility routine",
+    "sleep": "Gentle stretches for better sleep",
+    "expert": "Advanced flexibility training",
+    "hips": "Deep hip opening stretches",
+    "hamstrings": "Targeted hamstring flexibility",
+    "lowerBack": "Relief for lower back pain",
+    "backSafeHips": "Gentle hip and core strengthening for people with back issues",
+    "isometric": "Strength through static holds",
+    "neck": "Relieve neck tension and stiffness",
+    "shoulders": "Release shoulder tension",
+    "feet": "Foot flexibility and health",
+    "ankle": "Ankle mobility and flexibility",
+    "knees": "Knee mobility and joint health",
+    "hands": "Hand and finger dexterity",
+    "fingers": "Individual finger flexibility",
+    "wrists": "Wrist mobility and flexibility"
+  },
   "exercises": {
     "neckRolls": {
       "name": "Neck Rolls",

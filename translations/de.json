@@ -44,8 +44,7 @@
     "knees": "Knie",
     "hands": "Hände",
     "fingers": "Finger",
-    "wrists": "Handgelenke",
-    "feetAnkles": "Füße & Knöchel"
+    "wrists": "Handgelenke"
   },
   "folders": {
     "hips": "Hüften",
@@ -74,6 +73,26 @@
     "seated": "Sitzende Übungen für Büro oder eingeschränkte Mobilität",
     "posture": "Haltungskorrektur- und Ausrichtungsroutinen",
     "chest": "Brustöffnungs- und Flexibilitätsroutinen"
+  },
+  "routineDescriptions": {
+    "wakeUp": "Schneller morgendlicher Mobilitätsfluss",
+    "postureReset": "Sitzende Dehnungen für bessere Haltung",
+    "fullBody": "Umfassende Flexibilitätsroutine",
+    "sleep": "Sanfte Dehnungen für besseren Schlaf",
+    "expert": "Fortgeschrittenes Flexibilitätstraining",
+    "hips": "Tiefe Hüftöffnungsdehnungen",
+    "hamstrings": "Gezielte Oberschenkelrückseiten-Flexibilität",
+    "lowerBack": "Linderung bei Rückenschmerzen",
+    "backSafeHips": "Sanfte Hüft- und Kernkräftigung für Menschen mit Rückenproblemen",
+    "isometric": "Kraft durch statische Halteübungen",
+    "neck": "Nackenspannung und Steifheit lindern",
+    "shoulders": "Schulterspannung lösen",
+    "feet": "Fußflexibilität und Gesundheit",
+    "ankle": "Knöchelmobilität und Flexibilität",
+    "knees": "Kniemobilität und Gelenkgesundheit",
+    "hands": "Hand- und Fingerfertigkeit",
+    "fingers": "Einzelne Fingerflexibilität",
+    "wrists": "Handgelenkmobilität und Flexibilität"
   },
   "exercises": {
     "neckRolls": {

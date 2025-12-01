@@ -75,6 +75,26 @@
     "posture": "Rutinas de corrección y alineación de postura",
     "chest": "Rutinas de apertura y flexibilidad del pecho"
   },
+  "routineDescriptions": {
+    "wakeUp": "Flujo rápido de movilidad matutina",
+    "postureReset": "Estiramientos sentados para mejor postura",
+    "fullBody": "Rutina integral de flexibilidad",
+    "sleep": "Estiramientos suaves para mejor sueño",
+    "expert": "Entrenamiento avanzado de flexibilidad",
+    "hips": "Estiramientos profundos de apertura de cadera",
+    "hamstrings": "Flexibilidad dirigida de isquiotibiales",
+    "lowerBack": "Alivio para dolor de espalda baja",
+    "backSafeHips": "Fortalecimiento suave de cadera y core para personas con problemas de espalda",
+    "isometric": "Fuerza a través de posiciones estáticas",
+    "neck": "Aliviar tensión y rigidez del cuello",
+    "shoulders": "Liberar tensión de hombros",
+    "feet": "Flexibilidad y salud del pie",
+    "ankle": "Movilidad y flexibilidad del tobillo",
+    "knees": "Movilidad de la rodilla y salud articular",
+    "hands": "Destreza de manos y dedos",
+    "fingers": "Flexibilidad individual de los dedos",
+    "wrists": "Movilidad y flexibilidad de la muñeca"
+  },
   "exercises": {
     "neckRolls": {
       "name": "Rotaciones de Cuello",
