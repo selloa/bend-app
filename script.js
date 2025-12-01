@@ -509,6 +509,92 @@ const bendRoutines = {
             }
         ]
     },
+    "back-safe-hips": {
+        name: "Back-Safe Hip Strengthening",
+        description: "Gentle hip and core strengthening exercises designed for people with lower back issues. Focuses on glutes, hips, and core stability while avoiding spinal stress. Consult your physiotherapist before starting.",
+        duration: "12 minutes",
+        exercises: [
+            {
+                name: "Pelvic Tilts",
+                description: "Lie on your back with knees bent, feet flat. Gently tilt your pelvis, pressing your lower back into the floor. Hold for 5 seconds, then release.",
+                duration: 60,
+                emoji: "🔄"
+            },
+            {
+                name: "Glute Bridge Hold",
+                description: "Lie on your back, knees bent, feet flat. Lift your hips up, squeezing your glutes. Keep your spine neutral - don't arch too much. Hold for 5-10 seconds.",
+                duration: 75,
+                emoji: "🌉"
+            },
+            {
+                name: "Single Leg Glute Bridge",
+                description: "Same as glute bridge, but extend one leg straight while lifting hips. This strengthens glutes without spinal load. Alternate legs.",
+                duration: 90,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Clamshells",
+                description: "Lie on your side, knees bent. Keep feet together and lift your top knee up, opening like a clamshell. Strengthens hip external rotators.",
+                duration: 75,
+                emoji: "🐚",
+                needsSideSwitch: true
+            },
+            {
+                name: "Side-Lying Hip Abduction",
+                description: "Lie on your side, bottom leg bent for support. Lift your top leg straight up to hip height. Slow and controlled movement.",
+                duration: 75,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Bird Dog (Gentle)",
+                description: "On hands and knees, slowly extend one arm forward and opposite leg back. Keep core tight and spine neutral. No arching or rotating.",
+                duration: 90,
+                emoji: "🐕",
+                needsSideSwitch: true
+            },
+            {
+                name: "Supine Marching",
+                description: "Lie on your back, knees bent. Slowly lift one knee toward chest, then lower and switch. Keep lower back pressed to floor. Builds core stability.",
+                duration: 60,
+                emoji: "🚶"
+            },
+            {
+                name: "Figure 4 Stretch",
+                description: "Lie on your back, place ankle on opposite knee. Gently pull bottom leg toward chest. Great for hip flexibility without spinal stress.",
+                duration: 75,
+                emoji: "4️⃣",
+                needsSideSwitch: true
+            },
+            {
+                name: "Knee to Chest (Single)",
+                description: "Lie on your back, gently bring one knee to chest with hands. Keep the other leg bent or extended flat. Relieves lower back pressure.",
+                duration: 60,
+                emoji: "🦵",
+                needsSideSwitch: true
+            },
+            {
+                name: "Dead Bug (Modified)",
+                description: "Lie on back, knees bent at 90°. Slowly lower one heel to floor while keeping lower back pressed down. Return and alternate sides.",
+                duration: 90,
+                emoji: "🪲"
+            },
+            {
+                name: "Hip Flexor Activation",
+                description: "Lie on back, knees bent. Press one foot into floor while trying to lift knee (resist with your hands). Isometric strengthening - no movement needed.",
+                duration: 60,
+                emoji: "💪",
+                needsSideSwitch: true
+            },
+            {
+                name: "Final Relaxation",
+                description: "Lie on your back in a comfortable position, knees bent or supported. Close your eyes, breathe deeply, and let all tension release.",
+                duration: 60,
+                emoji: "😌"
+            }
+        ]
+    },
     "isometric": {
         name: "Isometric",
         description: "Routines that build muscle, strength, balance, and range of motion through static muscle contractions.",
@@ -2086,9 +2172,13 @@ function showFolderView(folderKey) {
         routineBtn.className = 'routine-category-btn';
         routineBtn.setAttribute('data-routine', routineKey);
         
+        // Convert routine key to match i18n key format
+        // "wake-up" -> "wakeUp", "posture-reset" -> "postureReset", etc.
+        const i18nRoutineKey = routineKey.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+        
         // Get translated routine name and description
-        const translatedRoutineName = window.i18n.t(`routines.${routineKey}`, routine.name);
-        const translatedRoutineDescription = window.i18n.t(`routineDescriptions.${routineKey}`, routine.description);
+        const translatedRoutineName = window.i18n.t(`routines.${i18nRoutineKey}`, routine.name);
+        const translatedRoutineDescription = window.i18n.t(`routineDescriptions.${i18nRoutineKey}`, routine.description);
         
         routineBtn.innerHTML = `
             <div class="icon">${getRoutineIcon(routineKey)}</div>
@@ -2158,7 +2248,8 @@ function showCompletionScreen() {
     
     // Update completion screen with translations
     const routineData = bendRoutines[currentRoutine];
-    const translatedRoutineName = window.i18n.t(`routines.${currentRoutine}`, routineData.name);
+    const i18nRoutineKey = currentRoutine.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+    const translatedRoutineName = window.i18n.t(`routines.${i18nRoutineKey}`, routineData.name);
     const completionMessage = window.i18n.t('timer.routineCompleteMessage', `You've completed the ${translatedRoutineName} routine!`).replace('{{routineName}}', translatedRoutineName);
     document.getElementById('completion-message').textContent = completionMessage;
     document.getElementById('total-time').textContent = totalRoutineTime;
@@ -2174,8 +2265,10 @@ function getTranslatedExercise(exercise) {
     const currentLang = window.i18n.currentLang;
     
     // Convert exercise name to match i18n key format
-    // "Neck Rolls" -> "neckrolls", "Shoulder Shrugs" -> "shouldershrugs", etc.
-    const exerciseKey = exercise.name.toLowerCase().replace(/\s+/g, '');
+    // "Neck Rolls" -> "neckRolls", "Shoulder Shrugs" -> "shoulderShrugs", etc.
+    const exerciseKey = exercise.name.replace(/\s+/g, '').replace(/([A-Z])/g, (match, letter, index) => 
+        index === 0 ? letter.toLowerCase() : letter
+    );
     
     // Try to get translation from i18n system
     const translatedName = window.i18n.t(`exercises.${exerciseKey}.name`, {}, exercise.name);

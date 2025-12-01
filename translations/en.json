@@ -39,6 +39,7 @@
     "hips": "Hips",
     "hamstrings": "Hamstrings",
     "lowerBack": "Lower Back",
+    "backSafeHips": "Back-Safe Hip Strengthening",
     "isometric": "Isometric",
     "neck": "Neck",
     "shoulders": "Shoulders",
@@ -162,6 +163,86 @@
       "name": "Chin Tucks",
       "description": "Gently pull your chin back, creating a double chin. Hold for 5 seconds, then release. Repeat slowly.",
       "instructions": "Imagine you're making a double chin."
+    },
+    "seatedForwardFold": {
+      "name": "Seated Forward Fold",
+      "description": "Sit with legs extended, hinge forward from hips, reaching for feet or shins.",
+      "instructions": "Keep your back straight and fold from the hips, not the waist."
+    },
+    "finalRelaxation": {
+      "name": "Final Relaxation",
+      "description": "Lie down comfortably and focus on deep, slow breathing to relax your entire body.",
+      "instructions": "Allow your body to completely relax and release any remaining tension."
+    },
+    "sunSalutation": {
+      "name": "Sun Salutation",
+      "description": "A flowing sequence of poses that warms up the entire body and connects breath with movement.",
+      "instructions": "Move smoothly between poses, coordinating your breath with each movement."
+    },
+    "fullBodyStretch": {
+      "name": "Full Body Stretch",
+      "description": "Reach your arms overhead and stretch your entire body from fingertips to toes.",
+      "instructions": "Stretch gently and hold the position while breathing deeply."
+    },
+    "catCowStretch": {
+      "name": "Cat-Cow Stretch",
+      "description": "On hands and knees, alternate between arching your back (cow) and rounding it (cat).",
+      "instructions": "Move slowly and coordinate the movement with your breath."
+    },
+    "childsPose": {
+      "name": "Child's Pose",
+      "description": "Kneel and sit back on your heels, then fold forward with arms extended.",
+      "instructions": "Relax your forehead to the ground and breathe deeply into your back."
+    },
+    "downwardDog": {
+      "name": "Downward Dog",
+      "description": "Start on hands and knees, then lift hips up and back to form an inverted V shape.",
+      "instructions": "Keep your arms straight and press your heels toward the ground."
+    },
+    "warriorI": {
+      "name": "Warrior I",
+      "description": "Step one foot forward into a lunge, raise arms overhead, and hold the position.",
+      "instructions": "Keep your front knee over your ankle and engage your core."
+    },
+    "trianglePose": {
+      "name": "Triangle Pose",
+      "description": "Stand with feet wide apart, reach one hand down to your shin and the other up to the sky.",
+      "instructions": "Keep both legs straight and open your chest to the side."
+    },
+    "butterflyStretch": {
+      "name": "Butterfly Stretch",
+      "description": "Sit with soles of feet together, gently press knees down and fold forward.",
+      "instructions": "Keep your back straight and fold from the hips."
+    },
+    "supineTwist": {
+      "name": "Supine Twist",
+      "description": "Lie on your back, bring knees to chest, then drop them to one side while keeping shoulders on the ground.",
+      "instructions": "Relax into the twist and breathe deeply."
+    },
+    "happyBaby": {
+      "name": "Happy Baby",
+      "description": "Lie on your back, grab the outsides of your feet, and gently rock side to side.",
+      "instructions": "Keep your lower back pressed to the ground and rock gently."
+    },
+    "ragDoll": {
+      "name": "Rag Doll",
+      "description": "Stand with feet hip-width apart, fold forward and let your arms hang loosely.",
+      "instructions": "Relax your neck and shoulders, letting gravity do the work."
+    },
+    "kneesToChest": {
+      "name": "Knees to Chest",
+      "description": "Lie on your back and gently pull your knees toward your chest.",
+      "instructions": "Hold the position and rock gently side to side."
+    },
+    "legsUpTheWall": {
+      "name": "Legs Up the Wall",
+      "description": "Lie on your back with your legs resting against a wall.",
+      "instructions": "Relax completely and focus on your breathing."
+    },
+    "corpsePose": {
+      "name": "Corpse Pose",
+      "description": "Lie flat on your back with arms at your sides, palms up, and legs slightly apart.",
+      "instructions": "Relax every muscle in your body and focus on your breath."
     }
   },
   "accessibility": {

@@ -167,6 +167,7 @@ class TendI18n {
                     hips: "Hips",
                     hamstrings: "Hamstrings",
                     lowerBack: "Lower Back",
+                    backSafeHips: "Back-Safe Hip Strengthening",
                     isometric: "Isometric",
                     neck: "Neck",
                     shoulders: "Shoulders",
@@ -228,6 +229,7 @@ class TendI18n {
                     hips: "Deep hip opening stretches",
                     hamstrings: "Targeted hamstring flexibility",
                     lowerBack: "Relief for lower back pain",
+                    backSafeHips: "Gentle hip and core strengthening for people with back issues",
                     isometric: "Strength through static holds",
                     neck: "Relieve neck tension and stiffness",
                     shoulders: "Release shoulder tension",
@@ -860,6 +862,7 @@ class TendI18n {
                     hips: "Hüften",
                     hamstrings: "Oberschenkelrückseite",
                     lowerBack: "Unterer Rücken",
+                    backSafeHips: "Rückenschonende Hüftkräftigung",
                     isometric: "Isometrisch",
                     neck: "Nacken",
                     shoulders: "Schultern",
@@ -953,6 +956,7 @@ class TendI18n {
                     hips: "Tiefe Hüftöffnungsdehnungen",
                     hamstrings: "Gezielte Oberschenkelrückseiten-Flexibilität",
                     lowerBack: "Linderung bei Rückenschmerzen",
+                    backSafeHips: "Sanfte Hüft- und Kernkräftigung für Menschen mit Rückenproblemen",
                     isometric: "Kraft durch statische Halteübungen",
                     neck: "Nackenspannung und Steifheit lindern",
                     shoulders: "Schulterspannung lösen",
@@ -1223,6 +1227,22 @@ class TendI18n {
                     hipflexorstrengthening: {
                         name: "Hüftbeuger-Kräftigung",
                         description: "Stehen Sie und heben Sie ein Knie zur Brust, dann senken Sie es langsam ab."
+                    },
+                    clamshells: {
+                        name: "Muschelöffnung",
+                        description: "Legen Sie sich auf die Seite, Knie gebeugt. Füße zusammen halten und das obere Knie öffnen."
+                    },
+                    singlelegglutbridge: {
+                        name: "Einbeinige Gesäßbrücke",
+                        description: "Gesäßbrücke mit einem Bein ausgestreckt. Stärkt Gesäßmuskeln ohne Wirbelsäulenbelastung."
+                    },
+                    supinemarching: {
+                        name: "Marschieren in Rückenlage",
+                        description: "Auf dem Rücken liegend, abwechselnd die Knie zur Brust heben. Baut Kernstabilität auf."
+                    },
+                    hipflexoractivation: {
+                        name: "Hüftbeuger-Aktivierung",
+                        description: "Isometrische Kräftigung: Fuß in den Boden drücken während Sie versuchen, das Knie zu heben."
                     },
                     singlelegdeadlift: {
                         name: "Einbeiniges Kreuzheben",
@@ -1553,6 +1573,7 @@ class TendI18n {
                     hips: "Caderas",
                     hamstrings: "Isquiotibiales",
                     lowerBack: "Espalda Baja",
+                    backSafeHips: "Fortalecimiento de Cadera Seguro para la Espalda",
                     isometric: "Isométrico",
                     neck: "Cuello",
                     shoulders: "Hombros",
@@ -1582,6 +1603,7 @@ class TendI18n {
                     hips: "Estiramientos profundos de apertura de cadera",
                     hamstrings: "Flexibilidad dirigida de isquiotibiales",
                     lowerBack: "Alivio para dolor de espalda baja",
+                    backSafeHips: "Fortalecimiento suave de cadera y core para personas con problemas de espalda",
                     isometric: "Fuerza a través de posiciones estáticas",
                     neck: "Aliviar tensión y rigidez del cuello",
                     shoulders: "Liberar tensión de hombros",
@@ -1820,6 +1842,22 @@ class TendI18n {
                     hipflexorstrengthening: {
                         name: "Fortalecimiento de Flexores de Cadera",
                         description: "Párese y levante una rodilla hacia el pecho, luego bájela lentamente."
+                    },
+                    clamshells: {
+                        name: "Almejas",
+                        description: "Acuéstese de lado, rodillas dobladas. Mantenga los pies juntos y abra la rodilla superior."
+                    },
+                    singlelegglutbridge: {
+                        name: "Puente de Glúteos con Una Pierna",
+                        description: "Puente de glúteos con una pierna extendida. Fortalece los glúteos sin carga espinal."
+                    },
+                    supinemarching: {
+                        name: "Marcha en Posición Supina",
+                        description: "Acostado boca arriba, levante alternadamente las rodillas hacia el pecho. Construye estabilidad del core."
+                    },
+                    hipflexoractivation: {
+                        name: "Activación de Flexores de Cadera",
+                        description: "Fortalecimiento isométrico: presione el pie contra el suelo mientras intenta levantar la rodilla."
                     },
                     singlelegdeadlift: {
                         name: "Peso Muerto de Una Pierna",
@@ -2150,6 +2188,7 @@ class TendI18n {
                     hips: "இடுப்புகள்",
                     hamstrings: "பின்புற துடை எலும்பு",
                     lowerBack: "கீழ் முதுகு",
+                    backSafeHips: "முதுகு பாதுகாப்பான இடுப்பு வலுப்படுத்துதல்",
                     isometric: "ஐசோமெட்ரிக்",
                     neck: "கழுத்து",
                     shoulders: "தோள்கள்",
@@ -2211,6 +2250,7 @@ class TendI18n {
                     hips: "ஆழமான இடுப்பு திறப்பு நீட்சிகள்",
                     hamstrings: "இலக்கு பின்புற துடை எலும்பு நெகிழ்வு",
                     lowerBack: "கீழ் முதுகு வலிக்கு நிவாரணம்",
+                    backSafeHips: "முதுகு பிரச்சனைகள் உள்ளவர்களுக்கு மென்மையான இடுப்பு மற்றும் மைய வலிமைப்படுத்துதல்",
                     isometric: "நிலையான பிடிப்புகள் மூலம் வலிமை",
                     neck: "கழுத்து பதற்றம் மற்றும் விறைப்பை நிவாரணம்",
                     shoulders: "தோள் பதற்றத்தை விடுவித்தல்",
@@ -2481,6 +2521,22 @@ class TendI18n {
                     hipflexorstrengthening: {
                         name: "இடுப்பு வளைவு வலிமை",
                         description: "நிற்கவும் மற்றும் ஒரு முழங்காலை உங்கள் மார்புக்கு நோக்கி உயர்த்தவும், பின்னர் அதை மெதுவாக கீழே இறக்கவும்."
+                    },
+                    clamshells: {
+                        name: "கிளாம்ஷெல்ஸ்",
+                        description: "பக்கவாட்டில் படுத்து, முழங்கால்கள் வளைந்தவை. பாதங்களை ஒன்றாக வைத்து மேல் முழங்காலைத் திறக்கவும்."
+                    },
+                    singlelegglutbridge: {
+                        name: "ஒற்றை கால் குளுட் பாலம்",
+                        description: "ஒரு கால் நீட்டிய குளுட் பாலம். முதுகெலும்பு சுமை இல்லாமல் குளுட்களை வலுப்படுத்துகிறது."
+                    },
+                    supinemarching: {
+                        name: "படுத்த நிலையில் அணிவகுப்பு",
+                        description: "முதுகில் படுத்து, மாற்றி மாற்றி முழங்கால்களை மார்பை நோக்கி உயர்த்தவும். மைய நிலைப்பாட்டை உருவாக்குகிறது."
+                    },
+                    hipflexoractivation: {
+                        name: "இடுப்பு வளைவு செயல்படுத்துதல்",
+                        description: "ஐசோமெட்ரிக் வலிமைப்படுத்துதல்: முழங்காலை உயர்த்த முயற்சிக்கும் போது பாதத்தை தரையில் அழுத்தவும்."
                     },
                     singlelegdeadlift: {
                         name: "ஒற்றை கால் டெட்லிப்ட்",

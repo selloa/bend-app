@@ -35,6 +35,7 @@
     "hips": "Caderas",
     "hamstrings": "Isquiotibiales",
     "lowerBack": "Espalda Baja",
+    "backSafeHips": "Fortalecimiento de Cadera Seguro para la Espalda",
     "isometric": "Isométrico",
     "neck": "Cuello",
     "shoulders": "Hombros",
@@ -59,6 +60,20 @@
     "seated": "Sentado",
     "posture": "Postura",
     "chest": "Pecho"
+  },
+  "folderDescriptions": {
+    "hips": "Rutinas de movilidad y flexibilidad de cadera",
+    "shoulders": "Rutinas de movilidad y flexibilidad de hombros",
+    "lowerBack": "Rutinas de alivio y fortalecimiento de espalda baja",
+    "neck": "Rutinas de movilidad y alivio de tensión del cuello",
+    "hamstrings": "Rutinas de flexibilidad y movilidad de isquiotibiales",
+    "feetAnkles": "Rutinas de movilidad de pies y tobillos",
+    "core": "Rutinas de fuerza y estabilidad del núcleo",
+    "upperBody": "Rutinas de movilidad y fuerza de la parte superior",
+    "lowerBody": "Rutinas de movilidad y fuerza de la parte inferior",
+    "seated": "Ejercicios sentados para oficina o movilidad limitada",
+    "posture": "Rutinas de corrección y alineación de postura",
+    "chest": "Rutinas de apertura y flexibilidad del pecho"
   },
   "exercises": {
     "neckRolls": {
@@ -125,6 +140,86 @@
       "name": "Retracción de Barbilla",
       "description": "Retraiga suavemente la barbilla, creando una papada. Mantenga 5 segundos, luego suelte. Repita lentamente.",
       "instructions": "Imagine que está haciendo una papada."
+    },
+    "seatedForwardFold": {
+      "name": "Pliegue Hacia Adelante Sentado",
+      "description": "Siéntese con las piernas extendidas, inclínese hacia adelante desde las caderas, alcanzando los pies o espinillas.",
+      "instructions": "Mantenga la espalda recta y pliegue desde las caderas, no desde la cintura."
+    },
+    "finalRelaxation": {
+      "name": "Relajación Final",
+      "description": "Acuéstese cómodamente y concéntrese en respiraciones profundas y lentas para relajar todo su cuerpo.",
+      "instructions": "Permita que su cuerpo se relaje completamente y libere cualquier tensión restante."
+    },
+    "sunSalutation": {
+      "name": "Saludo al Sol",
+      "description": "Una secuencia fluida de poses que calienta todo el cuerpo y conecta la respiración con el movimiento.",
+      "instructions": "Muévase suavemente entre poses, coordinando su respiración con cada movimiento."
+    },
+    "fullBodyStretch": {
+      "name": "Estiramiento de Cuerpo Completo",
+      "description": "Extienda los brazos por encima de la cabeza y estire todo su cuerpo desde las puntas de los dedos hasta los dedos de los pies.",
+      "instructions": "Estire suavemente y mantenga la posición mientras respira profundamente."
+    },
+    "catCowStretch": {
+      "name": "Estiramiento Gato-Vaca",
+      "description": "En manos y rodillas, alterne entre arquear la espalda (vaca) y redondearla (gato).",
+      "instructions": "Muévase lentamente y coordine el movimiento con su respiración."
+    },
+    "childsPose": {
+      "name": "Postura del Niño",
+      "description": "Arrodíllese y siéntese sobre los talones, luego pliegue hacia adelante con los brazos extendidos.",
+      "instructions": "Relaje la frente en el suelo y respire profundamente en la espalda."
+    },
+    "downwardDog": {
+      "name": "Perro Boca Abajo",
+      "description": "Comience en manos y rodillas, luego levante las caderas hacia arriba y atrás para formar una forma de V invertida.",
+      "instructions": "Mantenga los brazos rectos y presione los talones hacia el suelo."
+    },
+    "warriorI": {
+      "name": "Guerrero I",
+      "description": "Dé un paso hacia adelante con un pie en una estocada, levante los brazos por encima de la cabeza y mantenga la posición.",
+      "instructions": "Mantenga la rodilla delantera sobre el tobillo y active el núcleo."
+    },
+    "trianglePose": {
+      "name": "Postura del Triángulo",
+      "description": "Párese con los pies muy separados, alcance una mano hacia la espinilla y la otra hacia el cielo.",
+      "instructions": "Mantenga ambas piernas rectas y abra el pecho hacia el lado."
+    },
+    "butterflyStretch": {
+      "name": "Estiramiento de Mariposa",
+      "description": "Siéntese con las plantas de los pies juntas, presione suavemente las rodillas hacia abajo y pliegue hacia adelante.",
+      "instructions": "Mantenga la espalda recta y pliegue desde las caderas."
+    },
+    "supineTwist": {
+      "name": "Giro Supino",
+      "description": "Acuéstese boca arriba, lleve las rodillas al pecho, luego déjelas caer a un lado mientras mantiene los hombros en el suelo.",
+      "instructions": "Relájese en el giro y respire profundamente."
+    },
+    "happyBaby": {
+      "name": "Bebé Feliz",
+      "description": "Acuéstese boca arriba, agarre los lados exteriores de los pies y balancee suavemente de lado a lado.",
+      "instructions": "Mantenga la espalda baja presionada contra el suelo y balancee suavemente."
+    },
+    "ragDoll": {
+      "name": "Muñeca de Trapo",
+      "description": "Párese con los pies separados al ancho de las caderas, pliegue hacia adelante y deje que los brazos cuelguen sueltos.",
+      "instructions": "Relaje el cuello y los hombros, dejando que la gravedad haga el trabajo."
+    },
+    "kneesToChest": {
+      "name": "Rodillas al Pecho",
+      "description": "Acuéstese boca arriba y tire suavemente de las rodillas hacia el pecho.",
+      "instructions": "Mantenga la posición y balancee suavemente de lado a lado."
+    },
+    "legsUpTheWall": {
+      "name": "Piernas en la Pared",
+      "description": "Acuéstese boca arriba con las piernas apoyadas contra una pared.",
+      "instructions": "Relájese completamente y concéntrese en su respiración."
+    },
+    "corpsePose": {
+      "name": "Postura del Cadáver",
+      "description": "Acuéstese boca arriba con los brazos a los lados, palmas hacia arriba y piernas ligeramente separadas.",
+      "instructions": "Relaje cada músculo de su cuerpo y concéntrese en su respiración."
     }
   },
   "accessibility": {

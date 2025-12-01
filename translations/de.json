@@ -35,6 +35,7 @@
     "hips": "Hüften",
     "hamstrings": "Oberschenkelrückseite",
     "lowerBack": "Unterer Rücken",
+    "backSafeHips": "Rückenschonende Hüftkräftigung",
     "isometric": "Isometrisch",
     "neck": "Nacken",
     "shoulders": "Schultern",
@@ -59,6 +60,20 @@
     "seated": "Sitzend",
     "posture": "Haltung",
     "chest": "Brust"
+  },
+  "folderDescriptions": {
+    "hips": "Hüftmobilität und Flexibilitätsroutinen",
+    "shoulders": "Schultermobilität und Flexibilitätsroutinen",
+    "lowerBack": "Untere Rückenentlastung und Kräftigungsroutinen",
+    "neck": "Nackenmobilität und Spannungsabbau-Routinen",
+    "hamstrings": "Oberschenkelrückseiten-Flexibilität und Mobilitätsroutinen",
+    "feetAnkles": "Fuß- und Knöchelmobilitätsroutinen",
+    "core": "Rumpfkraft- und Stabilitätsroutinen",
+    "upperBody": "Oberkörper-Mobilitäts- und Kraftroutinen",
+    "lowerBody": "Unterkörper-Mobilitäts- und Kraftroutinen",
+    "seated": "Sitzende Übungen für Büro oder eingeschränkte Mobilität",
+    "posture": "Haltungskorrektur- und Ausrichtungsroutinen",
+    "chest": "Brustöffnungs- und Flexibilitätsroutinen"
   },
   "exercises": {
     "neckRolls": {
@@ -125,6 +140,86 @@
       "name": "Kinn-Einziehen",
       "description": "Ziehen Sie Ihr Kinn sanft zurück, wodurch ein Doppelkinn entsteht. Halten Sie 5 Sekunden, dann lassen Sie los. Wiederholen Sie langsam.",
       "instructions": "Stellen Sie sich vor, Sie machen ein Doppelkinn."
+    },
+    "seatedForwardFold": {
+      "name": "Sitzende Vorwärtsbeuge",
+      "description": "Setzen Sie sich mit ausgestreckten Beinen hin, beugen Sie sich von den Hüften nach vorne und greifen Sie nach den Füßen oder Schienbeinen.",
+      "instructions": "Halten Sie Ihren Rücken gerade und beugen Sie sich von den Hüften, nicht von der Taille."
+    },
+    "finalRelaxation": {
+      "name": "Endentspannung",
+      "description": "Legen Sie sich bequem hin und konzentrieren Sie sich auf tiefes, langsames Atmen, um Ihren ganzen Körper zu entspannen.",
+      "instructions": "Lassen Sie Ihren Körper vollständig entspannen und lösen Sie alle verbleibenden Spannungen."
+    },
+    "sunSalutation": {
+      "name": "Sonnengruß",
+      "description": "Eine fließende Sequenz von Posen, die den ganzen Körper aufwärmt und Atem mit Bewegung verbindet.",
+      "instructions": "Bewegen Sie sich sanft zwischen den Posen und koordinieren Sie Ihren Atem mit jeder Bewegung."
+    },
+    "fullBodyStretch": {
+      "name": "Ganzkörperdehnung",
+      "description": "Strecken Sie Ihre Arme über den Kopf und dehnen Sie Ihren ganzen Körper von den Fingerspitzen bis zu den Zehen.",
+      "instructions": "Dehnen Sie sich sanft und halten Sie die Position, während Sie tief atmen."
+    },
+    "catCowStretch": {
+      "name": "Katze-Kuh-Dehnung",
+      "description": "Auf Händen und Knien wechseln Sie zwischen dem Wölben Ihres Rückens (Kuh) und dem Runden (Katze).",
+      "instructions": "Bewegen Sie sich langsam und koordinieren Sie die Bewegung mit Ihrem Atem."
+    },
+    "childsPose": {
+      "name": "Kindhaltung",
+      "description": "Knien Sie und setzen Sie sich auf Ihre Fersen, dann beugen Sie sich nach vorne mit ausgestreckten Armen.",
+      "instructions": "Entspannen Sie Ihre Stirn auf dem Boden und atmen Sie tief in Ihren Rücken."
+    },
+    "downwardDog": {
+      "name": "Herabschauender Hund",
+      "description": "Beginnen Sie auf Händen und Knien, dann heben Sie die Hüften nach oben und hinten, um eine umgekehrte V-Form zu bilden.",
+      "instructions": "Halten Sie Ihre Arme gerade und drücken Sie Ihre Fersen zum Boden."
+    },
+    "warriorI": {
+      "name": "Krieger I",
+      "description": "Treten Sie mit einem Fuß nach vorne in einen Ausfallschritt, heben Sie die Arme über den Kopf und halten Sie die Position.",
+      "instructions": "Halten Sie Ihr vorderes Knie über Ihrem Knöchel und aktivieren Sie Ihren Kern."
+    },
+    "trianglePose": {
+      "name": "Dreieckshaltung",
+      "description": "Stehen Sie mit weit auseinander stehenden Füßen, greifen Sie mit einer Hand nach Ihrem Schienbein und mit der anderen nach dem Himmel.",
+      "instructions": "Halten Sie beide Beine gerade und öffnen Sie Ihre Brust zur Seite."
+    },
+    "butterflyStretch": {
+      "name": "Schmetterlingsdehnung",
+      "description": "Setzen Sie sich mit zusammengeführten Fußsohlen hin, drücken Sie die Knie sanft nach unten und beugen Sie sich nach vorne.",
+      "instructions": "Halten Sie Ihren Rücken gerade und beugen Sie sich von den Hüften."
+    },
+    "supineTwist": {
+      "name": "Rückenlage-Drehung",
+      "description": "Legen Sie sich auf den Rücken, bringen Sie die Knie zur Brust, dann lassen Sie sie zu einer Seite fallen, während Sie die Schultern auf dem Boden halten.",
+      "instructions": "Entspannen Sie sich in die Drehung und atmen Sie tief."
+    },
+    "happyBaby": {
+      "name": "Glückliches Baby",
+      "description": "Legen Sie sich auf den Rücken, greifen Sie die Außenseiten Ihrer Füße und wiegen Sie sich sanft von Seite zu Seite.",
+      "instructions": "Halten Sie Ihren unteren Rücken auf dem Boden und wiegen Sie sich sanft."
+    },
+    "ragDoll": {
+      "name": "Lumpenpuppe",
+      "description": "Stehen Sie mit hüftbreit auseinander stehenden Füßen, beugen Sie sich nach vorne und lassen Sie Ihre Arme locker hängen.",
+      "instructions": "Entspannen Sie Nacken und Schultern und lassen Sie die Schwerkraft die Arbeit machen."
+    },
+    "kneesToChest": {
+      "name": "Knie zur Brust",
+      "description": "Legen Sie sich auf den Rücken und ziehen Sie Ihre Knie sanft zur Brust.",
+      "instructions": "Halten Sie die Position und wiegen Sie sich sanft von Seite zu Seite."
+    },
+    "legsUpTheWall": {
+      "name": "Beine an der Wand",
+      "description": "Legen Sie sich auf den Rücken mit Ihren Beinen an einer Wand.",
+      "instructions": "Entspannen Sie sich vollständig und konzentrieren Sie sich auf Ihr Atmen."
+    },
+    "corpsePose": {
+      "name": "Leichenhaltung",
+      "description": "Legen Sie sich flach auf den Rücken mit Armen an den Seiten, Handflächen nach oben und Beinen leicht auseinander.",
+      "instructions": "Entspannen Sie jeden Muskel in Ihrem Körper und konzentrieren Sie sich auf Ihren Atem."
     }
   },
   "accessibility": {
