@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Test - Tend App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .language-selector {
+            margin: 20px 0;
+        }
+        .language-selector button {
+            background: #6c757d;
+        }
+        .language-selector button.active {
+            background: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Translation System Test</h1>
+    
+    <div class="test-section">
+        <h2>Language Selection</h2>
+        <div class="language-selector">
+            <button onclick="testLanguage('en')" id="btn-en">English</button>
+            <button onclick="testLanguage('de')" id="btn-de">Deutsch</button>
+            <button onclick="testLanguage('es')" id="btn-es">Español</button>
+            <button onclick="testLanguage('ta')" id="btn-ta">தமிழ்</button>
+        </div>
+        <div id="current-language" class="test-result info">Current Language: English</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Translation Tests</h2>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <button onclick="testExerciseTranslations()">Test Exercise Translations</button>
+        <button onclick="testRoutineTranslations()">Test Routine Translations</button>
+        <button onclick="testFolderTranslations()">Test Folder Translations</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <!-- Load the i18n system -->
+    <script src="i18n.js"></script>
+    
+    <script>
+        let testResults = [];
+        
+        function log(message, type = 'info') {
+            const resultsDiv = document.getElementById('results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${type}`;
+            resultDiv.textContent = message;
+            resultsDiv.appendChild(resultDiv);
+            console.log(message);
+        }
+        
+        function testLanguage(lang) {
+            if (window.i18n) {
+                window.i18n.changeLanguage(lang);
+                document.getElementById('current-language').textContent = `Current Language: ${lang.toUpperCase()}`;
+                
+                // Update button states
+                document.querySelectorAll('.language-selector button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById(`btn-${lang}`).classList.add('active');
+                
+                log(`✅ Language changed to ${lang}`, 'success');
+            } else {
+                log('❌ i18n system not available', 'error');
+            }
+        }
+        
+        function testExerciseTranslations() {
+            log('🧪 Testing Exercise Translations...', 'info');
+            
+            const exercises = [
+                'neckRolls',
+                'shoulderShrugs',
+                'sideNeckStretch',
+                'forwardNeckStretch',
+                'armCircles',
+                'gentleTwist',
+                'calfRaises',
+                'deepBreathing',
+                'cactusArms',
+                'divers',
+                'seatedBackTwist',
+                'shoulderBladeSqueeze',
+                'chinTucks',
+                'seatedForwardFold',
+                'finalRelaxation',
+                'sunSalutation',
+                'fullBodyStretch',
+                'catCowStretch',
+                'childsPose',
+                'downwardDog',
+                'warriorI',
+                'trianglePose',
+                'butterflyStretch',
+                'supineTwist',
+                'happyBaby',
+                'ragDoll',
+                'kneesToChest',
+                'legsUpTheWall',
+                'corpsePose'
+            ];
+            
+            let successCount = 0;
+            let totalCount = exercises.length;
+            
+            exercises.forEach(exerciseKey => {
+                const nameKey = `exercises.${exerciseKey}.name`;
+                const descKey = `exercises.${exerciseKey}.description`;
+                
+                const name = window.i18n.t(nameKey);
+                const description = window.i18n.t(descKey);
+                
+                if (name !== nameKey && description !== descKey) {
+                    successCount++;
+                    log(`✅ ${exerciseKey}: "${name}"`, 'success');
+                } else {
+                    log(`❌ ${exerciseKey}: Missing translation`, 'error');
+                }
+            });
+            
+            log(`📊 Exercise Translations: ${successCount}/${totalCount} working`, 
+                successCount === totalCount ? 'success' : 'error');
+        }
+        
+        function testRoutineTranslations() {
+            log('🧪 Testing Routine Translations...', 'info');
+            
+            const routines = [
+                'wakeUp',
+                'postureReset',
+                'fullBody',
+                'sleep',
+                'expert',
+                'hips',
+                'hamstrings',
+                'lowerBack',
+                'isometric',
+                'neck',
+                'shoulders',
+                'feet',
+                'ankle',
+                'knees',
+                'hands',
+                'fingers',
+                'wrists',
+                'feetAnkles'
+            ];
+            
+            let successCount = 0;
+            let totalCount = routines.length;
+            
+            routines.forEach(routineKey => {
+                const nameKey = `routines.${routineKey}`;
+                const descKey = `routineDescriptions.${routineKey}`;
+                
+                const name = window.i18n.t(nameKey);
+                const description = window.i18n.t(descKey);
+                
+                if (name !== nameKey && description !== descKey) {
+                    successCount++;
+                    log(`✅ ${routineKey}: "${name}"`, 'success');
+                } else {
+                    log(`❌ ${routineKey}: Missing translation`, 'error');
+                }
+            });
+            
+            log(`📊 Routine Translations: ${successCount}/${totalCount} working`, 
+                successCount === totalCount ? 'success' : 'error');
+        }
+        
+        function testFolderTranslations() {
+            log('🧪 Testing Folder Translations...', 'info');
+            
+            const folders = [
+                'hips',
+                'shoulders',
+                'lowerBack',
+                'neck',
+                'hamstrings',
+                'feetAnkles',
+                'core',
+                'upperBody',
+                'lowerBody',
+                'seated',
+                'posture',
+                'chest'
+            ];
+            
+            let successCount = 0;
+            let totalCount = folders.length;
+            
+            folders.forEach(folderKey => {
+                const nameKey = `folders.${folderKey}`;
+                const descKey = `folderDescriptions.${folderKey}`;
+                
+                const name = window.i18n.t(nameKey);
+                const description = window.i18n.t(descKey);
+                
+                if (name !== nameKey && description !== descKey) {
+                    successCount++;
+                    log(`✅ ${folderKey}: "${name}"`, 'success');
+                } else {
+                    log(`❌ ${folderKey}: Missing translation`, 'error');
+                }
+            });
+            
+            log(`📊 Folder Translations: ${successCount}/${totalCount} working`, 
+                successCount === totalCount ? 'success' : 'error');
+        }
+        
+        function runAllTests() {
+            document.getElementById('results').innerHTML = '';
+            log('🚀 Running All Translation Tests...', 'info');
+            
+            testExerciseTranslations();
+            testRoutineTranslations();
+            testFolderTranslations();
+            
+            log('✅ All tests completed!', 'success');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (window.i18n) {
+                    log('✅ i18n system loaded successfully', 'success');
+                    document.getElementById('btn-en').classList.add('active');
+                } else {
+                    log('❌ i18n system failed to load', 'error');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
