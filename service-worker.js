@@ -1,17 +1,17 @@
 // Tend App - Service Worker for Offline Support
-const CACHE_NAME = 'tend-app-v1';
+const CACHE_NAME = 'tend-app-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/i18n-styles.css',
-  '/script.js',
-  '/i18n.js',
-  '/translations/en.json',
-  '/translations/de.json',
-  '/translations/es.json',
-  '/translations/ta.json',
-  '/manifest.json'
+  './',
+  './index.html',
+  './styles.css',
+  './i18n-styles.css',
+  './script.js',
+  './i18n.js',
+  './translations/en.json',
+  './translations/de.json',
+  './translations/es.json',
+  './translations/ta.json',
+  './manifest.json'
 ];
 
 // Install event - cache all essential files
