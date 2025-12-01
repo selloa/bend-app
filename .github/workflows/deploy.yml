@@ -1,11 +1,10 @@
-name: Deploy to GitHub Pages (DISABLED - Manual deployment only)
+name: Deploy to GitHub Pages
 
-# DISABLED: Automatic deployment disabled for production safety
-# on:
-#   push:
-#     branches: [ master, main ]
-#   pull_request:
-#     branches: [ master, main ]
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 
 permissions:
   contents: read
