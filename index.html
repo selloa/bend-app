@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tend: Stretching & Flexibility</title>
     <meta name="description" content="A gentle stretching and flexibility app designed for all ages and abilities">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#4A90E2">
+    <meta name="msapplication-TileColor" content="#4A90E2">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
+    
+    <!-- Apple Mobile Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tend">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A90E2' stroke='%232C5F8A' stroke-width='3'/%3E%3Cpath d='M30 40 Q50 20 70 40 Q50 60 30 40' fill='%23FFFFFF' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 35 Q50 25 65 35' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3Cpath d='M35 45 Q50 55 65 45' fill='none' stroke='%232C5F8A' stroke-width='2'/%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="i18n-styles.css">
 </head>
@@ -338,5 +358,59 @@
             </p>
         </div>
     </footer>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        // Register service worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('✅ Service Worker registered successfully:', registration.scope);
+                        
+                        // Check for updates periodically
+                        setInterval(() => {
+                            registration.update();
+                        }, 60000); // Check every minute
+                        
+                        // Handle updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New service worker available, show update notification
+                                    console.log('🔄 New version available! Refresh to update.');
+                                    // You can show a custom notification here
+                                }
+                            });
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('❌ Service Worker registration failed:', error);
+                    });
+            });
+        } else {
+            console.log('⚠️ Service Worker not supported in this browser');
+        }
+        
+        // Handle install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            console.log('💾 App can be installed');
+            
+            // You can show your own install button here
+            // Example: showInstallButton();
+        });
+        
+        // Track if app was installed
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ App installed successfully');
+            deferredPrompt = null;
+        });
+    </script>
 </body>
 </html>
