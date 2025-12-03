@@ -1403,13 +1403,24 @@ body {
     }
 }
 
-/* Editorial Footer */
+/* Editorial Footer - Only visible on main routine selection page */
 .editorial-footer {
     margin-top: 40px;
     padding: 30px 20px;
     background: var(--bg-tertiary);
     border-top: 1px solid var(--border-tertiary);
     text-align: center;
+    display: none; /* Hidden by default */
+}
+
+/* Only show footer when routine selection is active */
+body.routine-selection-active .editorial-footer {
+    display: block;
+}
+
+/* Force hide footer when body doesn't have routine-selection-active class */
+body:not(.routine-selection-active) .editorial-footer {
+    display: none !important;
 }
 
 .editorial-content {
