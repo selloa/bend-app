@@ -2263,23 +2263,45 @@ function getTranslatedExercise(exercise) {
     }
     
     const currentLang = window.i18n.currentLang;
-    
-    // Convert exercise name to match i18n key format
-    // "Neck Rolls" -> "neckRolls", "Shoulder Shrugs" -> "shoulderShrugs", etc.
-    const exerciseKey = exercise.name.replace(/\s+/g, '').replace(/([A-Z])/g, (match, letter, index) => 
-        index === 0 ? letter.toLowerCase() : letter
-    );
-    
-    // Try to get translation from i18n system
-    const translatedName = window.i18n.t(`exercises.${exerciseKey}.name`, {}, exercise.name);
-    const translatedDescription = window.i18n.t(`exercises.${exerciseKey}.description`, {}, exercise.description);
-    
-    // Always return translated data if available, even if it's the same as original
-    // This ensures the translation system is working
+    if (currentLang === 'en') {
+        return exercise;
+    }
+
+    // 1) Exact-text dictionary (exercise-translations-es.js): translates each
+    //    name and description as written, even when the same exercise has a
+    //    different description in another routine.
+    const textDict = (window.EXERCISE_TEXT && window.EXERCISE_TEXT[currentLang]) || {};
+    let translatedName = textDict[exercise.name];
+    let translatedDescription = textDict[exercise.description];
+
+    // 2) Fallback: the exercises section of i18n.js. Its keys are lowercase with
+    //    no spaces or punctuation ("neckrolls", "catcowstretch"), so the name is
+    //    normalized before looking it up. Previously the code built camelCase keys
+    //    ("neckRolls") that never matched, so exercises always showed in English.
+    if (!translatedName || !translatedDescription) {
+        const normalize = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const findEntry = (lang) => {
+            const all = (window.i18n.translations[lang] || {}).exercises || {};
+            const wanted = normalize(exercise.name);
+            const key = Object.keys(all).find(k => normalize(k) === wanted);
+            return key ? all[key] : null;
+        };
+        const entry = findEntry(currentLang);
+        const englishEntry = findEntry('en');
+        if (!translatedName && entry && entry.name) {
+            translatedName = entry.name;
+        }
+        // Only use the description if it belongs to the same English text
+        if (!translatedDescription && entry && entry.description &&
+            englishEntry && englishEntry.description === exercise.description) {
+            translatedDescription = entry.description;
+        }
+    }
+
     return {
         ...exercise,
-        name: translatedName,
-        description: translatedDescription
+        name: translatedName || exercise.name,
+        description: translatedDescription || exercise.description
     };
 }
 

@@ -1,5 +1,5 @@
 // Tend App - Service Worker for Offline Support
-const CACHE_NAME = 'tend-app-v2';
+const CACHE_NAME = 'tend-app-v3';
 const urlsToCache = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const urlsToCache = [
   './i18n-styles.css',
   './script.js',
   './i18n.js',
+  './exercise-translations-es.js',
   './translations/en.json',
   './translations/de.json',
   './translations/es.json',
